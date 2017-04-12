@@ -4,7 +4,8 @@
 	<!-- args -->
 	<arg name="robot" value="raw3-6"/>
 	<arg name="pc1" default="localhost"/>
-	<arg name="ur_ip" default="localhost" />
+	<arg name="ur_ip" default="192.168.1.40" />
+        <arg name="gripper_ip" default="192.168.1.11" />
 
 	<!-- upload robot description -->
 	<include file="$(find cob_hardware_config)/common/upload_robot.launch" >
@@ -21,10 +22,8 @@
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="pc" value="$(arg pc1)" />
 		</include>
-
 		<!-- wifi monitor -->
-		<include file="$(find cob_bringup)/tools/wifi_monitor.launch" />
-
+<!--		<include file="$(find cob_bringup)/tools/wifi_monitor.launch" /> -->
 		<!-- startup hardware -->
 		<!-- lower robot -->
 		<include file="$(find cob_bringup)/drivers/base_driver.launch" >
@@ -68,13 +67,21 @@
 			<arg name="max_payload"  value="20.0"/>
 		</include>
 
+		<!-- Robotiq gripper -->
+		<include file="$(find cob_bringup)/drivers/robotiq.launch">
+			<arg name="robot_ip" value="$(arg gripper_ip)"/>
+			<arg name="prefix" value="gripper_"/>
+		</include>
+
 		<!-- start additional packages -->
 		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
+
 		<include file="$(find cob_bringup)/tools/teleop.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
+
 		<include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
 			<arg name="robot" value="$(arg robot)" />
 		</include>
@@ -89,6 +96,9 @@
 
 		<!-- script server -->
 		<include file="$(find cob_script_server)/launch/script_server.launch" />
+
+		<!-- moveit server -->
+		<include file="$(find yuri_moveit)/launch/move_group.launch" />  
 	</group>
 
 	<machine name="pc1" address="$(arg pc1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
