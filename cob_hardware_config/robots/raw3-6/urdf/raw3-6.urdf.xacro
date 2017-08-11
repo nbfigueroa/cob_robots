@@ -20,7 +20,7 @@
   <xacro:include filename="$(find robotiq_s_model_visualization)/cfg/robotiq_hand_macro.urdf.xacro" />
 
   <!-- RealSense Sensors -->
-  <xacro:include filename="$(find yuripy)/description/perception/cameras/realsense/r200.urdf.xacro"/>
+  <xacro:include filename="$(find cob_hardware_config)/robots/raw3-6/realsense/r200.urdf.xacro"/>
   
   <!-- composition of the robot -->
   <xacro:raw_base name="base"/>
