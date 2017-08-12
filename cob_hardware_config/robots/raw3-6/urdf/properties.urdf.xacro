@@ -7,6 +7,7 @@
 	<!-- base calibration -->
 	<!-- ***************** -->
 	<!-- laser front mount positions | relative to base_link -->
+    <!--XXX: these parameters e.g. def_laser_front_x are from cob_robots/cob_hardware_config/robots/raw3-5/urdf/calibration_default.urdf.xacro-->
 	<property name="laser_front_x" value="${def_laser_front_x+offset_laser_front_x}"/>
 	<property name="laser_front_y" value="${def_laser_front_y+offset_laser_front_y}"/>
 	<property name="laser_front_z" value="${def_laser_front_z+offset_laser_front_z}"/>
