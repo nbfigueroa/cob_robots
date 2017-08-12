@@ -98,6 +98,7 @@
     <!--not sure if we need it for hardware or simulatror or both???-->
     <!-- Robotiq gripper -->
     <include file="$(find cob_bringup)/drivers/robotiq.launch">
+      <arg name="sim" value="$(arg sim)"/>
       <arg name="robot_ip" value="$(arg gripper_ip)"/>
       <arg name="prefix" value="gripper_"/>
     </include>
