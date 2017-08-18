@@ -1,0 +1,50 @@
+controller_list:
+  - name: fake_arm_controller
+    joints:
+      - arm_shoulder_pan_joint
+      - arm_shoulder_lift_joint
+      - arm_elbow_joint
+      - arm_wrist_1_joint
+      - arm_wrist_2_joint
+      - arm_wrist_3_joint
+  - name: fake_gripper_controller
+    joints:
+      - gripper_palm_finger_1_joint
+      - gripper_finger_1_joint_1
+      - gripper_finger_1_joint_2
+      - gripper_finger_1_joint_3
+      - gripper_finger_1_joint_paradistal_hinge
+      - gripper_finger_1_joint_median_actuating_hinge
+      - gripper_finger_1_joint_median_actuating_hinge_median_bar
+      - gripper_finger_1_joint_paramedian_hinge
+      - gripper_finger_1_joint_paramedian_hinge_median_bar_underactuated
+      - gripper_finger_1_joint_paraproximal_actuating_hinge
+      - gripper_finger_1_joint_paraproximal_bar
+      - gripper_finger_1_joint_proximal_actuating_hinge
+      - gripper_finger_1_joint_proximal_actuating_bar
+      - gripper_palm_finger_2_joint
+      - gripper_finger_2_joint_1
+      - gripper_finger_2_joint_2
+      - gripper_finger_2_joint_3
+      - gripper_finger_2_joint_paradistal_hinge
+      - gripper_finger_2_joint_median_actuating_hinge
+      - gripper_finger_2_joint_median_actuating_hinge_median_bar
+      - gripper_finger_2_joint_paramedian_hinge
+      - gripper_finger_2_joint_paramedian_hinge_median_bar_underactuated
+      - gripper_finger_2_joint_paraproximal_actuating_hinge
+      - gripper_finger_2_joint_paraproximal_bar
+      - gripper_finger_2_joint_proximal_actuating_hinge
+      - gripper_finger_2_joint_proximal_actuating_bar
+      - gripper_palm_finger_middle_joint
+      - gripper_finger_middle_joint_1
+      - gripper_finger_middle_joint_2
+      - gripper_finger_middle_joint_3
+      - gripper_finger_middle_joint_paradistal_hinge
+      - gripper_finger_middle_joint_median_actuating_hinge
+      - gripper_finger_middle_joint_median_actuating_hinge_median_bar
+      - gripper_finger_middle_joint_paramedian_hinge
+      - gripper_finger_middle_joint_paramedian_hinge_median_bar_underactuated
+      - gripper_finger_middle_joint_paraproximal_actuating_hinge
+      - gripper_finger_middle_joint_paraproximal_bar
+      - gripper_finger_middle_joint_proximal_actuating_hinge
+      - gripper_finger_middle_joint_proximal_actuating_bar

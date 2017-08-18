@@ -10,3 +10,14 @@ group1:
   buttons: [[stop,stop,omni],
     [init,init],
     [recover,recover]]
+group2:
+  group_name: arm pos
+  component_name: arm
+  buttons: [[stop,stop],
+    [home,move,home],
+    [upright,move,upright]]
+group3:
+  group_name: arm traj
+  component_name: arm
+  buttons: [[stop,stop]]
+

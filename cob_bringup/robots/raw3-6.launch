@@ -7,10 +7,11 @@
   <arg name="python_urx" default="$(optenv PYTHONURX !!NO_PYTHON_URX_SET!!)"/>
   <arg name="ur_ip" default="$(optenv UR_IP !!NO_UR_IP_SET!!)"/>
   <arg name="gripper_ip" default="$(optenv GRIPPER_IP !!NO_GRIPPER_IP_SET!!)"/>
-  <arg name="env-script" default="$(optenv ENV_SCRIPT !!NO_ENV_SCRIPT_SET!!)"/>
-  <arg name="pc1" default="$(optenv PC1 !!NO_PC1_SET!!)"/>
+  <arg name="env-script" default="$(find cob_bringup)/env.sh"/>
+  <arg name="pc1" default="localhost"/>
 
   <include file="$(find cob_bringup)/robots/$(arg robot).xml" >
+    <arg name="pc1" value="$(arg pc1)"/>
     <arg name="robot" value="$(arg robot)" />
     <arg name="sim" value="$(arg sim)"/>
     <arg name="teleop" value="$(arg teleop)"/>
@@ -18,7 +19,6 @@
     <arg name="ur_ip" value="$(arg ur_ip)"/>
     <arg name="gripper_ip" value="$(arg ur_ip)"/>
     <arg name="env-script" value="$(arg env-script)"/>
-    <arg name="pc1" value="$(arg pc1)"/>
   </include>
 
 </launch>

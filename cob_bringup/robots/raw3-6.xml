@@ -1,21 +1,22 @@
 <?xml version="1.0"?>
 <launch>
+
   <!-- args -->
   <arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
   <arg name="sim" default="$(optenv SIM !!NO_SIM_SET!!)"/>
-  <arg name="teleop" default="$(optenv TELEOP !!NO_TELEOP_SET!!)"/>
   <!--If you want to set the robot in teach mode, you have to load python-urx driver, while if you want to use motion planning, you have to load universal robot driver-->
-  <arg name="python_urx" default="$(optenv PYTHONURX !!NO_PYTHON_URX_SET!!)"/>
   <arg name="ur_ip" default="$(optenv UR_IP !!NO_UR_IP_SET!!)"/>
   <arg name="gripper_ip" default="$(optenv GRIPPER_IP !!NO_GRIPPER_IP_SET!!)"/>
   <arg name="env-script" default="$(optenv ENV_SCRIPT !!NO_ENV_SCRIPT_SET!!)"/>
   <arg name="pc1" default="$(optenv PC1 !!NO_PC1_SET!!)"/>
 
+  <arg name="teleop" default="$(optenv TELEOP !!NO_TELEOP_SET!!)"/>
+  <arg name="python_urx" default="$(optenv PYTHONURX !!NO_PYTHON_URX_SET!!)"/>
+
   <!-- upload robot description -->
   <include file="$(find cob_hardware_config)/upload_robot.launch" >
     <arg name="robot" value="$(arg robot)" />
   </include>
-
   <!-- upload default configuration parameters -->
   <include file="$(find cob_default_robot_config)/upload_param.launch" >
     <arg name="robot" value="$(arg robot)" />
@@ -83,19 +84,18 @@
     <group unless="$(arg python_urx)">
       <include file="$(find cob_bringup)/drivers/ur.launch">
         <arg name="robot" value="$(arg robot)"/>
+        <arg name="use_modern_driver" value="false"/>
         <arg name="component_name" value="arm"/>
         <arg name="robot_ip" value="$(arg ur_ip)"/>
         <arg name="min_payload"  value="0.0"/>
         <arg name="max_payload"  value="20.0"/>
         <arg name="sim" value="$(arg sim)"/>
       </include>
-      <include file="$(find cob_moveit)/launch/move_group.launch">
-        <arg name="robot" value="$(arg robot)"/>
-      </include>
+      <!--<include file="$(find cob_moveit)/launch/move_group.launch">-->
+        <!--<arg name="robot" value="$(arg robot)"/>-->
+      <!--</include>-->
     </group>
 
-
-    <!--not sure if we need it for hardware or simulatror or both???-->
     <!-- Robotiq gripper -->
     <include file="$(find cob_bringup)/drivers/robotiq.launch">
       <arg name="sim" value="$(arg sim)"/>
@@ -103,33 +103,33 @@
       <arg name="prefix" value="gripper_"/>
     </include>
 
-    <group if="$(arg teleop)">
-      <include file="$(find cob_bringup)/tools/teleop.launch" >
-        <arg name="robot" value="$(arg robot)" />
-      </include>
-    </group>
 
+    <!-- start common nodes used in hardware and simulation -->
     <include file="$(find cob_bringup)/drivers/scan_unifier.launch" >
-      <arg name="robot" value="$(arg robot)" />
-    </include>
-
-    <!-- start additional packages -->
-    <include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >
-      <arg name="robot" value="$(arg robot)" />
-    </include>
-
- 
-    <include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
       <arg name="robot" value="$(arg robot)" />
     </include>
 
     <include file="$(find cob_bringup)/tools/battery_monitor.launch" >
       <arg name="robot" value="$(arg robot)" />
     </include>
-
+    
     <include file="$(find cob_bringup)/tools/emergency_stop_monitor.launch" >
       <arg name="robot" value="$(arg robot)" />
     </include>
+
+    <include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
+      <arg name="robot" value="$(arg robot)" />
+    </include>
+
+    <include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >
+      <arg name="robot" value="$(arg robot)" />
+    </include>
+
+    <group if="$(arg teleop)">
+      <include file="$(find cob_bringup)/tools/teleop.launch" >
+        <arg name="robot" value="$(arg robot)" />
+      </include>
+    </group>
 
     <!-- aggregated robot_state_publisher -->
     <include file="$(find cob_bringup)/tools/robot_state_publisher.launch">
@@ -139,8 +139,12 @@
     <!-- script server -->
     <include file="$(find cob_script_server)/launch/script_server.launch" />
 
+    <!-- simulation only -->
+    <include if="$(arg sim)" file="$(find cob_bringup)/tools/fake_diagnostics.launch">
+      <arg name="fake_diagnostics" value="'base_laser_front, base_laser_rear, pc1'"/>
+    </include>
   </group>
-
-  <machine name="pc1" address="$(arg pc1)" env-loader="$(find cob_bringup)/env.sh" default="true"/>
+  
+  <machine name="pc1" address="$(arg pc1)" env-loader="$(arg env-script)" default="true"/>
 
 </launch>

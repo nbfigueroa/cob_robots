@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="moveit_controller_manager" default="moveit_simple_controller_manager/MoveItSimpleControllerManager" />
+  <arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+
+  <!-- load controller_list -->
+  <rosparam file="$(find cob_moveit_config)/robots/$(arg robot)/moveit/config/controllers.yaml"/>
+
+  <param name="use_controller_manager" value="false"/>
+
+  <param name="trajectory_execution/execution_duration_monitoring" value="false"/>
+
+  <param name="moveit_controller_manager" value="$(arg moveit_controller_manager)"/>
+</launch>
