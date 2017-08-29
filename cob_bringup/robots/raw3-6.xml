@@ -6,7 +6,8 @@
   <arg name="sim" default="$(optenv SIM !!NO_SIM_SET!!)"/>
   <arg name="teleop" default="$(optenv TELEOP !!NO_TELEOP_SET!!)"/>
   <!--If you want to set the robot in teach mode, you have to load python-urx driver, while if you want to use motion planning, you have to load universal robot driver-->
-  <arg name="python_urx" default="$(optenv PYTHONURX !!NO_PYTHON_URX_SET!!)"/>
+  <!-- <arg name="python_urx" default="$(optenv PYTHONURX !!NO_PYTHON_URX_SET!!)"/> -->
+  <arg name="python_urx" default="true"/>
   <arg name="ur_ip" default="$(optenv UR_IP !!NO_UR_IP_SET!!)"/>
   <arg name="gripper_ip" default="$(optenv GRIPPER_IP !!NO_GRIPPER_IP_SET!!)"/>
   <arg name="env-script" default="$(optenv ENV_SCRIPT !!NO_ENV_SCRIPT_SET!!)"/>
@@ -81,7 +82,7 @@
     -->
 
     <!-- upper robot -->
-    <!-- <group unless="$(arg python_urx)">
+    <group unless="$(arg python_urx)">
       <include file="$(find cob_bringup)/drivers/ur.launch">
         <arg name="robot" value="$(arg robot)"/>
         <arg name="use_modern_driver" value="false"/>
@@ -95,7 +96,7 @@
       <include file="$(find cob_moveit_config)/launch/move_group.launch">
         <arg name="robot" value="$(arg robot)"/>
       </include>
-    </group> -->
+    </group>
 
     <!-- Robotiq gripper -->
     <include file="$(find cob_bringup)/drivers/robotiq.launch">
