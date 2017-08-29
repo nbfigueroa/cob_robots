@@ -4,14 +4,14 @@
   <!-- args -->
   <arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
   <arg name="sim" default="$(optenv SIM !!NO_SIM_SET!!)"/>
+  <arg name="teleop" default="$(optenv TELEOP !!NO_TELEOP_SET!!)"/>
   <!--If you want to set the robot in teach mode, you have to load python-urx driver, while if you want to use motion planning, you have to load universal robot driver-->
+  <arg name="python_urx" default="$(optenv PYTHONURX !!NO_PYTHON_URX_SET!!)"/>
   <arg name="ur_ip" default="$(optenv UR_IP !!NO_UR_IP_SET!!)"/>
   <arg name="gripper_ip" default="$(optenv GRIPPER_IP !!NO_GRIPPER_IP_SET!!)"/>
   <arg name="env-script" default="$(optenv ENV_SCRIPT !!NO_ENV_SCRIPT_SET!!)"/>
   <arg name="pc1" default="$(optenv PC1 !!NO_PC1_SET!!)"/>
 
-  <arg name="teleop" default="$(optenv TELEOP !!NO_TELEOP_SET!!)"/>
-  <arg name="python_urx" default="$(optenv PYTHONURX !!NO_PYTHON_URX_SET!!)"/>
 
   <!-- upload robot description -->
   <include file="$(find cob_hardware_config)/upload_robot.launch" >
@@ -91,6 +91,7 @@
         <arg name="max_payload"  value="20.0"/>
         <arg name="sim" value="$(arg sim)"/>
       </include>
+      
       <include file="$(find cob_moveit_config)/launch/move_group.launch">
       <arg name="robot" value="$(arg robot)"/>
       </include>
