@@ -81,7 +81,7 @@
     -->
 
     <!-- upper robot -->
-    <group unless="$(arg python_urx)">
+    <!-- <group unless="$(arg python_urx)">
       <include file="$(find cob_bringup)/drivers/ur.launch">
         <arg name="robot" value="$(arg robot)"/>
         <arg name="use_modern_driver" value="false"/>
@@ -95,7 +95,7 @@
       <include file="$(find cob_moveit_config)/launch/move_group.launch">
         <arg name="robot" value="$(arg robot)"/>
       </include>
-    </group>
+    </group> -->
 
     <!-- Robotiq gripper -->
     <include file="$(find cob_bringup)/drivers/robotiq.launch">
