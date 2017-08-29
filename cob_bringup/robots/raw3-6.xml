@@ -91,9 +91,9 @@
         <arg name="max_payload"  value="20.0"/>
         <arg name="sim" value="$(arg sim)"/>
       </include>
-      <!--<include file="$(find cob_moveit)/launch/move_group.launch">-->
-        <!--<arg name="robot" value="$(arg robot)"/>-->
-      <!--</include>-->
+      <include file="$(find cob_moveit_config)/launch/move_group.launch">
+      <arg name="robot" value="$(arg robot)"/>
+      </include>
     </group>
 
     <!-- Robotiq gripper -->
