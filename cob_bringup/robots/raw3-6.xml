@@ -93,7 +93,7 @@
       </include>
       
       <include file="$(find cob_moveit_config)/launch/move_group.launch">
-      <arg name="robot" value="$(arg robot)"/>
+        <arg name="robot" value="$(arg robot)"/>
       </include>
     </group>
 

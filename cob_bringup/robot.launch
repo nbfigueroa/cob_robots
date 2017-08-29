@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <launch>
   <param name="/use_sim_time" value="false"/>
-  <arg name="pc1" default="localhost"/>
-  <arg name="robot" default="raw3-6"/>
-  <arg name="sim" default="false"/>
-  <arg name="teleop" default="false"/>
-  <arg name="python_urx" default="false"/>
-  <arg name="ur_ip" default="192.168.1.40"/>
-  <arg name="gripper_ip" default="192.168.1.11"/>
-  <arg name="env-script" default="$(find cob_bringup)/env.sh"/>
+  <arg name="pc1" default="$(optenv PC1 !!NO_PC1_SET!!)"/>
+  <arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+  <arg name="sim" default="$(optenv SIM !!NO_SIM_SET!!)"/>
+  <arg name="teleop" default="$(optenv TELEOP !!NO_TELEOP_SET!!)"/>
+  <arg name="python_urx" default="$(optenv PYTHON_URX !!NO_PYTHON_URX_SET!!)"/>
+  <arg name="ur_ip" default="$(optenv UR_IP !!NO_UR_IP_SET!!)"/>
+  <arg name="gripper_ip" default="$(optenv GRIPPER_IP !!NO_GRIPPER_IP_SET!!)"/>
+  <arg name="env-script" default="$(optenv ENV_SCRIPT !!NO_ENV_SCRIPT_SET!!)"/>
 
   <include file="$(find cob_bringup)/robots/$(arg robot).launch">
     <arg name="env-script" value="$(arg env-script)"/>
