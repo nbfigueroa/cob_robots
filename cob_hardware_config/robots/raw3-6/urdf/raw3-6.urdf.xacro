@@ -22,6 +22,7 @@
 
   <!-- RealSense Sensors -->
   <!--<xacro:include filename="$(find cob_description)/urdf/sensors/r200.urdf.xacro"/>-->
+  <xacro:include filename="$(find cob_description)/urdf/sensors/realsense.urdf.xacro"/>
   
   <!-- sick s300 -->
   <xacro:include filename="$(find cob_description)/urdf/sensors/sick_s300_laser.urdf.xacro"/>
@@ -62,6 +63,20 @@
     <origin xyz="0 -0.3 .15" rpy="1.570795 0 -0.7753975"/>
   </xacro:sensor_r200>
   -->
+
+  <!--we add the sensor above the robot base metal board-->
+  <!--x = in the middle of the base metal board-->
+  <!--z = as high as the arm shoulder square base-->
+  <!--y = in the middle of the 2 batteries under the base metal board-->
+  <!--z - blue axis - larger is going up-->
+  <!--x - red axis - larger is going forward the robot-->
+  <!--y - green axis - larger is going left to robot-->
+  <!--yaw - rotate around z, 1.57 is 90 degree, so the camera is facing to the right-->
+  <xacro:realsense name="side_sr300" parent="base_link" ros_topic="side_camera">
+    <origin xyz="0. -0.25 0.5" rpy="0.0 0.0 -1.57"/>
+  </xacro:realsense>
+  <!--tower_base_link-->
+
 
   <!--
   <gazebo>
