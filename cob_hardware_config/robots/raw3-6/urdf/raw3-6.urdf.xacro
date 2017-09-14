@@ -113,7 +113,7 @@
     <!-- because everything inside realsense.gazebo,xacro and realsense.urdf.xacro are used for visualizing the camera. What the camera will see will not be influenced by its visualization parameters. -->
     <xacro:realsense name="wrist_sr300" parent="wrist_sr300_mount_link" ros_topic="wrist_sr300">
         <!--<origin xyz="0. -0.25 0.5" rpy="0.0 0.0 -1.57"/>-->
-        <origin xyz="0.0 0.065 0.038" rpy="0.0 -${90/180*pi} -${90/180*pi}"/>
+        <origin xyz="0.0 0.065 0.038" rpy="0.0 0.0 ${180/180*pi}"/>
     </xacro:realsense>
 
     <!--
