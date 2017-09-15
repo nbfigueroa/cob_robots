@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro"
              name="raw3-6" >
+    <arg name="wrist_sr300_sim" default="$(optenv WRIST_SR300_SIM !!NO_WRIST_SR300_SIM_SET!!)"/>
 
     <!-- common stuff -->
     <xacro:include filename="$(find cob_description)/urdf/common.xacro" />
@@ -23,6 +24,7 @@
     <!-- RealSense Sensors -->
     <!--<xacro:include filename="$(find cob_description)/urdf/sensors/r200.urdf.xacro"/>-->
     <xacro:include filename="$(find cob_description)/urdf/sensors/realsense.urdf.xacro"/>
+    <xacro:include filename="$(find cob_description)/urdf/sensors/realsense.gazebo.xacro"/>
     
     <!-- sick s300 -->
     <xacro:include filename="$(find cob_description)/urdf/sensors/sick_s300_laser.urdf.xacro"/>
@@ -63,6 +65,8 @@
         <!--<origin xyz="0 0 .05" rpy="${90/180*pi} 0 -1.570795"/>-->
     </xacro:robotiq_hand>
 
+    <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
+    <!-- wrist_sr300 mount and camera -->
     <!--we add the sensor above the robot base metal board-->
     <!--x = in the middle of the base metal board-->
     <!--z = as high as the arm shoulder square base-->
@@ -111,16 +115,34 @@
     <!-- the view of the camera is only determined by the following xyzrpy -->
     <!-- it is not determined by the xyzrpy in realsense.gazebo,xacro and realsense.urdf.xacro -->
     <!-- because everything inside realsense.gazebo,xacro and realsense.urdf.xacro are used for visualizing the camera. What the camera will see will not be influenced by its visualization parameters. -->
-    <xacro:realsense name="wrist_sr300" parent="wrist_sr300_mount_link" ros_topic="wrist_sr300">
-        <!--<origin xyz="0. -0.25 0.5" rpy="0.0 0.0 -1.57"/>-->
-        <origin xyz="0.0 0.065 0.038" rpy="0.0 0.0 ${180/180*pi}"/>
-    </xacro:realsense>
+    <xacro:property name="wrist_sr300_name" value="wrist_sr300" />
+
+
+    <!-- The rpy for simulation is different from the rpy setup for the actual camera. If we use the rpy from actual camera in simulation, the view will be wrong -->
+    <xacro:if value="$(arg wrist_sr300_sim)">
+      <xacro:realsense sim="$(arg wrist_sr300_sim)" name="${wrist_sr300_name}" parent="wrist_sr300_mount_link" ros_topic="wrist_sr300">
+          <origin xyz="0.0 0.065 0.038" rpy="0.0 -${90/180*pi} -${90/180*pi}"/>
+      </xacro:realsense>
+      <!-- gazebo plug-in for simulating the camera -->
+      <xacro:realsense_rgb_gazebo_v0 name="${wrist_sr300_name}" link_name="${wrist_sr300_name}_realsense_rgb_link" frame_name="${wrist_sr300_name}_realsense_rgb_optical_frame" camera_name="${wrist_sr300_name}_gazebo"/>
+    </xacro:if>
+
+    <xacro:unless value="$(arg wrist_sr300_sim)">
+      <!-- if not in simulation: -->
+      <xacro:realsense sim="$(arg wrist_sr300_sim)" name="${wrist_sr300_name}" parent="wrist_sr300_mount_link" ros_topic="wrist_sr300">
+          <!--<origin xyz="0. -0.25 0.5" rpy="0.0 0.0 -1.57"/>-->
+          <origin xyz="0.0 0.065 0.038" rpy="0.0 0.0 ${180/180*pi}"/>
+      </xacro:realsense>
+    </xacro:unless>
+  
+
 
     <!--
     <xacro:sensor_r200 prefix="vision_wrist_" parent="arm_tool0">
         <origin xyz="0 -0.3 .15" rpy="1.570795 0 -0.7753975"/>
     </xacro:sensor_r200>
     -->
+    <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
 
 
     <!--

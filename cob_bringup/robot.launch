@@ -9,6 +9,7 @@
   <arg name="ur_ip" default="$(optenv UR_IP !!NO_UR_IP_SET!!)"/>
   <arg name="gripper_ip" default="$(optenv GRIPPER_IP !!NO_GRIPPER_IP_SET!!)"/>
   <arg name="env-script" default="$(optenv ENV_SCRIPT !!NO_ENV_SCRIPT_SET!!)"/>
+  <arg name="wrist_sr300_sim" default="$(optenv WRIST_SR300_SIM !!NO_WRIST_SR300_SIM_SET!!)"/>
 
   <include file="$(find cob_bringup)/robots/$(arg robot).launch">
     <arg name="env-script" value="$(arg env-script)"/>
@@ -19,6 +20,7 @@
     <arg name="python_urx" value="$(arg python_urx)"/>
     <arg name="ur_ip" value="$(arg ur_ip)"/>
     <arg name="gripper_ip" value="$(arg gripper_ip)"/>
+    <arg name="wrist_sr300_sim" value="$(arg wrist_sr300_sim)"/>
   </include>
 
 </launch>

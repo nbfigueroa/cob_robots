@@ -4,6 +4,7 @@
   <!-- args -->
   <arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
   <arg name="sim" default="$(optenv SIM !!NO_SIM_SET!!)"/>
+  <arg name="wrist_sr300_sim" default="$(optenv WRIST_SR300_SIM !!NO_WRIST_SR300_SIM_SET!!)"/>
   <arg name="teleop" default="$(optenv TELEOP !!NO_TELEOP_SET!!)"/>
   <!--If you want to set the robot in teach mode, you have to load python-urx driver, while if you want to use motion planning, you have to load universal robot driver-->
   <arg name="python_urx" default="$(optenv PYTHONURX !!NO_PYTHON_URX_SET!!)"/>
@@ -16,6 +17,7 @@
   <!-- upload robot description -->
   <include file="$(find cob_hardware_config)/upload_robot.launch" >
     <arg name="robot" value="$(arg robot)" />
+    <arg name="wrist_sr300_sim" value="$(arg wrist_sr300_sim)"/>
   </include>
   <!-- upload default configuration parameters -->
   <include file="$(find cob_default_robot_config)/upload_param.launch" >
