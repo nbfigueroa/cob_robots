@@ -4,7 +4,10 @@
   <arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
   <arg name="sim" default="$(optenv SIM !!NO_SIM_SET!!)"/>
   <arg name="teleop" default="$(optenv TELEOP !!NO_TELEOP_SET!!)"/>
-  <arg name="python_urx" default="$(optenv PYTHONURX !!NO_PYTHON_URX_SET!!)"/>
+
+  <arg name="arm" default="$(optenv ARM !!NO_ARM_SET!!)"/>
+  <arg name="arm_driver_universal_robot" default="$(optenv ARM_DRIVER_UNIVERSAL_ROBOT !!NO_ARM_DRIVER_UNIVERSAL_ROBOT_SET!!)"/>
+
   <arg name="ur_ip" default="$(optenv UR_IP !!NO_UR_IP_SET!!)"/>
   <arg name="gripper_ip" default="$(optenv GRIPPER_IP !!NO_GRIPPER_IP_SET!!)"/>
   <arg name="env-script" default="$(find cob_bringup)/env.sh"/>
@@ -15,7 +18,10 @@
     <arg name="robot" value="$(arg robot)" />
     <arg name="sim" value="$(arg sim)"/>
     <arg name="teleop" value="$(arg teleop)"/>
-    <arg name="python_urx" value="$(arg python_urx)"/>
+
+    <arg name="arm" value="$(arg arm)"/>
+    <arg name="arm_driver_universal_robot" value="$(arg arm_driver_universal_robot)"/>
+      
     <arg name="ur_ip" value="$(arg ur_ip)"/>
     <arg name="gripper_ip" value="$(arg gripper_ip)"/>
     <arg name="env-script" value="$(arg env-script)"/>

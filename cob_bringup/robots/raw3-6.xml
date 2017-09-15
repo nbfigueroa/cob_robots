@@ -4,10 +4,12 @@
   <!-- args -->
   <arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
   <arg name="sim" default="$(optenv SIM !!NO_SIM_SET!!)"/>
-  <arg name="wrist_sr300_sim" default="$(optenv WRIST_SR300_SIM !!NO_WRIST_SR300_SIM_SET!!)"/>
+  <arg name="load_wrist_sr300_simulator" default="$(optenv LOAD_WRIST_SR300_SIMULATOR !!NO_LOAD_WRIST_SR300_SIMULATOR_SET!!)"/>
   <arg name="teleop" default="$(optenv TELEOP !!NO_TELEOP_SET!!)"/>
-  <!--If you want to set the robot in teach mode, you have to load python-urx driver, while if you want to use motion planning, you have to load universal robot driver-->
-  <arg name="python_urx" default="$(optenv PYTHONURX !!NO_PYTHON_URX_SET!!)"/>
+
+  <arg name="load_arm_universal_robot_driver" default="$(optenv LOAD_ARM_UNIVERSAL_ROBOT_DRIVER !!NO_LOAD_ARM_UNIVERSAL_ROBOT_DRIVER_SET!!)"/>
+  <arg name="load_arm_moveit" default="$(optenv LOAD_ARM_MOVEIT !!NO_LOAD_ARM_MOVEIT_SET!!)"/>
+
   <arg name="ur_ip" default="$(optenv UR_IP !!NO_UR_IP_SET!!)"/>
   <arg name="gripper_ip" default="$(optenv GRIPPER_IP !!NO_GRIPPER_IP_SET!!)"/>
   <arg name="env-script" default="$(optenv ENV_SCRIPT !!NO_ENV_SCRIPT_SET!!)"/>
@@ -17,7 +19,7 @@
   <!-- upload robot description -->
   <include file="$(find cob_hardware_config)/upload_robot.launch" >
     <arg name="robot" value="$(arg robot)" />
-    <arg name="wrist_sr300_sim" value="$(arg wrist_sr300_sim)"/>
+    <arg name="load_wrist_sr300_simulator" value="$(arg load_wrist_sr300_simulator)"/>
   </include>
   <!-- upload default configuration parameters -->
   <include file="$(find cob_default_robot_config)/upload_param.launch" >
@@ -81,9 +83,9 @@
       <arg name="robot" value="$(arg robot)" />
     </include>
     -->
-
+    
     <!-- upper robot -->
-    <group unless="$(arg python_urx)">
+    <group if="$(arg load_arm_universal_robot_driver)">
       <include file="$(find cob_bringup)/drivers/ur.launch">
         <arg name="robot" value="$(arg robot)"/>
         <arg name="use_modern_driver" value="false"/>
@@ -93,18 +95,22 @@
         <arg name="max_payload"  value="20.0"/>
         <arg name="sim" value="$(arg sim)"/>
       </include>
-      
-      <include file="$(find cob_moveit_config)/launch/move_group.launch">
-        <arg name="robot" value="$(arg robot)"/>
+
+      <!-- Only load moveit when universal_robot driver is loaded -->
+      <group if="$(arg load_arm_moveit)">
+        <include file="$(find cob_moveit_config)/launch/move_group.launch">
+          <arg name="robot" value="$(arg robot)"/>
+        </include>
+      </group>
+
+      <!-- Robotiq gripper -->
+      <include file="$(find cob_bringup)/drivers/robotiq.launch">
+        <arg name="sim" value="$(arg sim)"/>
+        <arg name="robot_ip" value="$(arg gripper_ip)"/>
+        <arg name="prefix" value="gripper_"/>
       </include>
     </group>
 
-    <!-- Robotiq gripper -->
-    <include file="$(find cob_bringup)/drivers/robotiq.launch">
-      <arg name="sim" value="$(arg sim)"/>
-      <arg name="robot_ip" value="$(arg gripper_ip)"/>
-      <arg name="prefix" value="gripper_"/>
-    </include>
 
 
     <!-- start common nodes used in hardware and simulation -->
