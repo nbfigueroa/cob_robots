@@ -5,13 +5,23 @@
   <arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
   <arg name="sim" default="$(optenv SIM !!NO_SIM_SET!!)"/>
   <arg name="load_wrist_sr300_simulator" default="$(optenv LOAD_WRIST_SR300_SIMULATOR !!NO_LOAD_WRIST_SR300_SIMULATOR_SET!!)"/>
+
   <arg name="teleop" default="$(optenv TELEOP !!NO_TELEOP_SET!!)"/>
+  <arg name="load_base_navigation_local" default="$(optenv LOAD_BASE_NAVIGATION_LOCAL !!NO_LOAD_BASE_NAVIGATION_LOCAL_SET!!)"/>
+  <arg name="load_base_navigation_local_rviz" default="$(optenv LOAD_BASE_NAVIGATION_LOCAL_RVIZ !!NO_LOAD_BASE_NAVIGATION_LOCAL_RVIZ_SET!!)"/>
+  <arg name="base_navigation_local_planner" default="$(optenv BASE_NAVIGATION_LOCAL_PLANNER !!NO_BASE_NAVIGATION_LOCAL_PLANNER_SET!!)"/>
+  
+  <arg name="load_base_navigation_global" default="$(optenv LOAD_BASE_NAVIGATION_GLOBAL !!NO_LOAD_BASE_NAVIGATION_GLOBAL_SET!!)"/>
+  <arg name="load_base_navigation_global_rviz" default="$(optenv LOAD_BASE_NAVIGATION_GLOBAL_RVIZ !!NO_LOAD_BASE_NAVIGATION_GLOBAL_RVIZ_SET!!)"/>
+  <arg name="base_navigation_global_planner" default="$(optenv BASE_NAVIGATION_GLOBAL_PLANNER !!NO_BASE_NAVIGATION_GLOBAL_PLANNER_SET!!)"/>
+
 
   <arg name="load_arm_universal_robot_driver" default="$(optenv LOAD_ARM_UNIVERSAL_ROBOT_DRIVER !!NO_LOAD_ARM_UNIVERSAL_ROBOT_DRIVER_SET!!)"/>
   <arg name="load_arm_moveit" default="$(optenv LOAD_ARM_MOVEIT !!NO_LOAD_ARM_MOVEIT_SET!!)"/>
-
   <arg name="ur_ip" default="$(optenv UR_IP !!NO_UR_IP_SET!!)"/>
   <arg name="gripper_ip" default="$(optenv GRIPPER_IP !!NO_GRIPPER_IP_SET!!)"/>
+  
+
   <arg name="env-script" default="$(optenv ENV_SCRIPT !!NO_ENV_SCRIPT_SET!!)"/>
   <arg name="pc1" default="$(optenv PC1 !!NO_PC1_SET!!)"/>
 
@@ -73,6 +83,31 @@
       <arg name="sim" value="$(arg sim)"/>
     </include>
 
+    <group if="$(arg load_base_navigation_local)">
+      <include file="$(find cob_navigation_local)/launch/$(arg base_navigation_local_planner).launch">
+        <arg name="robot" value="$(arg robot)"/>
+        <arg name="pkg_nav_config" value="$(find cob_navigation_config)"/>
+      </include>
+      <group if="$(arg load_base_navigation_local_rviz)">
+        <include file="$(find cob_navigation_local)/launch/rviz.launch"/>
+      </group>
+    </group>
+
+    <group if="$(arg load_base_navigation_global)">
+      <include file="$(find cob_navigation_global)/launch/$(arg base_navigation_global_planner).launch">
+        <arg name="robot" value="$(arg robot)"/>
+        <arg name="pkg_nav_config" value="$(find cob_navigation_config)"/>
+      </include>
+      <group if="$(arg load_base_navigation_global_rviz)">
+        <include file="$(find cob_navigation_global)/launch/rviz.launch"/>
+      </group>
+    </group>
+
+    <group if="$(arg teleop)">
+      <include file="$(find cob_bringup)/tools/teleop.launch" >
+        <arg name="robot" value="$(arg robot)" />
+      </include>
+    </group>
     <!--brad-->
     <!--it is in legacy_now.launch now-->
     <!--
@@ -133,12 +168,6 @@
     <include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch" >
       <arg name="robot" value="$(arg robot)" />
     </include>
-
-    <group if="$(arg teleop)">
-      <include file="$(find cob_bringup)/tools/teleop.launch" >
-        <arg name="robot" value="$(arg robot)" />
-      </include>
-    </group>
 
     <!-- aggregated robot_state_publisher -->
     <include file="$(find cob_bringup)/tools/robot_state_publisher.launch">
