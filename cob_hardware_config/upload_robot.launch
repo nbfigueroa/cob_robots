@@ -3,12 +3,12 @@
 
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
 	<arg name="load_wrist_sr300_simulator" default="$(optenv LOAD_WRIST_SR300_SIMULATOR !!NO_LOAD_WRIST_SR300_SIMULATOR_SET!!)"/>
-    <arg name="load_gripper_simulator" default="$(optenv LOAD_GRIPPER_SIMULATOR !!NO_LOAD_GRIPPER_SIMULATOR_SET!!)"/>
+    <arg name="sim" default="$(optenv SIM !!NO_SIM_SET!!)"/>
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 
 
 	<!-- send cob urdf to param server -->
 	<!-- https://answers.ros.org/question/38956/pass-parameters-to-xacro-in-launch-file/ -->
-	<param name="robot_description" command="$(find xacro)/xacro --inorder '$(arg pkg_hardware_config)/robots/$(arg robot)/urdf/$(arg robot).urdf.xacro' load_wrist_sr300_simulator:=$(arg load_wrist_sr300_simulator) load_gripper_simulator:=$(arg load_gripper_simulator)"/>
+	<param name="robot_description" command="$(find xacro)/xacro --inorder '$(arg pkg_hardware_config)/robots/$(arg robot)/urdf/$(arg robot).urdf.xacro' load_wrist_sr300_simulator:=$(arg load_wrist_sr300_simulator) sim:=$(arg sim)"/>
 
 </launch>
