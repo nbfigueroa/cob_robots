@@ -122,7 +122,7 @@
           <include file="$(find cob_navigation_slam)/launch/2dnav.launch">
           </include>
         </group>
-          
+        
         <group if="$(arg load_base_navigation_slam_rviz)">
           <include file="$(find cob_navigation_slam)/launch/rviz.launch"/>
         </group>
