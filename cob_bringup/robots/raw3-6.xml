@@ -37,6 +37,7 @@
   <include file="$(find cob_hardware_config)/upload_robot.launch" >
     <arg name="robot" value="$(arg robot)" />
     <arg name="load_wrist_sr300_simulator" value="$(arg load_wrist_sr300_simulator)"/>
+    <arg name="load_gripper_simulator" value="$(arg sim)"/>
   </include>
   <!-- upload default configuration parameters -->
   <include file="$(find cob_default_robot_config)/upload_param.launch" >

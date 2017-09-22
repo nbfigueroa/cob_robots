@@ -2,6 +2,7 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro"
              name="raw3-6" >
     <arg name="load_wrist_sr300_simulator" default="$(optenv LOAD_WRIST_SR300_SIMULATOR !!NO_LOAD_WRIST_SR300_SIMULATOR_SET!!)"/>
+    <arg name="load_gripper_simulator" default="$(optenv LOAD_GRIPPER_SIMULATOR !!NO_LOAD_GRIPPER_SIMULATOR_SET!!)"/>
 
     <!-- common stuff -->
     <xacro:include filename="$(find cob_description)/urdf/common.xacro" />
@@ -19,7 +20,13 @@
     <xacro:include filename="$(find cob_description)/urdf/ur_arm/ur10_arm.urdf.xacro" />
 
     <!-- robotiq gripper -->
-    <xacro:include filename="$(find robotiq_s_model_visualization)/cfg/robotiq_hand_macro.urdf.xacro" />
+    <xacro:include filename="$(find cob_description)/urdf/robotiq_gripper/robotiq_s_gripper.urdf.xacro" />
+    <!--<xacro:if value="$(arg load_gripper_simulator)">-->
+        <!--<xacro:include filename="$(find robotiq_s_model_visualization)/cfg/robotiq_hand_with_gazebo_plugin.urdf.xacro" />-->
+    <!--</xacro:if>-->
+    <!--<xacro:unless value="$(arg load_gripper_simulator)">-->
+        <!--<xacro:include filename="$(find robotiq_s_model_visualization)/cfg/robotiq_hand_macro.urdf.xacro" />-->
+    <!--</xacro:unless>-->
 
     <!-- RealSense Sensors -->
     <!--<xacro:include filename="$(find cob_description)/urdf/sensors/r200.urdf.xacro"/>-->
@@ -59,11 +66,12 @@
     <!--<xacro:robotiq_hand prefix="gripper_" parent="arm_wrist_extension" reflect="0">-->
         <!--<origin xyz="0 0 .05" rpy="1.570795 0 -0.7753975"/>-->
     <!--</xacro:robotiq_hand>-->
-    <xacro:robotiq_hand prefix="gripper_" parent="arm_tool0" reflect="0">
+    <xacro:robotiq name="gripper" parent="arm_tool0" reflect="0" sim="false">
+    <!--<xacro:robotiq_hand prefix="gripper_" parent="arm_tool0" reflect="0">-->
         <origin xyz="0 0 .05" rpy="${90/180*pi} 0 0"/>
         <!-- <origin xyz="0 0 .05" rpy="${90/180*pi} 0 -0.7753975"/> -->
         <!--<origin xyz="0 0 .05" rpy="${90/180*pi} 0 -1.570795"/>-->
-    </xacro:robotiq_hand>
+    </xacro:robotiq>
 
     <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
     <!-- wrist_sr300 mount and camera -->
