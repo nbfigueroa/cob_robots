@@ -19,6 +19,7 @@
 ## MoveIt! Configuration
 * MoveIt! configuration is located at `./src/cob_robots/cob_moveit_config`. The *SRDF* file is located at `/home/shen/mit/1111/src/cob_robots/cob_moveit_config/robots/raw3-6/moveit/config`.
   * If you add new objects to the robot urdf, then you can use [**MoveIt! Setup Assistant**](http://docs.ros.org/hydro/api/moveit_setup_assistant/html/doc/tutorial.html) to update the SRDF file. It is really hard to update the self-collisions to disable inside the SRDF file manually since there are a lot of them, so it is better to first use the setup-assistant to auto-generate the config files.
+    * You need to build the URDF first before loading URDF into the setup-assistant. To build URDF, `$ rosrun xacro xacro --inorder -o model.urdf model.urdf.xacro` ([source](https://answers.ros.org/question/10401/how-to-convert-xacro-file-to-urdf-file/))
     * `$ roslaunch moveit_setup_assistant setup_assistant.launch`
     * The setup-assistant also generates launch files for MoveIt!, but we don't need to update our original launch files if not necessary.
     * [Only using the setup-assistant is not enough to use Moveit, you need to provide Moveit a way to control your robot, through a controller manager.](https://answers.ros.org/question/167501/how-to-solve-parameter-moveit_controller_manager-not-specified/)
