@@ -25,6 +25,11 @@
 
   <arg name="load_arm_universal_robot_driver" default="$(optenv LOAD_ARM_UNIVERSAL_ROBOT_DRIVER !!NO_LOAD_ARM_UNIVERSAL_ROBOT_DRIVER_SET!!)"/>
   <arg name="load_arm_moveit" default="$(optenv LOAD_ARM_MOVEIT !!NO_LOAD_ARM_MOVEIT_SET!!)"/>
+  <arg name="load_arm_moveit_rviz" default="$(optenv LOAD_ARM_MOVEIT_RVIZ !!NO_LOAD_ARM_MOVEIT_RVIZ_SET!!)"/>
+
+  <arg name="load_gripper_robitiq_s_driver" default="$(optenv LOAD_GRIPPER_ROBOTIQ_S_DRIVER !!NO_LOAD_GRIPPER_ROBOTIQ_S_DRIVER_SET!!)"/>
+
+
   <arg name="ur_ip" default="$(optenv UR_IP !!NO_UR_IP_SET!!)"/>
   <arg name="gripper_ip" default="$(optenv GRIPPER_IP !!NO_GRIPPER_IP_SET!!)"/>
   
@@ -185,7 +190,14 @@
         </include>
       </group>
 
-      <!-- Robotiq gripper -->
+      <group if="$(arg load_arm_moveit_rviz)">
+        <include file="$(find cob_moveit_config)/launch/moveit_rviz.launch">
+        </include>
+      </group>
+    </group>
+
+    <!-- Robotiq gripper -->
+    <group if="$(arg load_gripper_robitiq_s_driver)">
       <include file="$(find cob_bringup)/drivers/robotiq.launch">
         <arg name="sim" value="$(arg sim)"/>
         <arg name="robot_ip" value="$(arg gripper_ip)"/>
