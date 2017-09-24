@@ -65,8 +65,10 @@ arm:
     - TRRTkConfigDefault
     - PRMkConfigDefault
     - PRMstarkConfigDefault
-  projection_evaluator: joints(arm_shoulder_pan_joint,arm_shoulder_lift_joint)
-  longest_valid_segment_fraction: 0.05
+  # In Brad's version, there are no these next 2 lines.
+  # Shen tried to compare having vs not having these 2 lines, and he finds that with the next 2 lines, the planning becomes very slow. So comment them out for now.
+  # projection_evaluator: joints(arm_shoulder_pan_joint,arm_shoulder_lift_joint)
+  # longest_valid_segment_fraction: 0.05
 gripper:
   planner_configs:
     - SBLkConfigDefault
