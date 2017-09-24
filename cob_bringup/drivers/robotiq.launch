@@ -1,19 +1,19 @@
 <?xml version="1.0"?>
 <launch>
 
-    <arg name="sim" default="$(optenv SIM !!NO_SIM_SET!!)"/>
-	<arg name="robot_ip" default="$(optenv ROBOT_IP !!NO_ROBOT_IP_SET!!)"/>
-	<arg name="prefix" default="$(optenv PREFIX !!NO_PREFIX_SET!!)"/>
+  <arg name="sim" default="$(optenv SIM !!NO_SIM_SET!!)"/>
+  <arg name="robot_ip" default="$(optenv ROBOT_IP !!NO_ROBOT_IP_SET!!)"/>
+  <arg name="prefix" default="$(optenv PREFIX !!NO_PREFIX_SET!!)"/>
 
-	<!-- Robotiq Model S gripper -->
-    <group unless="$(arg sim)">
-        <node pkg="robotiq_s_model_control" type="SModelTcpNode.py" name="robotiq_driver" args="$(arg robot_ip)" output="screen">
-        </node>
-    </group>
-<!-- 
-	<node pkg="robotiq_joint_state_publisher" type="s_model_joint_states" name="robotiq_joint_state_publisher" args="" output="screen">
-		<param name="prefix" value="$(arg prefix)"/>
-		<remap from="/joint_states" to="/gripper/joint_states"/>
-	</node>
- -->
+  <!-- Robotiq Model S gripper -->
+  <group unless="$(arg sim)">
+    <node pkg="robotiq_s_model_control" type="SModelTcpNode.py" name="robotiq_driver" args="$(arg robot_ip)" output="screen">
+    </node>
+  </group>
+
+  <node pkg="robotiq_joint_state_publisher" type="s_model_joint_states" name="robotiq_joint_state_publisher" args="" output="screen">
+    <param name="prefix" value="$(arg prefix)"/>
+    <remap from="/joint_states" to="/gripper/joint_states"/>
+  </node>
+
 </launch>
