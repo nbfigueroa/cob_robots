@@ -24,6 +24,7 @@
 
 
   <arg name="load_arm_universal_robot_driver" default="$(optenv LOAD_ARM_UNIVERSAL_ROBOT_DRIVER !!NO_LOAD_ARM_UNIVERSAL_ROBOT_DRIVER_SET!!)"/>
+  <arg name="load_arm_modern_ur_driver" default="$(optenv USE_ARM_MODERN_UR_DRIVER !!NO_USE_ARM_MODERN_UR_DRIVER_SET!!)"/>
   <arg name="load_arm_moveit" default="$(optenv LOAD_ARM_MOVEIT !!NO_LOAD_ARM_MOVEIT_SET!!)"/>
   <arg name="load_arm_moveit_rviz" default="$(optenv LOAD_ARM_MOVEIT_RVIZ !!NO_LOAD_ARM_MOVEIT_RVIZ_SET!!)"/>
 
@@ -175,7 +176,7 @@
     <group if="$(arg load_arm_universal_robot_driver)">
       <include file="$(find cob_bringup)/drivers/ur.launch">
         <arg name="robot" value="$(arg robot)"/>
-        <arg name="use_modern_driver" value="false"/>
+        <arg name="load_arm_modern_ur_driver" default="$(arg load_arm_modern_ur_driver)"/>
         <arg name="component_name" value="arm"/>
         <arg name="robot_ip" value="$(arg ur_ip)"/>
         <arg name="min_payload"  value="0.0"/>

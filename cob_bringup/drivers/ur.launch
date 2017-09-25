@@ -3,7 +3,7 @@
 
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
 	<arg name="component_name" default="arm"/>
-	<arg name="use_modern_driver" default="false"/>
+    <arg name="load_arm_modern_ur_driver" default="$(optenv USE_ARM_MODERN_UR_DRIVER !!NO_USE_ARM_MODERN_UR_DRIVER_SET!!)"/>
 	<arg name="robot_ip" default="localhost"/>
 	<arg name="reverse_port" default="50001"/>
 	<arg name="min_payload" default="0.0"/>
@@ -14,7 +14,7 @@
 
 	<group unless="$(arg sim)">
 		<!-- universal robot python driver -->
-		<node unless="$(arg use_modern_driver)" ns="arm/joint_trajectory_controller" pkg="ur_driver" type="driver.py" name="ur_driver" args="$(arg robot_ip) $(arg reverse_port)" output="screen">
+		<node unless="$(arg load_arm_modern_ur_driver)" ns="arm/joint_trajectory_controller" pkg="ur_driver" type="driver.py" name="ur_driver" args="$(arg robot_ip) $(arg reverse_port)" output="screen">
 			<remap from="/arm/joint_trajectory_controller/joint_states" to="/arm/joint_states"/>
 			<remap from="/arm/joint_trajectory_controller/robot_description" to="/robot_description"/>
 			<param name="min_payload" type="double" value="$(arg min_payload)"/>
@@ -22,13 +22,13 @@
 			<param name="prefix" value="$(arg prefix)"/>
 		</node>
 		<!-- universal robot modern driver -->
-		<!--node if="$(arg use_modern_driver)" ns="arm/joint_trajectory_controller" pkg="ur_modern_driver" type="ur_driver" name="ur_driver" args="$(arg robot_ip) $(arg reverse_port)" output="screen">
-			<remap from="/arm/joint_trajectory_controller/joint_states" to="/arm/joint_states"/>
-			<remap from="/arm/joint_trajectory_controller/robot_description" to="/robot_description"/>
-			<param name="min_payload" type="double" value="$(arg min_payload)"/>
-			<param name="max_payload" type="double" value="$(arg max_payload)"/>
-			<param name="prefix" value="$(arg prefix)"/>
-		</node-->
+        <node if="$(arg load_arm_modern_ur_driver)" ns="arm/joint_trajectory_controller" pkg="ur_modern_driver" type="ur_driver" name="ur_driver" args="$(arg robot_ip) $(arg reverse_port)" output="screen">
+            <remap from="/arm/joint_trajectory_controller/joint_states" to="/arm/joint_states"/>
+            <remap from="/arm/joint_trajectory_controller/robot_description" to="/robot_description"/>
+            <param name="min_payload" type="double" value="$(arg min_payload)"/>
+            <param name="max_payload" type="double" value="$(arg max_payload)"/>
+            <param name="prefix" value="$(arg prefix)"/>
+        </node>
 	</group>
 	<include if="$(arg sim)" file="$(find cob_bringup)/controllers/generic_controller.launch">
 		<arg name="robot" value="$(arg robot)"/>
