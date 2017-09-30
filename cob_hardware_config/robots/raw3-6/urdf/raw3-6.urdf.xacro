@@ -2,6 +2,8 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro"
              name="raw3-6" >
     <arg name="load_wrist_sr300_simulator" default="$(optenv LOAD_WRIST_SR300_SIMULATOR !!NO_LOAD_WRIST_SR300_SIMULATOR_SET!!)"/>
+    <arg name="visualize_wrist_sr300_simulator" default="$(optenv VISUALIZE_WRIST_SR300_SIMULATOR !!NO_VISUALIZE_WRIST_SR300_SIMULATOR_SET!!)"/>
+    <arg name="visualize_sick_s300_simulator" default="$(optenv VISUALIZE_SICK_S300_SIMULATOR !!NO_VISUALIZE_SICK_S300_SIMULATOR_SET!!)"/>
     <arg name="sim" default="$(optenv SIM !!NO_SIM_SET!!)"/>
 
     <!-- common stuff -->
@@ -31,7 +33,7 @@
     <xacro:include filename="$(find cob_description)/urdf/sensors/sick_s300_laser.urdf.xacro"/>
 
     <!-- composition of the robot -->
-    <xacro:raw_base name="base"/>
+    <xacro:raw_base sim="$(arg sim)" visualize_sick_s300_simulator="$(arg visualize_sick_s300_simulator)" name="base"/>
 
     <!-- These are already defined at ./src/cob_common/raw_description/urdf/base_long/base.urdf.xacro. -->
     <!-- These are already defined at ./src/cob_common/raw_description/urdf/base_short/base.urdf.xacro. -->
@@ -125,7 +127,7 @@
           <origin xyz="0.0 0.065 0.038" rpy="0.0 -${90/180*pi} -${90/180*pi}"/>
       </xacro:realsense>
       <!-- gazebo plug-in for simulating the camera -->
-      <xacro:realsense_rgb_gazebo_v0 name="${wrist_sr300_name}" link_name="${wrist_sr300_name}_realsense_rgb_link" frame_name="${wrist_sr300_name}_realsense_rgb_optical_frame" camera_name="${wrist_sr300_name}_gazebo"/>
+      <xacro:realsense_rgb_gazebo_v0 name="${wrist_sr300_name}" link_name="${wrist_sr300_name}_realsense_rgb_link" frame_name="${wrist_sr300_name}_realsense_rgb_optical_frame" camera_name="${wrist_sr300_name}_gazebo" visualize_wrist_sr300_simulator="$(arg visualize_wrist_sr300_simulator)" />
     </xacro:if>
 
     <xacro:unless value="$(arg load_wrist_sr300_simulator)">
