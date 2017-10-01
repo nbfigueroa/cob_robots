@@ -5,6 +5,7 @@
   <arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
   <arg name="sim" default="$(optenv SIM !!NO_SIM_SET!!)"/>
   <arg name="robot_env" default="$(optenv ROBOT_ENV !!NO_ROBOT_ENV_SET!!)"/>
+  <arg name="pkg_data" default="$(optenv PKG_DATA !!NO_PKG_DATA_SET!!)"/>
 
   <arg name="load_wrist_sr300_simulator" default="$(optenv LOAD_WRIST_SR300_SIMULATOR !!NO_LOAD_WRIST_SR300_SIMULATOR_SET!!)"/>
   <arg name="visualize_wrist_sr300_simulator" default="$(optenv VISUALIZE_WRIST_SR300_SIMULATOR !!NO_VISUALIZE_WRIST_SR300_SIMULATOR_SET!!)"/>
@@ -148,6 +149,7 @@
           <arg name="pkg_nav_config" value="$(find cob_navigation_config)"/>
           <arg name="base_navigation_local_planner" value="$(arg base_navigation_local_planner)"/>
           <arg name="base_navigation_global_planner" value="$(arg base_navigation_global_planner)"/>
+          <arg name="pkg_data" value="$(arg pkg_data)" />
         </include>
         <group if="$(arg load_base_navigation_global_rviz)">
           <include file="$(find cob_navigation_global)/launch/rviz.launch"/>

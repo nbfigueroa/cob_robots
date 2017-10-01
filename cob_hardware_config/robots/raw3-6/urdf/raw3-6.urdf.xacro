@@ -79,17 +79,17 @@
     <!--y - green axis - larger is going left to robot-->
     <!--yaw - rotate around z, 1.57 is 90 degree, so the camera is facing to the right-->
 
-    <joint name="wrist_sr300_mount_joint" type="fixed">
+    <joint name="wrist_sr300_realsense_mount_joint" type="fixed">
         <!--<xacro:insert_block name="origin" />-->
         <parent link="arm_tool0"/>
-        <child link="wrist_sr300_mount_link"/>
+        <child link="wrist_sr300_realsense_mount_link"/>
         <!--always in parent reference frame-->
         <origin xyz="0.0 0.075 0.0025" rpy="0 0 0" />
         <!--for prismatic and revolute (in local joint reference frame)-->
         <!--<axis xyz="0 0 1" />-->
     </joint>
 
-    <link name="wrist_sr300_mount_link" >
+    <link name="wrist_sr300_realsense_mount_link" >
         <inertial>
             <mass value="0.1"/>
             <origin xyz="0 0 0"/>
@@ -118,21 +118,39 @@
     <!-- the view of the camera is only determined by the following xyzrpy -->
     <!-- it is not determined by the xyzrpy in realsense.gazebo,xacro and realsense.urdf.xacro -->
     <!-- because everything inside realsense.gazebo,xacro and realsense.urdf.xacro are used for visualizing the camera. What the camera will see will not be influenced by its visualization parameters. -->
-    <xacro:property name="wrist_sr300_name" value="wrist_sr300" />
+    <xacro:property name="wrist_sr300_name" value="wrist_sr300_realsense" />
 
 
     <!-- The rpy for simulation is different from the rpy setup for the actual camera. If we use the rpy from actual camera in simulation, the view will be wrong -->
+    <!-- gazebo plug-in for simulating the camera -->
     <xacro:if value="$(arg load_wrist_sr300_simulator)">
-      <xacro:realsense sim="$(arg load_wrist_sr300_simulator)" name="${wrist_sr300_name}" parent="wrist_sr300_mount_link" ros_topic="wrist_sr300">
-          <origin xyz="0.0 0.065 0.038" rpy="0.0 -${90/180*pi} -${90/180*pi}"/>
+      <xacro:realsense 
+        sim="$(arg load_wrist_sr300_simulator)"
+        name="${wrist_sr300_name}"
+        parent="wrist_sr300_realsense_mount_link">
+          <!-- <origin xyz="0.0 0.065 0.038" rpy="0.0 -${90/180*pi} -${90/180*pi}"/> -->
+          <origin xyz="0.0 0.065 0.038" rpy="0.0 0.0 ${180/180*pi}"/>
       </xacro:realsense>
-      <!-- gazebo plug-in for simulating the camera -->
-      <xacro:realsense_rgb_gazebo_v0 name="${wrist_sr300_name}" link_name="${wrist_sr300_name}_realsense_rgb_link" frame_name="${wrist_sr300_name}_realsense_rgb_optical_frame" camera_name="${wrist_sr300_name}_gazebo" visualize_wrist_sr300_simulator="$(arg visualize_wrist_sr300_simulator)" />
+      <xacro:realsense_rgb_gazebo_v0 
+        name="${wrist_sr300_name}"
+        link_name="${wrist_sr300_name}_rgb_frame"
+        frame_name="${wrist_sr300_name}_rgb_optical_frame"
+        camera_name="${wrist_sr300_name}"
+        visualize_wrist_sr300_simulator="$(arg visualize_wrist_sr300_simulator)" />
+      <xacro:realsense_ir_gazebo_v0
+        name="${wrist_sr300_name}"
+        link_name="${wrist_sr300_name}_depth_frame"
+        frame_name="${wrist_sr300_name}_depth_optical_frame"
+        camera_name="${wrist_sr300_name}"
+        visualize_wrist_sr300_simulator="$(arg visualize_wrist_sr300_simulator)" />
     </xacro:if>
 
+    <!-- if not in simulation: -->
     <xacro:unless value="$(arg load_wrist_sr300_simulator)">
-      <!-- if not in simulation: -->
-      <xacro:realsense sim="$(arg load_wrist_sr300_simulator)" name="${wrist_sr300_name}" parent="wrist_sr300_mount_link" ros_topic="wrist_sr300">
+      <xacro:realsense 
+        sim="$(arg load_wrist_sr300_simulator)" 
+        name="${wrist_sr300_name}" 
+        parent="wrist_sr300_realsense_mount_link">
           <!--<origin xyz="0. -0.25 0.5" rpy="0.0 0.0 -1.57"/>-->
           <origin xyz="0.0 0.065 0.038" rpy="0.0 0.0 ${180/180*pi}"/>
       </xacro:realsense>
