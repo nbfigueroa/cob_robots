@@ -240,14 +240,21 @@
 
 
     <!--3. no collision from arm to arm-->
-    <disable_collisions link1="arm_base_link" link2="arm_base" />
-    <disable_collisions link1="arm_base_link" link2="arm_shoulder_link" />
-    <disable_collisions link1="arm_shoulder_link" link2="arm_upper_arm_link" />
-    <disable_collisions link1="arm_upper_arm_link" link2="arm_forearm_link" />
-    <disable_collisions link1="arm_forearm_link" link2="arm_wrist_1_link" />
-    <disable_collisions link1="arm_wrist_1_link" link2="arm_wrist_2_link" />
-    <disable_collisions link1="arm_wrist_2_link" link2="arm_wrist_3_link" />
-    <disable_collisions link1="arm_wrist_3_link" link2="arm_ee_link" />
+    <!-- copied from ur10 https://github.com/ros-industrial/universal_robot/blob/kinetic-devel/ur10_moveit_config/config/ur10.srdf -->
+    <disable_collisions link1="arm_base_link" link2="arm_shoulder_link" reason="Adjacent" />
+    <disable_collisions link1="arm_base_link" link2="arm_upper_arm_link" reason="Never" />
+    <disable_collisions link1="arm_base_link" link2="arm_wrist_1_link" reason="Never" />
+    <disable_collisions link1="arm_ee_link" link2="arm_wrist_1_link" reason="Never" />
+    <disable_collisions link1="arm_ee_link" link2="arm_wrist_2_link" reason="Never" />
+    <disable_collisions link1="arm_ee_link" link2="arm_wrist_3_link" reason="Adjacent" />
+    <disable_collisions link1="arm_forearm_link" link2="arm_upper_arm_link" reason="Adjacent" />
+    <disable_collisions link1="arm_forearm_link" link2="arm_wrist_1_link" reason="Adjacent" />
+    <disable_collisions link1="arm_shoulder_link" link2="arm_upper_arm_link" reason="Adjacent" />
+    <disable_collisions link1="arm_shoulder_link" link2="arm_wrist_1_link" reason="Never" />
+    <disable_collisions link1="arm_shoulder_link" link2="arm_wrist_2_link" reason="Never" />
+    <disable_collisions link1="arm_wrist_1_link" link2="arm_wrist_2_link" reason="Adjacent" />
+    <disable_collisions link1="arm_wrist_1_link" link2="arm_wrist_3_link" reason="Never" />
+    <disable_collisions link1="arm_wrist_2_link" link2="arm_wrist_3_link" reason="Adjacent" />
 
     <!--4. arm to gripper and camera-->
     <disable_collisions link1="arm_wrist_1_link" link2="gripper_finger_1_link_0" />
