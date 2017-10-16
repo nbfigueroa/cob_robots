@@ -53,7 +53,10 @@
         <joint name="gripper_finger_middle_joint_paraproximal_bar" />
         <joint name="gripper_finger_middle_joint_proximal_actuating_hinge" />
         <joint name="gripper_finger_middle_joint_proximal_actuating_bar" />
+
     </group>
+    
+    
     <!--GROUP STATES: Purpose: Define a named state for a particular group, in terms of joint values. This is useful to define states like 'folded arms'-->
     <group_state name="arm_tuck" group="arm">
         <joint name="arm_elbow_joint" value="-1.5" />
@@ -76,6 +79,35 @@
     <passive_joint name="fl_caster_r_wheel_joint" />
     <passive_joint name="fr_caster_rotation_joint" />
     <passive_joint name="fr_caster_r_wheel_joint" />
+
+    <!-- ************************ -->
+    <!-- TODO: Shen is not sure if we need to cover all the joints here -->
+    <!-- passive_joint = Purpose: By default it is assumed that all joints specified by a URDF are active and their state is made available for planning. If this is not the case for some joints, this tag can be used to specify that. -->
+    <!-- http://wiki.ros.org/srdf -->
+    <passive_joint name="base_battery_front_battery_joint" />
+    <passive_joint name="base_battery_rear_battery_joint" />
+    <passive_joint name="base_laser_front_joint" />
+    <passive_joint name="base_laser_rear_joint" />
+
+    <passive_joint name="tower_joint" />
+    <passive_joint name="base_footprint_joint" />
+
+    <passive_joint name="arm_base_joint" />
+    <passive_joint name="arm_base_link-base_fixed_joint" />
+    <passive_joint name="arm_ee_fixed_joint" />
+    <passive_joint name="arm_wrist_3_link-tool0_fixed_joint" />
+
+    <passive_joint name="wrist_sr300_realsense_mount_joint" />
+    <passive_joint name="wrist_sr300_realsense_joint" />
+    <passive_joint name="wrist_sr300_realsense_depth_frame_joint" />
+    <passive_joint name="wrist_sr300_realsense_depth_optical_frame_joint" />
+    <passive_joint name="wrist_sr300_realsense_ir_frame_joint" />
+    <passive_joint name="wrist_sr300_realsense_ir_optical_frame_joint" />
+    <passive_joint name="wrist_sr300_realsense_rgb_frame_joint" />
+    <passive_joint name="wrist_sr300_realsense_rgb_optical_frame_joint" />
+    <!-- ************************ -->
+
+
     <!-- ****************************************************************** -->
     <!-- Shen added these since moveit_setup_assistant doesn't disable all the possible collisions -->
     <!-- You can add more by the script - ./src/python_utils/scripts/generate_self_collisions_for_SRDF.py -->
