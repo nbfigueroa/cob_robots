@@ -63,8 +63,8 @@
     <!--</xacro:robotiq_hand>-->
     <xacro:robotiq name="gripper" parent="arm_tool0" reflect="0" sim="$(arg sim)">
     <!--<xacro:robotiq_hand prefix="gripper_" parent="arm_tool0" reflect="0">-->
-        <origin xyz="0 0 .05" rpy="${90/180*pi} 0 0"/>
-        <!-- <origin xyz="0 0 .05" rpy="${90/180*pi} 0 -0.7753975"/> -->
+        <!-- We have to rotate the gripper by 45 around z, so that it matches the real robot -->
+        <origin xyz="0 0 .05" rpy="${90/180*pi} 0 -${45/180*pi}"/>
         <!--<origin xyz="0 0 .05" rpy="${90/180*pi} 0 -1.570795"/>-->
     </xacro:robotiq>
 
@@ -84,7 +84,9 @@
         <parent link="arm_tool0"/>
         <child link="wrist_sr300_realsense_mount_link"/>
         <!--always in parent reference frame-->
-        <origin xyz="0.0 0.075 0.0025" rpy="0 0 0" />
+        <!-- we have to rotate 45 around z to match the robotiq, while the robotiq has to rotate the same to match the real robot -->
+        <origin xyz="0.05 0.065 0.0025" rpy="0 0 -${45/180*pi}" />
+        <!-- <origin xyz="0.0 0.075 0.0025" rpy="0 0 0" /> -->
         <!--for prismatic and revolute (in local joint reference frame)-->
         <!--<axis xyz="0 0 1" />-->
     </joint>
