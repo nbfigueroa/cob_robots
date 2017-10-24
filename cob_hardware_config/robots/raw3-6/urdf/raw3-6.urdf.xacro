@@ -79,13 +79,51 @@
   <!--y - green axis - larger is going left to robot-->
   <!--yaw - rotate around z, 1.57 is 90 degree, so the camera is facing to the right-->
 
+<!--  <joint name="wrist_sr300_realsense_mount_joint" type="fixed">-->
+    <!--[><xacro:insert_block name="origin" /><]-->
+    <!--<parent link="arm_tool0"/>-->
+    <!--<child link="wrist_sr300_realsense_mount_link"/>-->
+    <!--[>always in parent reference frame<]-->
+    <!--[> we have to rotate 45 around z to match the robotiq, while the robotiq has to rotate the same to match the real robot <]-->
+    <!--<origin xyz="0.05 0.065 0.0025" rpy="0 0 -${45/180*pi}" />-->
+    <!--[> <origin xyz="0.0 0.075 0.0025" rpy="0 0 0" /> <]-->
+    <!--[>for prismatic and revolute (in local joint reference frame)<]-->
+    <!--[><axis xyz="0 0 1" /><]-->
+  <!--</joint>-->
+
+  <!--<link name="wrist_sr300_realsense_mount_link" >-->
+    <!--<inertial>-->
+      <!--<mass value="0.1"/>-->
+      <!--<origin xyz="0 0 0"/>-->
+      <!--[>https://gist.github.com/awesomebytes/39a4ba6c64956a1aa9bd<]-->
+      <!--<inertia ixx="0.00018" ixy="0.0" ixz="0.0" iyy="0.00002" iyz="0.0" izz="0.0002" />-->
+    <!--</inertial>-->
+    <!--<visual>-->
+      <!--<origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>-->
+      <!--<geometry>-->
+        <!--<box size="0.05 0.150 0.005"/>-->
+      <!--</geometry>-->
+      <!--<material name="gray">-->
+        <!--<color rgba="0.50 0.50 0.50 1" />-->
+        <!--[> <color rgba="1.0 1.0 1.0 1" /> <]-->
+        <!--[><color rgba="0.2 0.2 1 1" /><]-->
+      <!--</material>-->
+    <!--</visual>-->
+    <!--<collision>-->
+      <!--<origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>-->
+      <!--<geometry>-->
+        <!--<box size="0.05 0.150 0.005"/>-->
+      <!--</geometry>-->
+    <!--</collision>-->
+  <!--</link>-->
+
   <joint name="wrist_sr300_realsense_mount_joint" type="fixed">
     <!--<xacro:insert_block name="origin" />-->
-    <parent link="arm_tool0"/>
+    <parent link="gripper_palm"/>
     <child link="wrist_sr300_realsense_mount_link"/>
     <!--always in parent reference frame-->
     <!-- we have to rotate 45 around z to match the robotiq, while the robotiq has to rotate the same to match the real robot -->
-    <origin xyz="0.05 0.065 0.0025" rpy="0 0 -${45/180*pi}" />
+    <origin xyz="0.00 -0.02 -0.05" rpy="-${90/180*pi} 0 0" />
     <!-- <origin xyz="0.0 0.075 0.0025" rpy="0 0 0" /> -->
     <!--for prismatic and revolute (in local joint reference frame)-->
     <!--<axis xyz="0 0 1" />-->
@@ -101,7 +139,7 @@
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <geometry>
-        <box size="0.05 0.150 0.005"/>
+        <box size="0.05 0.08 0.005"/>
       </geometry>
       <material name="gray">
         <color rgba="0.50 0.50 0.50 1" />
@@ -112,16 +150,19 @@
     <collision>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <geometry>
-        <box size="0.05 0.150 0.005"/>
+        <box size="0.05 0.08 0.005"/>
       </geometry>
     </collision>
   </link>
+
 
   <!-- the view of the camera is only determined by the following xyzrpy -->
   <!-- it is not determined by the xyzrpy in realsense.gazebo,xacro and realsense.urdf.xacro -->
   <!-- because everything inside realsense.gazebo,xacro and realsense.urdf.xacro are used for visualizing the camera. What the camera will see will not be influenced by its visualization parameters. -->
   <xacro:property name="wrist_sr300_name" value="wrist_sr300_realsense" />
-  <xacro:property name="realsense_xyz" value="0.0 0.065 0.052"/>
+  <!--<xacro:property name="realsense_xyz" value="0.0 0.065 0.052"/>-->
+  <xacro:property name="realsense_xyz" value="0.0 0.04 0.052"/>
+  <!--<xacro:property name="realsense_rpy" value="0.0 0.0 ${180/180*pi}"/>-->
   <xacro:property name="realsense_rpy" value="0.0 0.0 ${180/180*pi}"/>
 
   <!-- The rpy for simulation is different from the rpy setup for the actual camera. If we use the rpy from actual camera in simulation, the view will be wrong -->
