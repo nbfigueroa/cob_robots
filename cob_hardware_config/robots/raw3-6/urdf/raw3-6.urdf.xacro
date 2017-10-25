@@ -161,14 +161,14 @@
   <!-- because everything inside realsense.gazebo,xacro and realsense.urdf.xacro are used for visualizing the camera. What the camera will see will not be influenced by its visualization parameters. -->
   <xacro:property name="wrist_sr300_name" value="wrist_sr300_realsense" />
   <!--<xacro:property name="realsense_xyz" value="0.0 0.065 0.052"/>-->
-  <xacro:property name="realsense_xyz" value="0.0 0.04 0.052"/>
+  <xacro:property name="realsense_xyz" value="0.0 0.02 0.062"/>
   <!--<xacro:property name="realsense_rpy" value="0.0 0.0 ${180/180*pi}"/>-->
   <xacro:property name="realsense_rpy" value="0.0 0.0 ${180/180*pi}"/>
 
   <!-- The rpy for simulation is different from the rpy setup for the actual camera. If we use the rpy from actual camera in simulation, the view will be wrong -->
   <!-- gazebo plug-in for simulating the camera -->
   <xacro:if value="$(arg load_wrist_sr300_simulator)">
-    <xacro:realsense 
+    <xacro:realsense
     sim="$(arg load_wrist_sr300_simulator)"
     name="${wrist_sr300_name}"
     parent="wrist_sr300_realsense_mount_link">
