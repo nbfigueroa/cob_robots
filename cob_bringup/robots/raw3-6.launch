@@ -12,7 +12,7 @@
   <arg name="gripper_ip" default="$(optenv GRIPPER_IP !!NO_GRIPPER_IP_SET!!)"/>
   <arg name="env-script" default="$(find cob_bringup)/env.sh"/>
   <arg name="pc1" default="localhost"/>
-  <arg name="wrist_sr300_sim" default="$(optenv WRIST_SR300_SIM !!NO_WRIST_SR300_SIM_SET!!)"/>
+  <arg name="wrist_camera_sim" default="$(optenv WRIST_CAMERA_SIM !!NO_WRIST_CAMERA_SIM_SET!!)"/>
 
   <include file="$(find cob_bringup)/robots/$(arg robot).xml" >
     <arg name="robot" value="$(arg robot)" />
@@ -26,7 +26,7 @@
     <arg name="gripper_ip" value="$(arg gripper_ip)"/>
     <arg name="env-script" value="$(arg env-script)"/>
     <arg name="pc1" value="$(arg pc1)"/>
-    <arg name="wrist_sr300_sim" value="$(arg wrist_sr300_sim)"/>
+    <arg name="wrist_camera_sim" value="$(arg wrist_camera_sim)"/>
   </include>
 
 </launch>

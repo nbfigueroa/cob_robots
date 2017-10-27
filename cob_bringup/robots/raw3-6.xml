@@ -7,8 +7,8 @@
   <arg name="robot_env" default="$(optenv ROBOT_ENV !!NO_ROBOT_ENV_SET!!)"/>
   <arg name="pkg_data" default="$(optenv PKG_DATA !!NO_PKG_DATA_SET!!)"/>
 
-  <arg name="load_wrist_sr300_simulator" default="$(optenv LOAD_WRIST_SR300_SIMULATOR !!NO_LOAD_WRIST_SR300_SIMULATOR_SET!!)"/>
-  <arg name="visualize_wrist_sr300_simulator" default="$(optenv VISUALIZE_WRIST_SR300_SIMULATOR !!NO_VISUALIZE_WRIST_SR300_SIMULATOR_SET!!)"/>
+  <arg name="load_wrist_camera_simulator" default="$(optenv LOAD_WRIST_CAMERA_SIMULATOR !!NO_LOAD_WRIST_CAMERA_SIMULATOR_SET!!)"/>
+  <arg name="visualize_wrist_camera_simulator" default="$(optenv VISUALIZE_WRIST_CAMERA_SIMULATOR !!NO_VISUALIZE_WRIST_CAMERA_SIMULATOR_SET!!)"/>
   <arg name="visualize_sick_s300_simulator" default="$(optenv VISUALIZE_SICK_S300_SIMULATOR !!NO_VISUALIZE_SICK_S300_SIMULATOR_SET!!)"/>
 
 
@@ -46,8 +46,8 @@
   <!-- upload robot description -->
   <include file="$(find cob_hardware_config)/upload_robot.launch" >
     <arg name="robot" value="$(arg robot)" />
-    <arg name="load_wrist_sr300_simulator" value="$(arg load_wrist_sr300_simulator)"/>
-    <arg name="visualize_wrist_sr300_simulator" value="$(arg visualize_wrist_sr300_simulator)"/>
+    <arg name="load_wrist_camera_simulator" value="$(arg load_wrist_camera_simulator)"/>
+    <arg name="visualize_wrist_camera_simulator" value="$(arg visualize_wrist_camera_simulator)"/>
     <arg name="visualize_sick_s300_simulator" value="$(arg visualize_sick_s300_simulator)"/>
     <arg name="sim" value="$(arg sim)"/>
   </include>

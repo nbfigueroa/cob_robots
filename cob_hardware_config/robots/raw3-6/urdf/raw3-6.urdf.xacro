@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro"
        name="raw3-6" >
-  <arg name="load_wrist_sr300_simulator" default="$(optenv LOAD_WRIST_SR300_SIMULATOR !!NO_LOAD_WRIST_SR300_SIMULATOR_SET!!)"/>
-  <arg name="visualize_wrist_sr300_simulator" default="$(optenv VISUALIZE_WRIST_SR300_SIMULATOR !!NO_VISUALIZE_WRIST_SR300_SIMULATOR_SET!!)"/>
+  <arg name="load_wrist_camera_simulator" default="$(optenv LOAD_WRIST_CAMERA_SIMULATOR !!NO_LOAD_WRIST_CAMERA_SIMULATOR_SET!!)"/>
+  <arg name="visualize_wrist_camera_simulator" default="$(optenv VISUALIZE_WRIST_CAMERA_SIMULATOR !!NO_VISUALIZE_WRIST_CAMERA_SIMULATOR_SET!!)"/>
   <arg name="visualize_sick_s300_simulator" default="$(optenv VISUALIZE_SICK_S300_SIMULATOR !!NO_VISUALIZE_SICK_S300_SIMULATOR_SET!!)"/>
   <arg name="sim" default="$(optenv SIM !!NO_SIM_SET!!)"/>
 
@@ -69,7 +69,7 @@
   </xacro:robotiq>
 
   <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
-  <!-- wrist_sr300 mount and camera -->
+  <!-- wrist_camera mount and camera -->
   <!--we add the sensor above the robot base metal board-->
   <!--x = in the middle of the base metal board-->
   <!--z = as high as the arm shoulder square base-->
@@ -79,10 +79,10 @@
   <!--y - green axis - larger is going left to robot-->
   <!--yaw - rotate around z, 1.57 is 90 degree, so the camera is facing to the right-->
 
-<!--  <joint name="wrist_sr300_realsense_mount_joint" type="fixed">-->
+<!--  <joint name="wrist_camera_mount_joint" type="fixed">-->
     <!--[><xacro:insert_block name="origin" /><]-->
     <!--<parent link="arm_tool0"/>-->
-    <!--<child link="wrist_sr300_realsense_mount_link"/>-->
+    <!--<child link="wrist_camera_mount_link"/>-->
     <!--[>always in parent reference frame<]-->
     <!--[> we have to rotate 45 around z to match the robotiq, while the robotiq has to rotate the same to match the real robot <]-->
     <!--<origin xyz="0.05 0.065 0.0025" rpy="0 0 -${45/180*pi}" />-->
@@ -91,7 +91,7 @@
     <!--[><axis xyz="0 0 1" /><]-->
   <!--</joint>-->
 
-  <!--<link name="wrist_sr300_realsense_mount_link" >-->
+  <!--<link name="wrist_camera_mount_link" >-->
     <!--<inertial>-->
       <!--<mass value="0.1"/>-->
       <!--<origin xyz="0 0 0"/>-->
@@ -117,10 +117,10 @@
     <!--</collision>-->
   <!--</link>-->
 
-  <joint name="wrist_sr300_realsense_mount_joint" type="fixed">
+  <joint name="wrist_camera_mount_joint" type="fixed">
     <!--<xacro:insert_block name="origin" />-->
     <parent link="gripper_palm"/>
-    <child link="wrist_sr300_realsense_mount_link"/>
+    <child link="wrist_camera_mount_link"/>
     <!--always in parent reference frame-->
     <!-- we have to rotate 45 around z to match the robotiq, while the robotiq has to rotate the same to match the real robot -->
     <origin xyz="0.00 -0.02 -0.05" rpy="-${90/180*pi} 0 0" />
@@ -129,7 +129,7 @@
     <!--<axis xyz="0 0 1" />-->
   </joint>
 
-  <link name="wrist_sr300_realsense_mount_link" >
+  <link name="wrist_camera_mount_link" >
     <inertial>
       <mass value="0.1"/>
       <origin xyz="0 0 0"/>
@@ -159,7 +159,7 @@
   <!-- the view of the camera is only determined by the following xyzrpy -->
   <!-- it is not determined by the xyzrpy in realsense.gazebo,xacro and realsense.urdf.xacro -->
   <!-- because everything inside realsense.gazebo,xacro and realsense.urdf.xacro are used for visualizing the camera. What the camera will see will not be influenced by its visualization parameters. -->
-  <xacro:property name="wrist_sr300_name" value="wrist_sr300_realsense" />
+  <xacro:property name="wrist_camera_name" value="wrist_camera" />
   <!--<xacro:property name="realsense_xyz" value="0.0 0.065 0.052"/>-->
   <xacro:property name="realsense_xyz" value="0.01 0.06 0.072"/>
   <!--<xacro:property name="realsense_rpy" value="0.0 0.0 ${180/180*pi}"/>-->
@@ -167,34 +167,34 @@
 
   <!-- The rpy for simulation is different from the rpy setup for the actual camera. If we use the rpy from actual camera in simulation, the view will be wrong -->
   <!-- gazebo plug-in for simulating the camera -->
-  <xacro:if value="$(arg load_wrist_sr300_simulator)">
+  <xacro:if value="$(arg load_wrist_camera_simulator)">
     <xacro:realsense
-    sim="$(arg load_wrist_sr300_simulator)"
-    name="${wrist_sr300_name}"
-    parent="wrist_sr300_realsense_mount_link">
+    sim="$(arg load_wrist_camera_simulator)"
+    name="${wrist_camera_name}"
+    parent="wrist_camera_mount_link">
       <!-- <origin xyz="0.0 0.065 0.038" rpy="0.0 -${90/180*pi} -${90/180*pi}"/> -->
       <origin xyz="${realsense_xyz}" rpy="${realsense_rpy}"/>
     </xacro:realsense>
     <xacro:realsense_rgb_gazebo_v0 
-    name="${wrist_sr300_name}"
-    link_name="${wrist_sr300_name}_rgb_frame"
-    frame_name="${wrist_sr300_name}_rgb_optical_frame"
-    camera_name="${wrist_sr300_name}"
-    visualize_wrist_sr300_simulator="$(arg visualize_wrist_sr300_simulator)" />
+    name="${wrist_camera_name}"
+    link_name="${wrist_camera_name}_rgb_frame"
+    frame_name="${wrist_camera_name}_rgb_optical_frame"
+    camera_name="${wrist_camera_name}"
+    visualize_wrist_camera_simulator="$(arg visualize_wrist_camera_simulator)" />
     <xacro:realsense_ir_gazebo_v0
-    name="${wrist_sr300_name}"
-    link_name="${wrist_sr300_name}_depth_frame"
-    frame_name="${wrist_sr300_name}_depth_optical_frame"
-    camera_name="${wrist_sr300_name}"
-    visualize_wrist_sr300_simulator="$(arg visualize_wrist_sr300_simulator)" />
+    name="${wrist_camera_name}"
+    link_name="${wrist_camera_name}_depth_frame"
+    frame_name="${wrist_camera_name}_depth_optical_frame"
+    camera_name="${wrist_camera_name}"
+    visualize_wrist_camera_simulator="$(arg visualize_wrist_camera_simulator)" />
   </xacro:if>
 
   <!-- if not in simulation: -->
-  <xacro:unless value="$(arg load_wrist_sr300_simulator)">
+  <xacro:unless value="$(arg load_wrist_camera_simulator)">
     <xacro:realsense 
-    sim="$(arg load_wrist_sr300_simulator)" 
-    name="${wrist_sr300_name}" 
-    parent="wrist_sr300_realsense_mount_link">
+    sim="$(arg load_wrist_camera_simulator)" 
+    name="${wrist_camera_name}" 
+    parent="wrist_camera_mount_link">
       <!--<origin xyz="0. -0.25 0.5" rpy="0.0 0.0 -1.57"/>-->
       <origin xyz="${realsense_xyz}" rpy="${realsense_rpy}"/>
     </xacro:realsense>
