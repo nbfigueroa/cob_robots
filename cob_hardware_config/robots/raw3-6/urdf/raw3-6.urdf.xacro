@@ -55,7 +55,7 @@
     <origin xyz="${arm_x} ${arm_y} ${arm_z}" rpy="${arm_roll} ${arm_pitch} ${arm_yaw}" />
   </xacro:ur10>
 
-  <!--directlt defined here instead of retrieving from-->
+  <!--Directly defined here instead of retrieving from-->
   <!--$(find cob_hardware_config)/robots/raw3-6/urdf/properties.urdf.xacro-->
   <!--it has to be arm_tool0 instead of arm_ee_link-->
   <!--<xacro:robotiq_hand prefix="gripper_" parent="arm_wrist_extension" reflect="0">-->
@@ -65,105 +65,15 @@
   <!--<xacro:robotiq_hand prefix="gripper_" parent="arm_tool0" reflect="0">-->
     <!-- We have to rotate the gripper by 45 around z, so that it matches the real robot -->
     <origin xyz="0 0 .05" rpy="${90/180*pi} 0 -${45/180*pi}"/>
-    <!--<origin xyz="0 0 .05" rpy="${90/180*pi} 0 -1.570795"/>-->
   </xacro:robotiq>
 
-  <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
-  <!-- wrist_camera mount and camera -->
-  <!--we add the sensor above the robot base metal board-->
-  <!--x = in the middle of the base metal board-->
-  <!--z = as high as the arm shoulder square base-->
-  <!--y = in the middle of the 2 batteries under the base metal board-->
-  <!--z - blue axis - larger is going up-->
-  <!--x - red axis - larger is going forward the robot-->
-  <!--y - green axis - larger is going left to robot-->
-  <!--yaw - rotate around z, 1.57 is 90 degree, so the camera is facing to the right-->
-
-<!--  <joint name="wrist_camera_mount_joint" type="fixed">-->
-    <!--[><xacro:insert_block name="origin" /><]-->
-    <!--<parent link="arm_tool0"/>-->
-    <!--<child link="wrist_camera_mount_link"/>-->
-    <!--[>always in parent reference frame<]-->
-    <!--[> we have to rotate 45 around z to match the robotiq, while the robotiq has to rotate the same to match the real robot <]-->
-    <!--<origin xyz="0.05 0.065 0.0025" rpy="0 0 -${45/180*pi}" />-->
-    <!--[> <origin xyz="0.0 0.075 0.0025" rpy="0 0 0" /> <]-->
-    <!--[>for prismatic and revolute (in local joint reference frame)<]-->
-    <!--[><axis xyz="0 0 1" /><]-->
-  <!--</joint>-->
-
-  <!--<link name="wrist_camera_mount_link" >-->
-    <!--<inertial>-->
-      <!--<mass value="0.1"/>-->
-      <!--<origin xyz="0 0 0"/>-->
-      <!--[>https://gist.github.com/awesomebytes/39a4ba6c64956a1aa9bd<]-->
-      <!--<inertia ixx="0.00018" ixy="0.0" ixz="0.0" iyy="0.00002" iyz="0.0" izz="0.0002" />-->
-    <!--</inertial>-->
-    <!--<visual>-->
-      <!--<origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>-->
-      <!--<geometry>-->
-        <!--<box size="0.05 0.150 0.005"/>-->
-      <!--</geometry>-->
-      <!--<material name="gray">-->
-        <!--<color rgba="0.50 0.50 0.50 1" />-->
-        <!--[> <color rgba="1.0 1.0 1.0 1" /> <]-->
-        <!--[><color rgba="0.2 0.2 1 1" /><]-->
-      <!--</material>-->
-    <!--</visual>-->
-    <!--<collision>-->
-      <!--<origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>-->
-      <!--<geometry>-->
-        <!--<box size="0.05 0.150 0.005"/>-->
-      <!--</geometry>-->
-    <!--</collision>-->
-  <!--</link>-->
-
-  <joint name="wrist_camera_mount_joint" type="fixed">
-    <!--<xacro:insert_block name="origin" />-->
-    <parent link="gripper_palm"/>
-    <child link="wrist_camera_mount_link"/>
-    <!--always in parent reference frame-->
-    <!-- we have to rotate 45 around z to match the robotiq, while the robotiq has to rotate the same to match the real robot -->
-    <origin xyz="0.00 -0.02 -0.05" rpy="-${90/180*pi} 0 0" />
-    <!-- <origin xyz="0.0 0.075 0.0025" rpy="0 0 0" /> -->
-    <!--for prismatic and revolute (in local joint reference frame)-->
-    <!--<axis xyz="0 0 1" />-->
-  </joint>
-
-  <link name="wrist_camera_mount_link" >
-    <inertial>
-      <mass value="0.1"/>
-      <origin xyz="0 0 0"/>
-      <!--https://gist.github.com/awesomebytes/39a4ba6c64956a1aa9bd-->
-      <inertia ixx="0.00018" ixy="0.0" ixz="0.0" iyy="0.00002" iyz="0.0" izz="0.0002" />
-    </inertial>
-    <visual>
-      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
-      <geometry>
-        <box size="0.05 0.08 0.005"/>
-      </geometry>
-      <material name="gray">
-        <color rgba="0.50 0.50 0.50 1" />
-        <!-- <color rgba="1.0 1.0 1.0 1" /> -->
-        <!--<color rgba="0.2 0.2 1 1" />-->
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
-      <geometry>
-        <box size="0.05 0.08 0.005"/>
-      </geometry>
-    </collision>
-  </link>
-
-
+  
   <!-- the view of the camera is only determined by the following xyzrpy -->
   <!-- it is not determined by the xyzrpy in realsense.gazebo,xacro and realsense.urdf.xacro -->
   <!-- because everything inside realsense.gazebo,xacro and realsense.urdf.xacro are used for visualizing the camera. What the camera will see will not be influenced by its visualization parameters. -->
   <xacro:property name="wrist_camera_name" value="wrist_camera" />
-  <!--<xacro:property name="realsense_xyz" value="0.0 0.065 0.052"/>-->
-  <xacro:property name="realsense_xyz" value="0.01 0.06 0.072"/>
-  <!--<xacro:property name="realsense_rpy" value="0.0 0.0 ${180/180*pi}"/>-->
-  <xacro:property name="realsense_rpy" value="0.0 0.0 ${180/180*pi}"/>
+  <xacro:property name="realsense_xyz" value="-0.0381 0.0127 -0.0762"/>
+  <xacro:property name="realsense_rpy" value="-${90/180*pi} 0.0 0.0"/>
 
   <!-- The rpy for simulation is different from the rpy setup for the actual camera. If we use the rpy from actual camera in simulation, the view will be wrong -->
   <!-- gazebo plug-in for simulating the camera -->
@@ -171,8 +81,7 @@
     <xacro:realsense
     sim="$(arg load_wrist_camera_simulator)"
     name="${wrist_camera_name}"
-    parent="wrist_camera_mount_link">
-      <!-- <origin xyz="0.0 0.065 0.038" rpy="0.0 -${90/180*pi} -${90/180*pi}"/> -->
+    parent="gripper_palm">
       <origin xyz="${realsense_xyz}" rpy="${realsense_rpy}"/>
     </xacro:realsense>
     <xacro:realsense_rgb_gazebo_v0 
@@ -194,8 +103,7 @@
     <xacro:realsense 
     sim="$(arg load_wrist_camera_simulator)" 
     name="${wrist_camera_name}" 
-    parent="wrist_camera_mount_link">
-      <!--<origin xyz="0. -0.25 0.5" rpy="0.0 0.0 -1.57"/>-->
+    parent="gripper_palm">
       <origin xyz="${realsense_xyz}" rpy="${realsense_rpy}"/>
     </xacro:realsense>
   </xacro:unless>
