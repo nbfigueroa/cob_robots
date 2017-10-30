@@ -72,7 +72,7 @@
   <!-- it is not determined by the xyzrpy in realsense.gazebo,xacro and realsense.urdf.xacro -->
   <!-- because everything inside realsense.gazebo,xacro and realsense.urdf.xacro are used for visualizing the camera. What the camera will see will not be influenced by its visualization parameters. -->
   <xacro:property name="wrist_camera_name" value="wrist_camera" />
-  <xacro:property name="realsense_xyz" value="-0.0381 0.0127 -0.0762"/>
+  <xacro:property name="realsense_xyz" value="-0.0481 0.0027 -0.0762"/>
   <xacro:property name="realsense_rpy" value="-${90/180*pi} ${180/180*pi} 0.0"/>
 
   <!-- The rpy for simulation is different from the rpy setup for the actual camera. If we use the rpy from actual camera in simulation, the view will be wrong -->
