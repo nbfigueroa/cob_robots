@@ -69,7 +69,7 @@
   
   <xacro:property name="wrist_camera_name" value="wrist_camera" />
   <!-- wrist_camera_r200_xyz and wrist_camera_r200_rpy = r200_in_palm_mat -->
-  <xacro:property name="wrist_camera_r200_xyz" value="0.0057  0.0012 -0.0746"/>
+  <xacro:property name="wrist_camera_r200_xyz" value="-0.0057  0.0012 -0.0746"/>
   <xacro:property name="wrist_camera_r200_rpy" value="0 1.57 1.57"/>
 
   <!-- The rpy for simulation is different from the rpy setup for the actual camera. If we use the rpy from actual camera in simulation, the view will be wrong -->
