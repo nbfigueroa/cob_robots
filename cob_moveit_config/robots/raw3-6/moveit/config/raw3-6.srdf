@@ -97,6 +97,7 @@
     <passive_joint name="arm_ee_fixed_joint" />
     <passive_joint name="arm_wrist_3_link-tool0_fixed_joint" />
 
+    <passive_joint name="wrist_camera_mount_joint" />
     <passive_joint name="wrist_camera_joint" />
     <passive_joint name="wrist_camera_depth_frame_joint" />
     <passive_joint name="wrist_camera_depth_optical_frame_joint" />
@@ -288,6 +289,51 @@
     <disable_collisions link1="arm_wrist_2_link" link2="arm_wrist_3_link" reason="Adjacent" />
 
     <!--4. arm to gripper and camera-->
+    <disable_collisions link1="arm_base_link" link2="base_footprint" />
+    <disable_collisions link1="arm_base_link" link2="base_link" />
+    <disable_collisions link1="arm_base_link" link2="base_battery_front_battery" />
+    <disable_collisions link1="arm_base_link" link2="base_battery_rear_battery" />
+    <disable_collisions link1="arm_base_link" link2="base_laser_front_link" />
+    <disable_collisions link1="arm_base_link" link2="base_laser_rear_link" />
+    <disable_collisions link1="arm_base_link" link2="bl_caster_r_wheel_link" />
+    <disable_collisions link1="arm_base_link" link2="bl_caster_rotation_link" />
+    <disable_collisions link1="arm_base_link" link2="br_caster_r_wheel_link" />
+    <disable_collisions link1="arm_base_link" link2="br_caster_rotation_link" />
+    <disable_collisions link1="arm_base_link" link2="fl_caster_r_wheel_link" />
+    <disable_collisions link1="arm_base_link" link2="fl_caster_rotation_link" />
+    <disable_collisions link1="arm_base_link" link2="fr_caster_r_wheel_link" />
+    <disable_collisions link1="arm_base_link" link2="fr_caster_rotation_link" />
+    <disable_collisions link1="arm_base_link" link2="tower_base_link" />
+    <disable_collisions link1="arm_base" link2="base_footprint" />
+    <disable_collisions link1="arm_base" link2="base_link" />
+    <disable_collisions link1="arm_base" link2="base_battery_front_battery" />
+    <disable_collisions link1="arm_base" link2="base_battery_rear_battery" />
+    <disable_collisions link1="arm_base" link2="base_laser_front_link" />
+    <disable_collisions link1="arm_base" link2="base_laser_rear_link" />
+    <disable_collisions link1="arm_base" link2="bl_caster_r_wheel_link" />
+    <disable_collisions link1="arm_base" link2="bl_caster_rotation_link" />
+    <disable_collisions link1="arm_base" link2="br_caster_r_wheel_link" />
+    <disable_collisions link1="arm_base" link2="br_caster_rotation_link" />
+    <disable_collisions link1="arm_base" link2="fl_caster_r_wheel_link" />
+    <disable_collisions link1="arm_base" link2="fl_caster_rotation_link" />
+    <disable_collisions link1="arm_base" link2="fr_caster_r_wheel_link" />
+    <disable_collisions link1="arm_base" link2="fr_caster_rotation_link" />
+    <disable_collisions link1="arm_base" link2="tower_base_link" />
+    <disable_collisions link1="arm_shoulder_link" link2="base_footprint" />
+    <disable_collisions link1="arm_shoulder_link" link2="base_link" />
+    <disable_collisions link1="arm_shoulder_link" link2="base_battery_front_battery" />
+    <disable_collisions link1="arm_shoulder_link" link2="base_battery_rear_battery" />
+    <disable_collisions link1="arm_shoulder_link" link2="base_laser_front_link" />
+    <disable_collisions link1="arm_shoulder_link" link2="base_laser_rear_link" />
+    <disable_collisions link1="arm_shoulder_link" link2="bl_caster_r_wheel_link" />
+    <disable_collisions link1="arm_shoulder_link" link2="bl_caster_rotation_link" />
+    <disable_collisions link1="arm_shoulder_link" link2="br_caster_r_wheel_link" />
+    <disable_collisions link1="arm_shoulder_link" link2="br_caster_rotation_link" />
+    <disable_collisions link1="arm_shoulder_link" link2="fl_caster_r_wheel_link" />
+    <disable_collisions link1="arm_shoulder_link" link2="fl_caster_rotation_link" />
+    <disable_collisions link1="arm_shoulder_link" link2="fr_caster_r_wheel_link" />
+    <disable_collisions link1="arm_shoulder_link" link2="fr_caster_rotation_link" />
+    <disable_collisions link1="arm_shoulder_link" link2="tower_base_link" />
     <disable_collisions link1="arm_wrist_1_link" link2="gripper_finger_1_link_0" />
     <disable_collisions link1="arm_wrist_1_link" link2="gripper_finger_1_link_1" />
     <disable_collisions link1="arm_wrist_1_link" link2="gripper_finger_1_link_2" />
@@ -328,6 +374,7 @@
     <disable_collisions link1="arm_wrist_1_link" link2="gripper_finger_middle_link_proximal_actuating_bar" />
     <disable_collisions link1="arm_wrist_1_link" link2="gripper_finger_middle_link_proximal_actuating_hinge" />
     <disable_collisions link1="arm_wrist_1_link" link2="gripper_palm" />
+    <disable_collisions link1="arm_wrist_1_link" link2="wrist_camera_mount_link" />
     <disable_collisions link1="arm_wrist_1_link" link2="wrist_camera_link" />
     <disable_collisions link1="arm_wrist_1_link" link2="wrist_camera_depth_frame" />
     <disable_collisions link1="arm_wrist_1_link" link2="wrist_camera_depth_optical_frame" />
@@ -375,6 +422,7 @@
     <disable_collisions link1="arm_wrist_2_link" link2="gripper_finger_middle_link_proximal_actuating_bar" />
     <disable_collisions link1="arm_wrist_2_link" link2="gripper_finger_middle_link_proximal_actuating_hinge" />
     <disable_collisions link1="arm_wrist_2_link" link2="gripper_palm" />
+    <disable_collisions link1="arm_wrist_2_link" link2="wrist_camera_mount_link" />
     <disable_collisions link1="arm_wrist_2_link" link2="wrist_camera_link" />
     <disable_collisions link1="arm_wrist_2_link" link2="wrist_camera_depth_frame" />
     <disable_collisions link1="arm_wrist_2_link" link2="wrist_camera_depth_optical_frame" />
@@ -422,6 +470,7 @@
     <disable_collisions link1="arm_wrist_3_link" link2="gripper_finger_middle_link_proximal_actuating_bar" />
     <disable_collisions link1="arm_wrist_3_link" link2="gripper_finger_middle_link_proximal_actuating_hinge" />
     <disable_collisions link1="arm_wrist_3_link" link2="gripper_palm" />
+    <disable_collisions link1="arm_wrist_3_link" link2="wrist_camera_mount_link" />
     <disable_collisions link1="arm_wrist_3_link" link2="wrist_camera_link" />
     <disable_collisions link1="arm_wrist_3_link" link2="wrist_camera_depth_frame" />
     <disable_collisions link1="arm_wrist_3_link" link2="wrist_camera_depth_optical_frame" />
@@ -469,6 +518,7 @@
     <disable_collisions link1="arm_ee_link" link2="gripper_finger_middle_link_proximal_actuating_bar" />
     <disable_collisions link1="arm_ee_link" link2="gripper_finger_middle_link_proximal_actuating_hinge" />
     <disable_collisions link1="arm_ee_link" link2="gripper_palm" />
+    <disable_collisions link1="arm_ee_link" link2="wrist_camera_mount_link" />
     <disable_collisions link1="arm_ee_link" link2="wrist_camera_link" />
     <disable_collisions link1="arm_ee_link" link2="wrist_camera_depth_frame" />
     <disable_collisions link1="arm_ee_link" link2="wrist_camera_depth_optical_frame" />
@@ -516,6 +566,7 @@
     <disable_collisions link1="arm_tool0" link2="gripper_finger_middle_link_proximal_actuating_bar" />
     <disable_collisions link1="arm_tool0" link2="gripper_finger_middle_link_proximal_actuating_hinge" />
     <disable_collisions link1="arm_tool0" link2="gripper_palm" />
+    <disable_collisions link1="arm_tool0" link2="wrist_camera_mount_link" />
     <disable_collisions link1="arm_tool0" link2="wrist_camera_link" />
     <disable_collisions link1="arm_tool0" link2="wrist_camera_depth_frame" />
     <disable_collisions link1="arm_tool0" link2="wrist_camera_depth_optical_frame" />
@@ -524,8 +575,9 @@
     <disable_collisions link1="arm_tool0" link2="wrist_camera_rgb_frame" />
     <disable_collisions link1="arm_tool0" link2="wrist_camera_rgb_optical_frame" />
 
+
     <!--5. gripper and camera to gripper and camera-->
-<disable_collisions link1="gripper_finger_1_link_0" link2="gripper_finger_1_link_1" />
+        <disable_collisions link1="gripper_finger_1_link_0" link2="gripper_finger_1_link_1" />
     <disable_collisions link1="gripper_finger_1_link_0" link2="gripper_finger_1_link_2" />
     <disable_collisions link1="gripper_finger_1_link_0" link2="gripper_finger_1_link_3" />
     <disable_collisions link1="gripper_finger_1_link_0" link2="gripper_finger_1_link_median_actuating_hinge" />
@@ -564,6 +616,7 @@
     <disable_collisions link1="gripper_finger_1_link_0" link2="gripper_finger_middle_link_proximal_actuating_bar" />
     <disable_collisions link1="gripper_finger_1_link_0" link2="gripper_finger_middle_link_proximal_actuating_hinge" />
     <disable_collisions link1="gripper_finger_1_link_0" link2="gripper_palm" />
+    <disable_collisions link1="gripper_finger_1_link_0" link2="wrist_camera_mount_link" />
     <disable_collisions link1="gripper_finger_1_link_0" link2="wrist_camera_link" />
     <disable_collisions link1="gripper_finger_1_link_0" link2="wrist_camera_depth_frame" />
     <disable_collisions link1="gripper_finger_1_link_0" link2="wrist_camera_depth_optical_frame" />
@@ -609,6 +662,7 @@
     <disable_collisions link1="gripper_finger_1_link_1" link2="gripper_finger_middle_link_proximal_actuating_bar" />
     <disable_collisions link1="gripper_finger_1_link_1" link2="gripper_finger_middle_link_proximal_actuating_hinge" />
     <disable_collisions link1="gripper_finger_1_link_1" link2="gripper_palm" />
+    <disable_collisions link1="gripper_finger_1_link_1" link2="wrist_camera_mount_link" />
     <disable_collisions link1="gripper_finger_1_link_1" link2="wrist_camera_link" />
     <disable_collisions link1="gripper_finger_1_link_1" link2="wrist_camera_depth_frame" />
     <disable_collisions link1="gripper_finger_1_link_1" link2="wrist_camera_depth_optical_frame" />
@@ -653,6 +707,7 @@
     <disable_collisions link1="gripper_finger_1_link_2" link2="gripper_finger_middle_link_proximal_actuating_bar" />
     <disable_collisions link1="gripper_finger_1_link_2" link2="gripper_finger_middle_link_proximal_actuating_hinge" />
     <disable_collisions link1="gripper_finger_1_link_2" link2="gripper_palm" />
+    <disable_collisions link1="gripper_finger_1_link_2" link2="wrist_camera_mount_link" />
     <disable_collisions link1="gripper_finger_1_link_2" link2="wrist_camera_link" />
     <disable_collisions link1="gripper_finger_1_link_2" link2="wrist_camera_depth_frame" />
     <disable_collisions link1="gripper_finger_1_link_2" link2="wrist_camera_depth_optical_frame" />
@@ -696,6 +751,7 @@
     <disable_collisions link1="gripper_finger_1_link_3" link2="gripper_finger_middle_link_proximal_actuating_bar" />
     <disable_collisions link1="gripper_finger_1_link_3" link2="gripper_finger_middle_link_proximal_actuating_hinge" />
     <disable_collisions link1="gripper_finger_1_link_3" link2="gripper_palm" />
+    <disable_collisions link1="gripper_finger_1_link_3" link2="wrist_camera_mount_link" />
     <disable_collisions link1="gripper_finger_1_link_3" link2="wrist_camera_link" />
     <disable_collisions link1="gripper_finger_1_link_3" link2="wrist_camera_depth_frame" />
     <disable_collisions link1="gripper_finger_1_link_3" link2="wrist_camera_depth_optical_frame" />
@@ -738,6 +794,7 @@
     <disable_collisions link1="gripper_finger_1_link_median_actuating_hinge" link2="gripper_finger_middle_link_proximal_actuating_bar" />
     <disable_collisions link1="gripper_finger_1_link_median_actuating_hinge" link2="gripper_finger_middle_link_proximal_actuating_hinge" />
     <disable_collisions link1="gripper_finger_1_link_median_actuating_hinge" link2="gripper_palm" />
+    <disable_collisions link1="gripper_finger_1_link_median_actuating_hinge" link2="wrist_camera_mount_link" />
     <disable_collisions link1="gripper_finger_1_link_median_actuating_hinge" link2="wrist_camera_link" />
     <disable_collisions link1="gripper_finger_1_link_median_actuating_hinge" link2="wrist_camera_depth_frame" />
     <disable_collisions link1="gripper_finger_1_link_median_actuating_hinge" link2="wrist_camera_depth_optical_frame" />
@@ -779,6 +836,7 @@
     <disable_collisions link1="gripper_finger_1_link_median_bar" link2="gripper_finger_middle_link_proximal_actuating_bar" />
     <disable_collisions link1="gripper_finger_1_link_median_bar" link2="gripper_finger_middle_link_proximal_actuating_hinge" />
     <disable_collisions link1="gripper_finger_1_link_median_bar" link2="gripper_palm" />
+    <disable_collisions link1="gripper_finger_1_link_median_bar" link2="wrist_camera_mount_link" />
     <disable_collisions link1="gripper_finger_1_link_median_bar" link2="wrist_camera_link" />
     <disable_collisions link1="gripper_finger_1_link_median_bar" link2="wrist_camera_depth_frame" />
     <disable_collisions link1="gripper_finger_1_link_median_bar" link2="wrist_camera_depth_optical_frame" />
@@ -819,6 +877,7 @@
     <disable_collisions link1="gripper_finger_1_link_median_bar_underactuated" link2="gripper_finger_middle_link_proximal_actuating_bar" />
     <disable_collisions link1="gripper_finger_1_link_median_bar_underactuated" link2="gripper_finger_middle_link_proximal_actuating_hinge" />
     <disable_collisions link1="gripper_finger_1_link_median_bar_underactuated" link2="gripper_palm" />
+    <disable_collisions link1="gripper_finger_1_link_median_bar_underactuated" link2="wrist_camera_mount_link" />
     <disable_collisions link1="gripper_finger_1_link_median_bar_underactuated" link2="wrist_camera_link" />
     <disable_collisions link1="gripper_finger_1_link_median_bar_underactuated" link2="wrist_camera_depth_frame" />
     <disable_collisions link1="gripper_finger_1_link_median_bar_underactuated" link2="wrist_camera_depth_optical_frame" />
@@ -858,6 +917,7 @@
     <disable_collisions link1="gripper_finger_1_link_paradistal_hinge" link2="gripper_finger_middle_link_proximal_actuating_bar" />
     <disable_collisions link1="gripper_finger_1_link_paradistal_hinge" link2="gripper_finger_middle_link_proximal_actuating_hinge" />
     <disable_collisions link1="gripper_finger_1_link_paradistal_hinge" link2="gripper_palm" />
+    <disable_collisions link1="gripper_finger_1_link_paradistal_hinge" link2="wrist_camera_mount_link" />
     <disable_collisions link1="gripper_finger_1_link_paradistal_hinge" link2="wrist_camera_link" />
     <disable_collisions link1="gripper_finger_1_link_paradistal_hinge" link2="wrist_camera_depth_frame" />
     <disable_collisions link1="gripper_finger_1_link_paradistal_hinge" link2="wrist_camera_depth_optical_frame" />
@@ -896,6 +956,7 @@
     <disable_collisions link1="gripper_finger_1_link_paramedian_hinge" link2="gripper_finger_middle_link_proximal_actuating_bar" />
     <disable_collisions link1="gripper_finger_1_link_paramedian_hinge" link2="gripper_finger_middle_link_proximal_actuating_hinge" />
     <disable_collisions link1="gripper_finger_1_link_paramedian_hinge" link2="gripper_palm" />
+    <disable_collisions link1="gripper_finger_1_link_paramedian_hinge" link2="wrist_camera_mount_link" />
     <disable_collisions link1="gripper_finger_1_link_paramedian_hinge" link2="wrist_camera_link" />
     <disable_collisions link1="gripper_finger_1_link_paramedian_hinge" link2="wrist_camera_depth_frame" />
     <disable_collisions link1="gripper_finger_1_link_paramedian_hinge" link2="wrist_camera_depth_optical_frame" />
@@ -933,6 +994,7 @@
     <disable_collisions link1="gripper_finger_1_link_paraproximal_actuating_hinge" link2="gripper_finger_middle_link_proximal_actuating_bar" />
     <disable_collisions link1="gripper_finger_1_link_paraproximal_actuating_hinge" link2="gripper_finger_middle_link_proximal_actuating_hinge" />
     <disable_collisions link1="gripper_finger_1_link_paraproximal_actuating_hinge" link2="gripper_palm" />
+    <disable_collisions link1="gripper_finger_1_link_paraproximal_actuating_hinge" link2="wrist_camera_mount_link" />
     <disable_collisions link1="gripper_finger_1_link_paraproximal_actuating_hinge" link2="wrist_camera_link" />
     <disable_collisions link1="gripper_finger_1_link_paraproximal_actuating_hinge" link2="wrist_camera_depth_frame" />
     <disable_collisions link1="gripper_finger_1_link_paraproximal_actuating_hinge" link2="wrist_camera_depth_optical_frame" />
@@ -969,6 +1031,7 @@
     <disable_collisions link1="gripper_finger_1_link_paraproximal_bar" link2="gripper_finger_middle_link_proximal_actuating_bar" />
     <disable_collisions link1="gripper_finger_1_link_paraproximal_bar" link2="gripper_finger_middle_link_proximal_actuating_hinge" />
     <disable_collisions link1="gripper_finger_1_link_paraproximal_bar" link2="gripper_palm" />
+    <disable_collisions link1="gripper_finger_1_link_paraproximal_bar" link2="wrist_camera_mount_link" />
     <disable_collisions link1="gripper_finger_1_link_paraproximal_bar" link2="wrist_camera_link" />
     <disable_collisions link1="gripper_finger_1_link_paraproximal_bar" link2="wrist_camera_depth_frame" />
     <disable_collisions link1="gripper_finger_1_link_paraproximal_bar" link2="wrist_camera_depth_optical_frame" />
@@ -1004,6 +1067,7 @@
     <disable_collisions link1="gripper_finger_1_link_proximal_actuating_bar" link2="gripper_finger_middle_link_proximal_actuating_bar" />
     <disable_collisions link1="gripper_finger_1_link_proximal_actuating_bar" link2="gripper_finger_middle_link_proximal_actuating_hinge" />
     <disable_collisions link1="gripper_finger_1_link_proximal_actuating_bar" link2="gripper_palm" />
+    <disable_collisions link1="gripper_finger_1_link_proximal_actuating_bar" link2="wrist_camera_mount_link" />
     <disable_collisions link1="gripper_finger_1_link_proximal_actuating_bar" link2="wrist_camera_link" />
     <disable_collisions link1="gripper_finger_1_link_proximal_actuating_bar" link2="wrist_camera_depth_frame" />
     <disable_collisions link1="gripper_finger_1_link_proximal_actuating_bar" link2="wrist_camera_depth_optical_frame" />
@@ -1038,6 +1102,7 @@
     <disable_collisions link1="gripper_finger_1_link_proximal_actuating_hinge" link2="gripper_finger_middle_link_proximal_actuating_bar" />
     <disable_collisions link1="gripper_finger_1_link_proximal_actuating_hinge" link2="gripper_finger_middle_link_proximal_actuating_hinge" />
     <disable_collisions link1="gripper_finger_1_link_proximal_actuating_hinge" link2="gripper_palm" />
+    <disable_collisions link1="gripper_finger_1_link_proximal_actuating_hinge" link2="wrist_camera_mount_link" />
     <disable_collisions link1="gripper_finger_1_link_proximal_actuating_hinge" link2="wrist_camera_link" />
     <disable_collisions link1="gripper_finger_1_link_proximal_actuating_hinge" link2="wrist_camera_depth_frame" />
     <disable_collisions link1="gripper_finger_1_link_proximal_actuating_hinge" link2="wrist_camera_depth_optical_frame" />
@@ -1071,6 +1136,7 @@
     <disable_collisions link1="gripper_finger_2_link_0" link2="gripper_finger_middle_link_proximal_actuating_bar" />
     <disable_collisions link1="gripper_finger_2_link_0" link2="gripper_finger_middle_link_proximal_actuating_hinge" />
     <disable_collisions link1="gripper_finger_2_link_0" link2="gripper_palm" />
+    <disable_collisions link1="gripper_finger_2_link_0" link2="wrist_camera_mount_link" />
     <disable_collisions link1="gripper_finger_2_link_0" link2="wrist_camera_link" />
     <disable_collisions link1="gripper_finger_2_link_0" link2="wrist_camera_depth_frame" />
     <disable_collisions link1="gripper_finger_2_link_0" link2="wrist_camera_depth_optical_frame" />
@@ -1103,6 +1169,7 @@
     <disable_collisions link1="gripper_finger_2_link_1" link2="gripper_finger_middle_link_proximal_actuating_bar" />
     <disable_collisions link1="gripper_finger_2_link_1" link2="gripper_finger_middle_link_proximal_actuating_hinge" />
     <disable_collisions link1="gripper_finger_2_link_1" link2="gripper_palm" />
+    <disable_collisions link1="gripper_finger_2_link_1" link2="wrist_camera_mount_link" />
     <disable_collisions link1="gripper_finger_2_link_1" link2="wrist_camera_link" />
     <disable_collisions link1="gripper_finger_2_link_1" link2="wrist_camera_depth_frame" />
     <disable_collisions link1="gripper_finger_2_link_1" link2="wrist_camera_depth_optical_frame" />
@@ -1134,6 +1201,7 @@
     <disable_collisions link1="gripper_finger_2_link_2" link2="gripper_finger_middle_link_proximal_actuating_bar" />
     <disable_collisions link1="gripper_finger_2_link_2" link2="gripper_finger_middle_link_proximal_actuating_hinge" />
     <disable_collisions link1="gripper_finger_2_link_2" link2="gripper_palm" />
+    <disable_collisions link1="gripper_finger_2_link_2" link2="wrist_camera_mount_link" />
     <disable_collisions link1="gripper_finger_2_link_2" link2="wrist_camera_link" />
     <disable_collisions link1="gripper_finger_2_link_2" link2="wrist_camera_depth_frame" />
     <disable_collisions link1="gripper_finger_2_link_2" link2="wrist_camera_depth_optical_frame" />
@@ -1164,6 +1232,7 @@
     <disable_collisions link1="gripper_finger_2_link_3" link2="gripper_finger_middle_link_proximal_actuating_bar" />
     <disable_collisions link1="gripper_finger_2_link_3" link2="gripper_finger_middle_link_proximal_actuating_hinge" />
     <disable_collisions link1="gripper_finger_2_link_3" link2="gripper_palm" />
+    <disable_collisions link1="gripper_finger_2_link_3" link2="wrist_camera_mount_link" />
     <disable_collisions link1="gripper_finger_2_link_3" link2="wrist_camera_link" />
     <disable_collisions link1="gripper_finger_2_link_3" link2="wrist_camera_depth_frame" />
     <disable_collisions link1="gripper_finger_2_link_3" link2="wrist_camera_depth_optical_frame" />
@@ -1193,6 +1262,7 @@
     <disable_collisions link1="gripper_finger_2_link_median_actuating_hinge" link2="gripper_finger_middle_link_proximal_actuating_bar" />
     <disable_collisions link1="gripper_finger_2_link_median_actuating_hinge" link2="gripper_finger_middle_link_proximal_actuating_hinge" />
     <disable_collisions link1="gripper_finger_2_link_median_actuating_hinge" link2="gripper_palm" />
+    <disable_collisions link1="gripper_finger_2_link_median_actuating_hinge" link2="wrist_camera_mount_link" />
     <disable_collisions link1="gripper_finger_2_link_median_actuating_hinge" link2="wrist_camera_link" />
     <disable_collisions link1="gripper_finger_2_link_median_actuating_hinge" link2="wrist_camera_depth_frame" />
     <disable_collisions link1="gripper_finger_2_link_median_actuating_hinge" link2="wrist_camera_depth_optical_frame" />
@@ -1221,6 +1291,7 @@
     <disable_collisions link1="gripper_finger_2_link_median_bar" link2="gripper_finger_middle_link_proximal_actuating_bar" />
     <disable_collisions link1="gripper_finger_2_link_median_bar" link2="gripper_finger_middle_link_proximal_actuating_hinge" />
     <disable_collisions link1="gripper_finger_2_link_median_bar" link2="gripper_palm" />
+    <disable_collisions link1="gripper_finger_2_link_median_bar" link2="wrist_camera_mount_link" />
     <disable_collisions link1="gripper_finger_2_link_median_bar" link2="wrist_camera_link" />
     <disable_collisions link1="gripper_finger_2_link_median_bar" link2="wrist_camera_depth_frame" />
     <disable_collisions link1="gripper_finger_2_link_median_bar" link2="wrist_camera_depth_optical_frame" />
@@ -1248,6 +1319,7 @@
     <disable_collisions link1="gripper_finger_2_link_median_bar_underactuated" link2="gripper_finger_middle_link_proximal_actuating_bar" />
     <disable_collisions link1="gripper_finger_2_link_median_bar_underactuated" link2="gripper_finger_middle_link_proximal_actuating_hinge" />
     <disable_collisions link1="gripper_finger_2_link_median_bar_underactuated" link2="gripper_palm" />
+    <disable_collisions link1="gripper_finger_2_link_median_bar_underactuated" link2="wrist_camera_mount_link" />
     <disable_collisions link1="gripper_finger_2_link_median_bar_underactuated" link2="wrist_camera_link" />
     <disable_collisions link1="gripper_finger_2_link_median_bar_underactuated" link2="wrist_camera_depth_frame" />
     <disable_collisions link1="gripper_finger_2_link_median_bar_underactuated" link2="wrist_camera_depth_optical_frame" />
@@ -1274,6 +1346,7 @@
     <disable_collisions link1="gripper_finger_2_link_paradistal_hinge" link2="gripper_finger_middle_link_proximal_actuating_bar" />
     <disable_collisions link1="gripper_finger_2_link_paradistal_hinge" link2="gripper_finger_middle_link_proximal_actuating_hinge" />
     <disable_collisions link1="gripper_finger_2_link_paradistal_hinge" link2="gripper_palm" />
+    <disable_collisions link1="gripper_finger_2_link_paradistal_hinge" link2="wrist_camera_mount_link" />
     <disable_collisions link1="gripper_finger_2_link_paradistal_hinge" link2="wrist_camera_link" />
     <disable_collisions link1="gripper_finger_2_link_paradistal_hinge" link2="wrist_camera_depth_frame" />
     <disable_collisions link1="gripper_finger_2_link_paradistal_hinge" link2="wrist_camera_depth_optical_frame" />
@@ -1299,6 +1372,7 @@
     <disable_collisions link1="gripper_finger_2_link_paramedian_hinge" link2="gripper_finger_middle_link_proximal_actuating_bar" />
     <disable_collisions link1="gripper_finger_2_link_paramedian_hinge" link2="gripper_finger_middle_link_proximal_actuating_hinge" />
     <disable_collisions link1="gripper_finger_2_link_paramedian_hinge" link2="gripper_palm" />
+    <disable_collisions link1="gripper_finger_2_link_paramedian_hinge" link2="wrist_camera_mount_link" />
     <disable_collisions link1="gripper_finger_2_link_paramedian_hinge" link2="wrist_camera_link" />
     <disable_collisions link1="gripper_finger_2_link_paramedian_hinge" link2="wrist_camera_depth_frame" />
     <disable_collisions link1="gripper_finger_2_link_paramedian_hinge" link2="wrist_camera_depth_optical_frame" />
@@ -1323,6 +1397,7 @@
     <disable_collisions link1="gripper_finger_2_link_paraproximal_actuating_hinge" link2="gripper_finger_middle_link_proximal_actuating_bar" />
     <disable_collisions link1="gripper_finger_2_link_paraproximal_actuating_hinge" link2="gripper_finger_middle_link_proximal_actuating_hinge" />
     <disable_collisions link1="gripper_finger_2_link_paraproximal_actuating_hinge" link2="gripper_palm" />
+    <disable_collisions link1="gripper_finger_2_link_paraproximal_actuating_hinge" link2="wrist_camera_mount_link" />
     <disable_collisions link1="gripper_finger_2_link_paraproximal_actuating_hinge" link2="wrist_camera_link" />
     <disable_collisions link1="gripper_finger_2_link_paraproximal_actuating_hinge" link2="wrist_camera_depth_frame" />
     <disable_collisions link1="gripper_finger_2_link_paraproximal_actuating_hinge" link2="wrist_camera_depth_optical_frame" />
@@ -1346,6 +1421,7 @@
     <disable_collisions link1="gripper_finger_2_link_paraproximal_bar" link2="gripper_finger_middle_link_proximal_actuating_bar" />
     <disable_collisions link1="gripper_finger_2_link_paraproximal_bar" link2="gripper_finger_middle_link_proximal_actuating_hinge" />
     <disable_collisions link1="gripper_finger_2_link_paraproximal_bar" link2="gripper_palm" />
+    <disable_collisions link1="gripper_finger_2_link_paraproximal_bar" link2="wrist_camera_mount_link" />
     <disable_collisions link1="gripper_finger_2_link_paraproximal_bar" link2="wrist_camera_link" />
     <disable_collisions link1="gripper_finger_2_link_paraproximal_bar" link2="wrist_camera_depth_frame" />
     <disable_collisions link1="gripper_finger_2_link_paraproximal_bar" link2="wrist_camera_depth_optical_frame" />
@@ -1368,6 +1444,7 @@
     <disable_collisions link1="gripper_finger_2_link_proximal_actuating_bar" link2="gripper_finger_middle_link_proximal_actuating_bar" />
     <disable_collisions link1="gripper_finger_2_link_proximal_actuating_bar" link2="gripper_finger_middle_link_proximal_actuating_hinge" />
     <disable_collisions link1="gripper_finger_2_link_proximal_actuating_bar" link2="gripper_palm" />
+    <disable_collisions link1="gripper_finger_2_link_proximal_actuating_bar" link2="wrist_camera_mount_link" />
     <disable_collisions link1="gripper_finger_2_link_proximal_actuating_bar" link2="wrist_camera_link" />
     <disable_collisions link1="gripper_finger_2_link_proximal_actuating_bar" link2="wrist_camera_depth_frame" />
     <disable_collisions link1="gripper_finger_2_link_proximal_actuating_bar" link2="wrist_camera_depth_optical_frame" />
@@ -1389,6 +1466,7 @@
     <disable_collisions link1="gripper_finger_2_link_proximal_actuating_hinge" link2="gripper_finger_middle_link_proximal_actuating_bar" />
     <disable_collisions link1="gripper_finger_2_link_proximal_actuating_hinge" link2="gripper_finger_middle_link_proximal_actuating_hinge" />
     <disable_collisions link1="gripper_finger_2_link_proximal_actuating_hinge" link2="gripper_palm" />
+    <disable_collisions link1="gripper_finger_2_link_proximal_actuating_hinge" link2="wrist_camera_mount_link" />
     <disable_collisions link1="gripper_finger_2_link_proximal_actuating_hinge" link2="wrist_camera_link" />
     <disable_collisions link1="gripper_finger_2_link_proximal_actuating_hinge" link2="wrist_camera_depth_frame" />
     <disable_collisions link1="gripper_finger_2_link_proximal_actuating_hinge" link2="wrist_camera_depth_optical_frame" />
@@ -1409,6 +1487,7 @@
     <disable_collisions link1="gripper_finger_middle_link_0" link2="gripper_finger_middle_link_proximal_actuating_bar" />
     <disable_collisions link1="gripper_finger_middle_link_0" link2="gripper_finger_middle_link_proximal_actuating_hinge" />
     <disable_collisions link1="gripper_finger_middle_link_0" link2="gripper_palm" />
+    <disable_collisions link1="gripper_finger_middle_link_0" link2="wrist_camera_mount_link" />
     <disable_collisions link1="gripper_finger_middle_link_0" link2="wrist_camera_link" />
     <disable_collisions link1="gripper_finger_middle_link_0" link2="wrist_camera_depth_frame" />
     <disable_collisions link1="gripper_finger_middle_link_0" link2="wrist_camera_depth_optical_frame" />
@@ -1428,6 +1507,7 @@
     <disable_collisions link1="gripper_finger_middle_link_1" link2="gripper_finger_middle_link_proximal_actuating_bar" />
     <disable_collisions link1="gripper_finger_middle_link_1" link2="gripper_finger_middle_link_proximal_actuating_hinge" />
     <disable_collisions link1="gripper_finger_middle_link_1" link2="gripper_palm" />
+    <disable_collisions link1="gripper_finger_middle_link_1" link2="wrist_camera_mount_link" />
     <disable_collisions link1="gripper_finger_middle_link_1" link2="wrist_camera_link" />
     <disable_collisions link1="gripper_finger_middle_link_1" link2="wrist_camera_depth_frame" />
     <disable_collisions link1="gripper_finger_middle_link_1" link2="wrist_camera_depth_optical_frame" />
@@ -1446,6 +1526,7 @@
     <disable_collisions link1="gripper_finger_middle_link_2" link2="gripper_finger_middle_link_proximal_actuating_bar" />
     <disable_collisions link1="gripper_finger_middle_link_2" link2="gripper_finger_middle_link_proximal_actuating_hinge" />
     <disable_collisions link1="gripper_finger_middle_link_2" link2="gripper_palm" />
+    <disable_collisions link1="gripper_finger_middle_link_2" link2="wrist_camera_mount_link" />
     <disable_collisions link1="gripper_finger_middle_link_2" link2="wrist_camera_link" />
     <disable_collisions link1="gripper_finger_middle_link_2" link2="wrist_camera_depth_frame" />
     <disable_collisions link1="gripper_finger_middle_link_2" link2="wrist_camera_depth_optical_frame" />
@@ -1463,6 +1544,7 @@
     <disable_collisions link1="gripper_finger_middle_link_3" link2="gripper_finger_middle_link_proximal_actuating_bar" />
     <disable_collisions link1="gripper_finger_middle_link_3" link2="gripper_finger_middle_link_proximal_actuating_hinge" />
     <disable_collisions link1="gripper_finger_middle_link_3" link2="gripper_palm" />
+    <disable_collisions link1="gripper_finger_middle_link_3" link2="wrist_camera_mount_link" />
     <disable_collisions link1="gripper_finger_middle_link_3" link2="wrist_camera_link" />
     <disable_collisions link1="gripper_finger_middle_link_3" link2="wrist_camera_depth_frame" />
     <disable_collisions link1="gripper_finger_middle_link_3" link2="wrist_camera_depth_optical_frame" />
@@ -1479,6 +1561,7 @@
     <disable_collisions link1="gripper_finger_middle_link_median_actuating_hinge" link2="gripper_finger_middle_link_proximal_actuating_bar" />
     <disable_collisions link1="gripper_finger_middle_link_median_actuating_hinge" link2="gripper_finger_middle_link_proximal_actuating_hinge" />
     <disable_collisions link1="gripper_finger_middle_link_median_actuating_hinge" link2="gripper_palm" />
+    <disable_collisions link1="gripper_finger_middle_link_median_actuating_hinge" link2="wrist_camera_mount_link" />
     <disable_collisions link1="gripper_finger_middle_link_median_actuating_hinge" link2="wrist_camera_link" />
     <disable_collisions link1="gripper_finger_middle_link_median_actuating_hinge" link2="wrist_camera_depth_frame" />
     <disable_collisions link1="gripper_finger_middle_link_median_actuating_hinge" link2="wrist_camera_depth_optical_frame" />
@@ -1494,6 +1577,7 @@
     <disable_collisions link1="gripper_finger_middle_link_median_bar" link2="gripper_finger_middle_link_proximal_actuating_bar" />
     <disable_collisions link1="gripper_finger_middle_link_median_bar" link2="gripper_finger_middle_link_proximal_actuating_hinge" />
     <disable_collisions link1="gripper_finger_middle_link_median_bar" link2="gripper_palm" />
+    <disable_collisions link1="gripper_finger_middle_link_median_bar" link2="wrist_camera_mount_link" />
     <disable_collisions link1="gripper_finger_middle_link_median_bar" link2="wrist_camera_link" />
     <disable_collisions link1="gripper_finger_middle_link_median_bar" link2="wrist_camera_depth_frame" />
     <disable_collisions link1="gripper_finger_middle_link_median_bar" link2="wrist_camera_depth_optical_frame" />
@@ -1508,6 +1592,7 @@
     <disable_collisions link1="gripper_finger_middle_link_median_bar_underactuated" link2="gripper_finger_middle_link_proximal_actuating_bar" />
     <disable_collisions link1="gripper_finger_middle_link_median_bar_underactuated" link2="gripper_finger_middle_link_proximal_actuating_hinge" />
     <disable_collisions link1="gripper_finger_middle_link_median_bar_underactuated" link2="gripper_palm" />
+    <disable_collisions link1="gripper_finger_middle_link_median_bar_underactuated" link2="wrist_camera_mount_link" />
     <disable_collisions link1="gripper_finger_middle_link_median_bar_underactuated" link2="wrist_camera_link" />
     <disable_collisions link1="gripper_finger_middle_link_median_bar_underactuated" link2="wrist_camera_depth_frame" />
     <disable_collisions link1="gripper_finger_middle_link_median_bar_underactuated" link2="wrist_camera_depth_optical_frame" />
@@ -1521,6 +1606,7 @@
     <disable_collisions link1="gripper_finger_middle_link_paradistal_hinge" link2="gripper_finger_middle_link_proximal_actuating_bar" />
     <disable_collisions link1="gripper_finger_middle_link_paradistal_hinge" link2="gripper_finger_middle_link_proximal_actuating_hinge" />
     <disable_collisions link1="gripper_finger_middle_link_paradistal_hinge" link2="gripper_palm" />
+    <disable_collisions link1="gripper_finger_middle_link_paradistal_hinge" link2="wrist_camera_mount_link" />
     <disable_collisions link1="gripper_finger_middle_link_paradistal_hinge" link2="wrist_camera_link" />
     <disable_collisions link1="gripper_finger_middle_link_paradistal_hinge" link2="wrist_camera_depth_frame" />
     <disable_collisions link1="gripper_finger_middle_link_paradistal_hinge" link2="wrist_camera_depth_optical_frame" />
@@ -1533,6 +1619,7 @@
     <disable_collisions link1="gripper_finger_middle_link_paramedian_hinge" link2="gripper_finger_middle_link_proximal_actuating_bar" />
     <disable_collisions link1="gripper_finger_middle_link_paramedian_hinge" link2="gripper_finger_middle_link_proximal_actuating_hinge" />
     <disable_collisions link1="gripper_finger_middle_link_paramedian_hinge" link2="gripper_palm" />
+    <disable_collisions link1="gripper_finger_middle_link_paramedian_hinge" link2="wrist_camera_mount_link" />
     <disable_collisions link1="gripper_finger_middle_link_paramedian_hinge" link2="wrist_camera_link" />
     <disable_collisions link1="gripper_finger_middle_link_paramedian_hinge" link2="wrist_camera_depth_frame" />
     <disable_collisions link1="gripper_finger_middle_link_paramedian_hinge" link2="wrist_camera_depth_optical_frame" />
@@ -1544,6 +1631,7 @@
     <disable_collisions link1="gripper_finger_middle_link_paraproximal_actuating_hinge" link2="gripper_finger_middle_link_proximal_actuating_bar" />
     <disable_collisions link1="gripper_finger_middle_link_paraproximal_actuating_hinge" link2="gripper_finger_middle_link_proximal_actuating_hinge" />
     <disable_collisions link1="gripper_finger_middle_link_paraproximal_actuating_hinge" link2="gripper_palm" />
+    <disable_collisions link1="gripper_finger_middle_link_paraproximal_actuating_hinge" link2="wrist_camera_mount_link" />
     <disable_collisions link1="gripper_finger_middle_link_paraproximal_actuating_hinge" link2="wrist_camera_link" />
     <disable_collisions link1="gripper_finger_middle_link_paraproximal_actuating_hinge" link2="wrist_camera_depth_frame" />
     <disable_collisions link1="gripper_finger_middle_link_paraproximal_actuating_hinge" link2="wrist_camera_depth_optical_frame" />
@@ -1554,6 +1642,7 @@
     <disable_collisions link1="gripper_finger_middle_link_paraproximal_bar" link2="gripper_finger_middle_link_proximal_actuating_bar" />
     <disable_collisions link1="gripper_finger_middle_link_paraproximal_bar" link2="gripper_finger_middle_link_proximal_actuating_hinge" />
     <disable_collisions link1="gripper_finger_middle_link_paraproximal_bar" link2="gripper_palm" />
+    <disable_collisions link1="gripper_finger_middle_link_paraproximal_bar" link2="wrist_camera_mount_link" />
     <disable_collisions link1="gripper_finger_middle_link_paraproximal_bar" link2="wrist_camera_link" />
     <disable_collisions link1="gripper_finger_middle_link_paraproximal_bar" link2="wrist_camera_depth_frame" />
     <disable_collisions link1="gripper_finger_middle_link_paraproximal_bar" link2="wrist_camera_depth_optical_frame" />
@@ -1563,6 +1652,7 @@
     <disable_collisions link1="gripper_finger_middle_link_paraproximal_bar" link2="wrist_camera_rgb_optical_frame" />
     <disable_collisions link1="gripper_finger_middle_link_proximal_actuating_bar" link2="gripper_finger_middle_link_proximal_actuating_hinge" />
     <disable_collisions link1="gripper_finger_middle_link_proximal_actuating_bar" link2="gripper_palm" />
+    <disable_collisions link1="gripper_finger_middle_link_proximal_actuating_bar" link2="wrist_camera_mount_link" />
     <disable_collisions link1="gripper_finger_middle_link_proximal_actuating_bar" link2="wrist_camera_link" />
     <disable_collisions link1="gripper_finger_middle_link_proximal_actuating_bar" link2="wrist_camera_depth_frame" />
     <disable_collisions link1="gripper_finger_middle_link_proximal_actuating_bar" link2="wrist_camera_depth_optical_frame" />
@@ -1571,6 +1661,7 @@
     <disable_collisions link1="gripper_finger_middle_link_proximal_actuating_bar" link2="wrist_camera_rgb_frame" />
     <disable_collisions link1="gripper_finger_middle_link_proximal_actuating_bar" link2="wrist_camera_rgb_optical_frame" />
     <disable_collisions link1="gripper_finger_middle_link_proximal_actuating_hinge" link2="gripper_palm" />
+    <disable_collisions link1="gripper_finger_middle_link_proximal_actuating_hinge" link2="wrist_camera_mount_link" />
     <disable_collisions link1="gripper_finger_middle_link_proximal_actuating_hinge" link2="wrist_camera_link" />
     <disable_collisions link1="gripper_finger_middle_link_proximal_actuating_hinge" link2="wrist_camera_depth_frame" />
     <disable_collisions link1="gripper_finger_middle_link_proximal_actuating_hinge" link2="wrist_camera_depth_optical_frame" />
@@ -1578,6 +1669,7 @@
     <disable_collisions link1="gripper_finger_middle_link_proximal_actuating_hinge" link2="wrist_camera_ir_optical_frame" />
     <disable_collisions link1="gripper_finger_middle_link_proximal_actuating_hinge" link2="wrist_camera_rgb_frame" />
     <disable_collisions link1="gripper_finger_middle_link_proximal_actuating_hinge" link2="wrist_camera_rgb_optical_frame" />
+    <disable_collisions link1="gripper_palm" link2="wrist_camera_mount_link" />
     <disable_collisions link1="gripper_palm" link2="wrist_camera_link" />
     <disable_collisions link1="gripper_palm" link2="wrist_camera_depth_frame" />
     <disable_collisions link1="gripper_palm" link2="wrist_camera_depth_optical_frame" />
@@ -1585,6 +1677,13 @@
     <disable_collisions link1="gripper_palm" link2="wrist_camera_ir_optical_frame" />
     <disable_collisions link1="gripper_palm" link2="wrist_camera_rgb_frame" />
     <disable_collisions link1="gripper_palm" link2="wrist_camera_rgb_optical_frame" />
+    <disable_collisions link1="wrist_camera_mount_link" link2="wrist_camera_link" />
+    <disable_collisions link1="wrist_camera_mount_link" link2="wrist_camera_depth_frame" />
+    <disable_collisions link1="wrist_camera_mount_link" link2="wrist_camera_depth_optical_frame" />
+    <disable_collisions link1="wrist_camera_mount_link" link2="wrist_camera_ir_frame" />
+    <disable_collisions link1="wrist_camera_mount_link" link2="wrist_camera_ir_optical_frame" />
+    <disable_collisions link1="wrist_camera_mount_link" link2="wrist_camera_rgb_frame" />
+    <disable_collisions link1="wrist_camera_mount_link" link2="wrist_camera_rgb_optical_frame" />
     <disable_collisions link1="wrist_camera_link" link2="wrist_camera_depth_frame" />
     <disable_collisions link1="wrist_camera_link" link2="wrist_camera_depth_optical_frame" />
     <disable_collisions link1="wrist_camera_link" link2="wrist_camera_ir_frame" />
@@ -1607,1110 +1706,4 @@
     <disable_collisions link1="wrist_camera_ir_optical_frame" link2="wrist_camera_rgb_optical_frame" />
     <disable_collisions link1="wrist_camera_rgb_frame" link2="wrist_camera_rgb_optical_frame" />
 
-
-    <!-- ****************************************************************** -->
-    <!-- These are generated from "rosrun moveit_setup_assistant moveit_setup_assistant"  -->
-    
-    <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
-    <disable_collisions link1="arm_base_link" link2="arm_shoulder_link" reason="Adjacent" />
-    <disable_collisions link1="arm_base_link" link2="arm_upper_arm_link" reason="Never" />
-    <disable_collisions link1="arm_base_link" link2="arm_wrist_1_link" reason="Never" />
-    <disable_collisions link1="arm_base_link" link2="base_battery_front_battery" reason="Never" />
-    <disable_collisions link1="arm_base_link" link2="base_battery_rear_battery" reason="Never" />
-    <disable_collisions link1="arm_base_link" link2="base_laser_front_link" reason="Never" />
-    <disable_collisions link1="arm_base_link" link2="base_laser_rear_link" reason="Never" />
-    <disable_collisions link1="arm_base_link" link2="base_link" reason="Adjacent" />
-    <disable_collisions link1="arm_base_link" link2="bl_caster_r_wheel_link" reason="Never" />
-    <disable_collisions link1="arm_base_link" link2="bl_caster_rotation_link" reason="Never" />
-    <disable_collisions link1="arm_base_link" link2="br_caster_r_wheel_link" reason="Never" />
-    <disable_collisions link1="arm_base_link" link2="br_caster_rotation_link" reason="Never" />
-    <disable_collisions link1="arm_base_link" link2="fl_caster_r_wheel_link" reason="Never" />
-    <disable_collisions link1="arm_base_link" link2="fl_caster_rotation_link" reason="Never" />
-    <disable_collisions link1="arm_base_link" link2="fr_caster_r_wheel_link" reason="Never" />
-    <disable_collisions link1="arm_base_link" link2="fr_caster_rotation_link" reason="Never" />
-    <disable_collisions link1="arm_base_link" link2="tower_base_link" reason="Never" />
-    <disable_collisions link1="arm_ee_link" link2="arm_wrist_1_link" reason="Never" />
-    <disable_collisions link1="arm_ee_link" link2="arm_wrist_2_link" reason="Never" />
-    <disable_collisions link1="arm_ee_link" link2="arm_wrist_3_link" reason="Adjacent" />
-    <disable_collisions link1="arm_ee_link" link2="bl_caster_rotation_link" reason="Never" />
-    <disable_collisions link1="arm_ee_link" link2="br_caster_rotation_link" reason="Never" />
-    <disable_collisions link1="arm_ee_link" link2="fl_caster_rotation_link" reason="Never" />
-    <disable_collisions link1="arm_ee_link" link2="fr_caster_rotation_link" reason="Never" />
-    <disable_collisions link1="arm_ee_link" link2="gripper_finger_1_link_0" reason="Never" />
-    <disable_collisions link1="arm_ee_link" link2="gripper_finger_1_link_1" reason="Never" />
-    <disable_collisions link1="arm_ee_link" link2="gripper_finger_1_link_2" reason="Never" />
-    <disable_collisions link1="arm_ee_link" link2="gripper_finger_1_link_3" reason="Never" />
-    <disable_collisions link1="arm_ee_link" link2="gripper_finger_1_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="arm_ee_link" link2="gripper_finger_1_link_median_bar" reason="Never" />
-    <disable_collisions link1="arm_ee_link" link2="gripper_finger_1_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="arm_ee_link" link2="gripper_finger_1_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="arm_ee_link" link2="gripper_finger_1_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="arm_ee_link" link2="gripper_finger_1_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="arm_ee_link" link2="gripper_finger_1_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="arm_ee_link" link2="gripper_finger_1_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="arm_ee_link" link2="gripper_finger_1_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="arm_ee_link" link2="gripper_finger_2_link_0" reason="Never" />
-    <disable_collisions link1="arm_ee_link" link2="gripper_finger_2_link_1" reason="Never" />
-    <disable_collisions link1="arm_ee_link" link2="gripper_finger_2_link_2" reason="Never" />
-    <disable_collisions link1="arm_ee_link" link2="gripper_finger_2_link_3" reason="Never" />
-    <disable_collisions link1="arm_ee_link" link2="gripper_finger_2_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="arm_ee_link" link2="gripper_finger_2_link_median_bar" reason="Never" />
-    <disable_collisions link1="arm_ee_link" link2="gripper_finger_2_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="arm_ee_link" link2="gripper_finger_2_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="arm_ee_link" link2="gripper_finger_2_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="arm_ee_link" link2="gripper_finger_2_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="arm_ee_link" link2="gripper_finger_2_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="arm_ee_link" link2="gripper_finger_2_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="arm_ee_link" link2="gripper_finger_2_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="arm_ee_link" link2="gripper_finger_middle_link_0" reason="Never" />
-    <disable_collisions link1="arm_ee_link" link2="gripper_finger_middle_link_1" reason="Never" />
-    <disable_collisions link1="arm_ee_link" link2="gripper_finger_middle_link_2" reason="Never" />
-    <disable_collisions link1="arm_ee_link" link2="gripper_finger_middle_link_3" reason="Never" />
-    <disable_collisions link1="arm_ee_link" link2="gripper_finger_middle_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="arm_ee_link" link2="gripper_finger_middle_link_median_bar" reason="Never" />
-    <disable_collisions link1="arm_ee_link" link2="gripper_finger_middle_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="arm_ee_link" link2="gripper_finger_middle_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="arm_ee_link" link2="gripper_finger_middle_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="arm_ee_link" link2="gripper_finger_middle_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="arm_ee_link" link2="gripper_finger_middle_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="arm_ee_link" link2="gripper_finger_middle_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="arm_ee_link" link2="gripper_finger_middle_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="arm_ee_link" link2="gripper_palm" reason="Never" />
-    <disable_collisions link1="arm_ee_link" link2="wrist_camera_link" reason="Never" />
-    <disable_collisions link1="arm_forearm_link" link2="arm_upper_arm_link" reason="Adjacent" />
-    <disable_collisions link1="arm_forearm_link" link2="arm_wrist_1_link" reason="Adjacent" />
-    <disable_collisions link1="arm_shoulder_link" link2="arm_upper_arm_link" reason="Adjacent" />
-    <disable_collisions link1="arm_shoulder_link" link2="arm_wrist_1_link" reason="Never" />
-    <disable_collisions link1="arm_shoulder_link" link2="arm_wrist_2_link" reason="Never" />
-    <disable_collisions link1="arm_shoulder_link" link2="base_battery_front_battery" reason="Never" />
-    <disable_collisions link1="arm_shoulder_link" link2="base_battery_rear_battery" reason="Never" />
-    <disable_collisions link1="arm_shoulder_link" link2="base_laser_front_link" reason="Never" />
-    <disable_collisions link1="arm_shoulder_link" link2="base_laser_rear_link" reason="Never" />
-    <disable_collisions link1="arm_shoulder_link" link2="base_link" reason="Never" />
-    <disable_collisions link1="arm_shoulder_link" link2="bl_caster_r_wheel_link" reason="Never" />
-    <disable_collisions link1="arm_shoulder_link" link2="bl_caster_rotation_link" reason="Never" />
-    <disable_collisions link1="arm_shoulder_link" link2="br_caster_r_wheel_link" reason="Never" />
-    <disable_collisions link1="arm_shoulder_link" link2="br_caster_rotation_link" reason="Never" />
-    <disable_collisions link1="arm_shoulder_link" link2="fl_caster_r_wheel_link" reason="Never" />
-    <disable_collisions link1="arm_shoulder_link" link2="fl_caster_rotation_link" reason="Never" />
-    <disable_collisions link1="arm_shoulder_link" link2="fr_caster_r_wheel_link" reason="Never" />
-    <disable_collisions link1="arm_shoulder_link" link2="fr_caster_rotation_link" reason="Never" />
-    <disable_collisions link1="arm_shoulder_link" link2="tower_base_link" reason="Never" />
-    <disable_collisions link1="arm_upper_arm_link" link2="base_laser_rear_link" reason="Never" />
-    <disable_collisions link1="arm_upper_arm_link" link2="bl_caster_r_wheel_link" reason="Never" />
-    <disable_collisions link1="arm_upper_arm_link" link2="bl_caster_rotation_link" reason="Never" />
-    <disable_collisions link1="arm_upper_arm_link" link2="br_caster_r_wheel_link" reason="Never" />
-    <disable_collisions link1="arm_upper_arm_link" link2="br_caster_rotation_link" reason="Never" />
-    <disable_collisions link1="arm_wrist_1_link" link2="arm_wrist_2_link" reason="Adjacent" />
-    <disable_collisions link1="arm_wrist_1_link" link2="arm_wrist_3_link" reason="Never" />
-    <disable_collisions link1="arm_wrist_1_link" link2="br_caster_rotation_link" reason="Never" />
-    <disable_collisions link1="arm_wrist_1_link" link2="gripper_finger_1_link_0" reason="Never" />
-    <disable_collisions link1="arm_wrist_1_link" link2="gripper_finger_1_link_1" reason="Never" />
-    <disable_collisions link1="arm_wrist_1_link" link2="gripper_finger_1_link_2" reason="Never" />
-    <disable_collisions link1="arm_wrist_1_link" link2="gripper_finger_1_link_3" reason="Never" />
-    <disable_collisions link1="arm_wrist_1_link" link2="gripper_finger_1_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="arm_wrist_1_link" link2="gripper_finger_1_link_median_bar" reason="Never" />
-    <disable_collisions link1="arm_wrist_1_link" link2="gripper_finger_1_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="arm_wrist_1_link" link2="gripper_finger_1_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="arm_wrist_1_link" link2="gripper_finger_1_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="arm_wrist_1_link" link2="gripper_finger_1_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="arm_wrist_1_link" link2="gripper_finger_1_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="arm_wrist_1_link" link2="gripper_finger_1_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="arm_wrist_1_link" link2="gripper_finger_1_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="arm_wrist_1_link" link2="gripper_finger_2_link_0" reason="Never" />
-    <disable_collisions link1="arm_wrist_1_link" link2="gripper_finger_2_link_1" reason="Never" />
-    <disable_collisions link1="arm_wrist_1_link" link2="gripper_finger_2_link_2" reason="Never" />
-    <disable_collisions link1="arm_wrist_1_link" link2="gripper_finger_2_link_3" reason="Never" />
-    <disable_collisions link1="arm_wrist_1_link" link2="gripper_finger_2_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="arm_wrist_1_link" link2="gripper_finger_2_link_median_bar" reason="Never" />
-    <disable_collisions link1="arm_wrist_1_link" link2="gripper_finger_2_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="arm_wrist_1_link" link2="gripper_finger_2_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="arm_wrist_1_link" link2="gripper_finger_2_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="arm_wrist_1_link" link2="gripper_finger_2_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="arm_wrist_1_link" link2="gripper_finger_2_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="arm_wrist_1_link" link2="gripper_finger_2_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="arm_wrist_1_link" link2="gripper_finger_2_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="arm_wrist_1_link" link2="gripper_finger_middle_link_0" reason="Never" />
-    <disable_collisions link1="arm_wrist_1_link" link2="gripper_finger_middle_link_1" reason="Never" />
-    <disable_collisions link1="arm_wrist_1_link" link2="gripper_finger_middle_link_2" reason="Never" />
-    <disable_collisions link1="arm_wrist_1_link" link2="gripper_finger_middle_link_3" reason="Never" />
-    <disable_collisions link1="arm_wrist_1_link" link2="gripper_finger_middle_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="arm_wrist_1_link" link2="gripper_finger_middle_link_median_bar" reason="Never" />
-    <disable_collisions link1="arm_wrist_1_link" link2="gripper_finger_middle_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="arm_wrist_1_link" link2="gripper_finger_middle_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="arm_wrist_1_link" link2="gripper_finger_middle_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="arm_wrist_1_link" link2="gripper_finger_middle_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="arm_wrist_1_link" link2="gripper_finger_middle_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="arm_wrist_1_link" link2="gripper_finger_middle_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="arm_wrist_1_link" link2="gripper_finger_middle_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="arm_wrist_1_link" link2="gripper_palm" reason="Never" />
-    <disable_collisions link1="arm_wrist_1_link" link2="wrist_camera_link" reason="Never" />
-    <disable_collisions link1="arm_wrist_2_link" link2="arm_wrist_3_link" reason="Adjacent" />
-    <disable_collisions link1="arm_wrist_2_link" link2="bl_caster_rotation_link" reason="Never" />
-    <disable_collisions link1="arm_wrist_2_link" link2="br_caster_rotation_link" reason="Never" />
-    <disable_collisions link1="arm_wrist_2_link" link2="gripper_finger_1_link_0" reason="Never" />
-    <disable_collisions link1="arm_wrist_2_link" link2="gripper_finger_1_link_1" reason="Never" />
-    <disable_collisions link1="arm_wrist_2_link" link2="gripper_finger_1_link_2" reason="Never" />
-    <disable_collisions link1="arm_wrist_2_link" link2="gripper_finger_1_link_3" reason="Never" />
-    <disable_collisions link1="arm_wrist_2_link" link2="gripper_finger_1_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="arm_wrist_2_link" link2="gripper_finger_1_link_median_bar" reason="Never" />
-    <disable_collisions link1="arm_wrist_2_link" link2="gripper_finger_1_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="arm_wrist_2_link" link2="gripper_finger_1_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="arm_wrist_2_link" link2="gripper_finger_1_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="arm_wrist_2_link" link2="gripper_finger_1_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="arm_wrist_2_link" link2="gripper_finger_1_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="arm_wrist_2_link" link2="gripper_finger_1_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="arm_wrist_2_link" link2="gripper_finger_1_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="arm_wrist_2_link" link2="gripper_finger_2_link_0" reason="Never" />
-    <disable_collisions link1="arm_wrist_2_link" link2="gripper_finger_2_link_1" reason="Never" />
-    <disable_collisions link1="arm_wrist_2_link" link2="gripper_finger_2_link_2" reason="Never" />
-    <disable_collisions link1="arm_wrist_2_link" link2="gripper_finger_2_link_3" reason="Never" />
-    <disable_collisions link1="arm_wrist_2_link" link2="gripper_finger_2_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="arm_wrist_2_link" link2="gripper_finger_2_link_median_bar" reason="Never" />
-    <disable_collisions link1="arm_wrist_2_link" link2="gripper_finger_2_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="arm_wrist_2_link" link2="gripper_finger_2_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="arm_wrist_2_link" link2="gripper_finger_2_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="arm_wrist_2_link" link2="gripper_finger_2_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="arm_wrist_2_link" link2="gripper_finger_2_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="arm_wrist_2_link" link2="gripper_finger_2_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="arm_wrist_2_link" link2="gripper_finger_2_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="arm_wrist_2_link" link2="gripper_finger_middle_link_0" reason="Never" />
-    <disable_collisions link1="arm_wrist_2_link" link2="gripper_finger_middle_link_1" reason="Never" />
-    <disable_collisions link1="arm_wrist_2_link" link2="gripper_finger_middle_link_2" reason="Never" />
-    <disable_collisions link1="arm_wrist_2_link" link2="gripper_finger_middle_link_3" reason="Never" />
-    <disable_collisions link1="arm_wrist_2_link" link2="gripper_finger_middle_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="arm_wrist_2_link" link2="gripper_finger_middle_link_median_bar" reason="Never" />
-    <disable_collisions link1="arm_wrist_2_link" link2="gripper_finger_middle_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="arm_wrist_2_link" link2="gripper_finger_middle_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="arm_wrist_2_link" link2="gripper_finger_middle_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="arm_wrist_2_link" link2="gripper_finger_middle_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="arm_wrist_2_link" link2="gripper_finger_middle_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="arm_wrist_2_link" link2="gripper_finger_middle_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="arm_wrist_2_link" link2="gripper_finger_middle_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="arm_wrist_2_link" link2="gripper_palm" reason="Never" />
-    <disable_collisions link1="arm_wrist_2_link" link2="wrist_camera_link" reason="Never" />
-    <disable_collisions link1="arm_wrist_3_link" link2="bl_caster_rotation_link" reason="Never" />
-    <disable_collisions link1="arm_wrist_3_link" link2="br_caster_rotation_link" reason="Never" />
-    <disable_collisions link1="arm_wrist_3_link" link2="fr_caster_rotation_link" reason="Never" />
-    <disable_collisions link1="arm_wrist_3_link" link2="gripper_finger_1_link_0" reason="Never" />
-    <disable_collisions link1="arm_wrist_3_link" link2="gripper_finger_1_link_1" reason="Never" />
-    <disable_collisions link1="arm_wrist_3_link" link2="gripper_finger_1_link_2" reason="Never" />
-    <disable_collisions link1="arm_wrist_3_link" link2="gripper_finger_1_link_3" reason="Never" />
-    <disable_collisions link1="arm_wrist_3_link" link2="gripper_finger_1_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="arm_wrist_3_link" link2="gripper_finger_1_link_median_bar" reason="Never" />
-    <disable_collisions link1="arm_wrist_3_link" link2="gripper_finger_1_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="arm_wrist_3_link" link2="gripper_finger_1_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="arm_wrist_3_link" link2="gripper_finger_1_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="arm_wrist_3_link" link2="gripper_finger_1_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="arm_wrist_3_link" link2="gripper_finger_1_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="arm_wrist_3_link" link2="gripper_finger_2_link_0" reason="Never" />
-    <disable_collisions link1="arm_wrist_3_link" link2="gripper_finger_2_link_1" reason="Never" />
-    <disable_collisions link1="arm_wrist_3_link" link2="gripper_finger_2_link_2" reason="Never" />
-    <disable_collisions link1="arm_wrist_3_link" link2="gripper_finger_2_link_3" reason="Never" />
-    <disable_collisions link1="arm_wrist_3_link" link2="gripper_finger_2_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="arm_wrist_3_link" link2="gripper_finger_2_link_median_bar" reason="Never" />
-    <disable_collisions link1="arm_wrist_3_link" link2="gripper_finger_2_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="arm_wrist_3_link" link2="gripper_finger_2_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="arm_wrist_3_link" link2="gripper_finger_2_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="arm_wrist_3_link" link2="gripper_finger_2_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="arm_wrist_3_link" link2="gripper_finger_2_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="arm_wrist_3_link" link2="gripper_finger_middle_link_0" reason="Never" />
-    <disable_collisions link1="arm_wrist_3_link" link2="gripper_finger_middle_link_1" reason="Never" />
-    <disable_collisions link1="arm_wrist_3_link" link2="gripper_finger_middle_link_2" reason="Never" />
-    <disable_collisions link1="arm_wrist_3_link" link2="gripper_finger_middle_link_3" reason="Never" />
-    <disable_collisions link1="arm_wrist_3_link" link2="gripper_finger_middle_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="arm_wrist_3_link" link2="gripper_finger_middle_link_median_bar" reason="Never" />
-    <disable_collisions link1="arm_wrist_3_link" link2="gripper_finger_middle_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="arm_wrist_3_link" link2="gripper_finger_middle_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="arm_wrist_3_link" link2="gripper_finger_middle_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="arm_wrist_3_link" link2="gripper_finger_middle_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="arm_wrist_3_link" link2="gripper_finger_middle_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="arm_wrist_3_link" link2="gripper_palm" reason="Adjacent" />
-    <disable_collisions link1="arm_wrist_3_link" link2="wrist_camera_link" reason="Never" />
-    <disable_collisions link1="base_battery_front_battery" link2="base_battery_rear_battery" reason="Never" />
-    <disable_collisions link1="base_battery_front_battery" link2="base_laser_front_link" reason="Never" />
-    <disable_collisions link1="base_battery_front_battery" link2="base_laser_rear_link" reason="Never" />
-    <disable_collisions link1="base_battery_front_battery" link2="base_link" reason="Adjacent" />
-    <disable_collisions link1="base_battery_front_battery" link2="bl_caster_r_wheel_link" reason="Never" />
-    <disable_collisions link1="base_battery_front_battery" link2="bl_caster_rotation_link" reason="Never" />
-    <disable_collisions link1="base_battery_front_battery" link2="br_caster_r_wheel_link" reason="Never" />
-    <disable_collisions link1="base_battery_front_battery" link2="br_caster_rotation_link" reason="Never" />
-    <disable_collisions link1="base_battery_front_battery" link2="fl_caster_r_wheel_link" reason="Never" />
-    <disable_collisions link1="base_battery_front_battery" link2="fl_caster_rotation_link" reason="Never" />
-    <disable_collisions link1="base_battery_front_battery" link2="fr_caster_r_wheel_link" reason="Never" />
-    <disable_collisions link1="base_battery_front_battery" link2="fr_caster_rotation_link" reason="Never" />
-    <disable_collisions link1="base_battery_front_battery" link2="tower_base_link" reason="Never" />
-    <disable_collisions link1="base_battery_rear_battery" link2="base_laser_front_link" reason="Never" />
-    <disable_collisions link1="base_battery_rear_battery" link2="base_laser_rear_link" reason="Never" />
-    <disable_collisions link1="base_battery_rear_battery" link2="base_link" reason="Adjacent" />
-    <disable_collisions link1="base_battery_rear_battery" link2="bl_caster_r_wheel_link" reason="Never" />
-    <disable_collisions link1="base_battery_rear_battery" link2="bl_caster_rotation_link" reason="Never" />
-    <disable_collisions link1="base_battery_rear_battery" link2="br_caster_r_wheel_link" reason="Never" />
-    <disable_collisions link1="base_battery_rear_battery" link2="br_caster_rotation_link" reason="Never" />
-    <disable_collisions link1="base_battery_rear_battery" link2="fl_caster_r_wheel_link" reason="Never" />
-    <disable_collisions link1="base_battery_rear_battery" link2="fl_caster_rotation_link" reason="Never" />
-    <disable_collisions link1="base_battery_rear_battery" link2="fr_caster_r_wheel_link" reason="Never" />
-    <disable_collisions link1="base_battery_rear_battery" link2="fr_caster_rotation_link" reason="Never" />
-    <disable_collisions link1="base_battery_rear_battery" link2="tower_base_link" reason="Never" />
-    <disable_collisions link1="base_laser_front_link" link2="base_laser_rear_link" reason="Never" />
-    <disable_collisions link1="base_laser_front_link" link2="base_link" reason="Adjacent" />
-    <disable_collisions link1="base_laser_front_link" link2="bl_caster_r_wheel_link" reason="Never" />
-    <disable_collisions link1="base_laser_front_link" link2="bl_caster_rotation_link" reason="Never" />
-    <disable_collisions link1="base_laser_front_link" link2="br_caster_r_wheel_link" reason="Never" />
-    <disable_collisions link1="base_laser_front_link" link2="br_caster_rotation_link" reason="Never" />
-    <disable_collisions link1="base_laser_front_link" link2="fl_caster_r_wheel_link" reason="Never" />
-    <disable_collisions link1="base_laser_front_link" link2="fl_caster_rotation_link" reason="Never" />
-    <disable_collisions link1="base_laser_front_link" link2="fr_caster_r_wheel_link" reason="Never" />
-    <disable_collisions link1="base_laser_front_link" link2="fr_caster_rotation_link" reason="Never" />
-    <disable_collisions link1="base_laser_front_link" link2="tower_base_link" reason="Never" />
-    <disable_collisions link1="base_laser_rear_link" link2="base_link" reason="Adjacent" />
-    <disable_collisions link1="base_laser_rear_link" link2="bl_caster_r_wheel_link" reason="Never" />
-    <disable_collisions link1="base_laser_rear_link" link2="bl_caster_rotation_link" reason="Never" />
-    <disable_collisions link1="base_laser_rear_link" link2="br_caster_r_wheel_link" reason="Never" />
-    <disable_collisions link1="base_laser_rear_link" link2="br_caster_rotation_link" reason="Never" />
-    <disable_collisions link1="base_laser_rear_link" link2="fl_caster_r_wheel_link" reason="Never" />
-    <disable_collisions link1="base_laser_rear_link" link2="fl_caster_rotation_link" reason="Never" />
-    <disable_collisions link1="base_laser_rear_link" link2="fr_caster_r_wheel_link" reason="Never" />
-    <disable_collisions link1="base_laser_rear_link" link2="fr_caster_rotation_link" reason="Never" />
-    <disable_collisions link1="base_laser_rear_link" link2="tower_base_link" reason="Never" />
-    <disable_collisions link1="base_link" link2="bl_caster_r_wheel_link" reason="Never" />
-    <disable_collisions link1="base_link" link2="bl_caster_rotation_link" reason="Adjacent" />
-    <disable_collisions link1="base_link" link2="br_caster_r_wheel_link" reason="Never" />
-    <disable_collisions link1="base_link" link2="br_caster_rotation_link" reason="Adjacent" />
-    <disable_collisions link1="base_link" link2="fl_caster_r_wheel_link" reason="Never" />
-    <disable_collisions link1="base_link" link2="fl_caster_rotation_link" reason="Adjacent" />
-    <disable_collisions link1="base_link" link2="fr_caster_r_wheel_link" reason="Never" />
-    <disable_collisions link1="base_link" link2="fr_caster_rotation_link" reason="Adjacent" />
-    <disable_collisions link1="base_link" link2="tower_base_link" reason="Adjacent" />
-    <disable_collisions link1="bl_caster_r_wheel_link" link2="bl_caster_rotation_link" reason="Adjacent" />
-    <disable_collisions link1="bl_caster_r_wheel_link" link2="br_caster_r_wheel_link" reason="Never" />
-    <disable_collisions link1="bl_caster_r_wheel_link" link2="br_caster_rotation_link" reason="Never" />
-    <disable_collisions link1="bl_caster_r_wheel_link" link2="fl_caster_r_wheel_link" reason="Never" />
-    <disable_collisions link1="bl_caster_r_wheel_link" link2="fl_caster_rotation_link" reason="Never" />
-    <disable_collisions link1="bl_caster_r_wheel_link" link2="fr_caster_r_wheel_link" reason="Never" />
-    <disable_collisions link1="bl_caster_r_wheel_link" link2="fr_caster_rotation_link" reason="Never" />
-    <disable_collisions link1="bl_caster_r_wheel_link" link2="tower_base_link" reason="Never" />
-    <disable_collisions link1="bl_caster_rotation_link" link2="br_caster_r_wheel_link" reason="Never" />
-    <disable_collisions link1="bl_caster_rotation_link" link2="br_caster_rotation_link" reason="Never" />
-    <disable_collisions link1="bl_caster_rotation_link" link2="fl_caster_r_wheel_link" reason="Never" />
-    <disable_collisions link1="bl_caster_rotation_link" link2="fl_caster_rotation_link" reason="Never" />
-    <disable_collisions link1="bl_caster_rotation_link" link2="fr_caster_r_wheel_link" reason="Never" />
-    <disable_collisions link1="bl_caster_rotation_link" link2="fr_caster_rotation_link" reason="Never" />
-    <disable_collisions link1="bl_caster_rotation_link" link2="gripper_finger_1_link_0" reason="Never" />
-    <disable_collisions link1="bl_caster_rotation_link" link2="gripper_finger_1_link_1" reason="Never" />
-    <disable_collisions link1="bl_caster_rotation_link" link2="gripper_finger_1_link_2" reason="Never" />
-    <disable_collisions link1="bl_caster_rotation_link" link2="gripper_finger_1_link_3" reason="Never" />
-    <disable_collisions link1="bl_caster_rotation_link" link2="gripper_finger_1_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="bl_caster_rotation_link" link2="gripper_finger_1_link_median_bar" reason="Never" />
-    <disable_collisions link1="bl_caster_rotation_link" link2="gripper_finger_1_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="bl_caster_rotation_link" link2="gripper_finger_1_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="bl_caster_rotation_link" link2="gripper_finger_1_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="bl_caster_rotation_link" link2="gripper_finger_1_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="bl_caster_rotation_link" link2="gripper_finger_1_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="bl_caster_rotation_link" link2="gripper_finger_1_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="bl_caster_rotation_link" link2="gripper_finger_1_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="bl_caster_rotation_link" link2="gripper_finger_2_link_0" reason="Never" />
-    <disable_collisions link1="bl_caster_rotation_link" link2="gripper_finger_2_link_1" reason="Never" />
-    <disable_collisions link1="bl_caster_rotation_link" link2="gripper_finger_2_link_2" reason="Never" />
-    <disable_collisions link1="bl_caster_rotation_link" link2="gripper_finger_2_link_3" reason="Never" />
-    <disable_collisions link1="bl_caster_rotation_link" link2="gripper_finger_2_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="bl_caster_rotation_link" link2="gripper_finger_2_link_median_bar" reason="Never" />
-    <disable_collisions link1="bl_caster_rotation_link" link2="gripper_finger_2_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="bl_caster_rotation_link" link2="gripper_finger_2_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="bl_caster_rotation_link" link2="gripper_finger_2_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="bl_caster_rotation_link" link2="gripper_finger_2_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="bl_caster_rotation_link" link2="gripper_finger_2_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="bl_caster_rotation_link" link2="gripper_finger_2_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="bl_caster_rotation_link" link2="gripper_finger_2_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="bl_caster_rotation_link" link2="gripper_finger_middle_link_0" reason="Never" />
-    <disable_collisions link1="bl_caster_rotation_link" link2="gripper_finger_middle_link_1" reason="Never" />
-    <disable_collisions link1="bl_caster_rotation_link" link2="gripper_finger_middle_link_2" reason="Never" />
-    <disable_collisions link1="bl_caster_rotation_link" link2="gripper_finger_middle_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="bl_caster_rotation_link" link2="gripper_finger_middle_link_median_bar" reason="Never" />
-    <disable_collisions link1="bl_caster_rotation_link" link2="gripper_finger_middle_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="bl_caster_rotation_link" link2="gripper_finger_middle_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="bl_caster_rotation_link" link2="gripper_finger_middle_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="bl_caster_rotation_link" link2="gripper_finger_middle_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="bl_caster_rotation_link" link2="gripper_finger_middle_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="bl_caster_rotation_link" link2="gripper_finger_middle_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="bl_caster_rotation_link" link2="gripper_finger_middle_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="bl_caster_rotation_link" link2="tower_base_link" reason="Never" />
-    <disable_collisions link1="br_caster_r_wheel_link" link2="br_caster_rotation_link" reason="Adjacent" />
-    <disable_collisions link1="br_caster_r_wheel_link" link2="fl_caster_r_wheel_link" reason="Never" />
-    <disable_collisions link1="br_caster_r_wheel_link" link2="fl_caster_rotation_link" reason="Never" />
-    <disable_collisions link1="br_caster_r_wheel_link" link2="fr_caster_r_wheel_link" reason="Never" />
-    <disable_collisions link1="br_caster_r_wheel_link" link2="fr_caster_rotation_link" reason="Never" />
-    <disable_collisions link1="br_caster_r_wheel_link" link2="tower_base_link" reason="Never" />
-    <disable_collisions link1="br_caster_rotation_link" link2="fl_caster_r_wheel_link" reason="Never" />
-    <disable_collisions link1="br_caster_rotation_link" link2="fl_caster_rotation_link" reason="Never" />
-    <disable_collisions link1="br_caster_rotation_link" link2="fr_caster_r_wheel_link" reason="Never" />
-    <disable_collisions link1="br_caster_rotation_link" link2="fr_caster_rotation_link" reason="Never" />
-    <disable_collisions link1="br_caster_rotation_link" link2="gripper_finger_1_link_1" reason="Never" />
-    <disable_collisions link1="br_caster_rotation_link" link2="gripper_finger_1_link_2" reason="Never" />
-    <disable_collisions link1="br_caster_rotation_link" link2="gripper_finger_1_link_3" reason="Never" />
-    <disable_collisions link1="br_caster_rotation_link" link2="gripper_finger_1_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="br_caster_rotation_link" link2="gripper_finger_1_link_median_bar" reason="Never" />
-    <disable_collisions link1="br_caster_rotation_link" link2="gripper_finger_1_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="br_caster_rotation_link" link2="gripper_finger_1_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="br_caster_rotation_link" link2="gripper_finger_1_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="br_caster_rotation_link" link2="gripper_finger_1_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="br_caster_rotation_link" link2="gripper_finger_1_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="br_caster_rotation_link" link2="gripper_finger_1_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="br_caster_rotation_link" link2="gripper_finger_1_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="br_caster_rotation_link" link2="gripper_finger_2_link_0" reason="Never" />
-    <disable_collisions link1="br_caster_rotation_link" link2="gripper_finger_2_link_1" reason="Never" />
-    <disable_collisions link1="br_caster_rotation_link" link2="gripper_finger_2_link_3" reason="Never" />
-    <disable_collisions link1="br_caster_rotation_link" link2="gripper_finger_2_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="br_caster_rotation_link" link2="gripper_finger_2_link_median_bar" reason="Never" />
-    <disable_collisions link1="br_caster_rotation_link" link2="gripper_finger_2_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="br_caster_rotation_link" link2="gripper_finger_2_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="br_caster_rotation_link" link2="gripper_finger_2_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="br_caster_rotation_link" link2="gripper_finger_2_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="br_caster_rotation_link" link2="gripper_finger_2_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="br_caster_rotation_link" link2="gripper_finger_2_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="br_caster_rotation_link" link2="gripper_finger_2_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="br_caster_rotation_link" link2="gripper_finger_middle_link_0" reason="Never" />
-    <disable_collisions link1="br_caster_rotation_link" link2="gripper_finger_middle_link_1" reason="Never" />
-    <disable_collisions link1="br_caster_rotation_link" link2="gripper_finger_middle_link_2" reason="Never" />
-    <disable_collisions link1="br_caster_rotation_link" link2="gripper_finger_middle_link_3" reason="Never" />
-    <disable_collisions link1="br_caster_rotation_link" link2="gripper_finger_middle_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="br_caster_rotation_link" link2="gripper_finger_middle_link_median_bar" reason="Never" />
-    <disable_collisions link1="br_caster_rotation_link" link2="gripper_finger_middle_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="br_caster_rotation_link" link2="gripper_finger_middle_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="br_caster_rotation_link" link2="gripper_finger_middle_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="br_caster_rotation_link" link2="gripper_finger_middle_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="br_caster_rotation_link" link2="gripper_finger_middle_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="br_caster_rotation_link" link2="gripper_finger_middle_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="br_caster_rotation_link" link2="gripper_finger_middle_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="br_caster_rotation_link" link2="tower_base_link" reason="Never" />
-    <disable_collisions link1="fl_caster_r_wheel_link" link2="fl_caster_rotation_link" reason="Adjacent" />
-    <disable_collisions link1="fl_caster_r_wheel_link" link2="fr_caster_r_wheel_link" reason="Never" />
-    <disable_collisions link1="fl_caster_r_wheel_link" link2="fr_caster_rotation_link" reason="Never" />
-    <disable_collisions link1="fl_caster_r_wheel_link" link2="tower_base_link" reason="Never" />
-    <disable_collisions link1="fl_caster_rotation_link" link2="fr_caster_r_wheel_link" reason="Never" />
-    <disable_collisions link1="fl_caster_rotation_link" link2="fr_caster_rotation_link" reason="Never" />
-    <disable_collisions link1="fl_caster_rotation_link" link2="gripper_finger_1_link_0" reason="Never" />
-    <disable_collisions link1="fl_caster_rotation_link" link2="gripper_finger_1_link_2" reason="Never" />
-    <disable_collisions link1="fl_caster_rotation_link" link2="gripper_finger_1_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="fl_caster_rotation_link" link2="gripper_finger_1_link_median_bar" reason="Never" />
-    <disable_collisions link1="fl_caster_rotation_link" link2="gripper_finger_1_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="fl_caster_rotation_link" link2="gripper_finger_1_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="fl_caster_rotation_link" link2="gripper_finger_1_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="fl_caster_rotation_link" link2="gripper_finger_1_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="fl_caster_rotation_link" link2="gripper_finger_1_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="fl_caster_rotation_link" link2="gripper_finger_1_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="fl_caster_rotation_link" link2="gripper_finger_1_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="fl_caster_rotation_link" link2="gripper_finger_2_link_1" reason="Never" />
-    <disable_collisions link1="fl_caster_rotation_link" link2="gripper_finger_2_link_2" reason="Never" />
-    <disable_collisions link1="fl_caster_rotation_link" link2="gripper_finger_2_link_3" reason="Never" />
-    <disable_collisions link1="fl_caster_rotation_link" link2="gripper_finger_2_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="fl_caster_rotation_link" link2="gripper_finger_2_link_median_bar" reason="Never" />
-    <disable_collisions link1="fl_caster_rotation_link" link2="gripper_finger_2_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="fl_caster_rotation_link" link2="gripper_finger_2_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="fl_caster_rotation_link" link2="gripper_finger_2_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="fl_caster_rotation_link" link2="gripper_finger_2_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="fl_caster_rotation_link" link2="gripper_finger_2_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="fl_caster_rotation_link" link2="gripper_finger_2_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="fl_caster_rotation_link" link2="gripper_finger_2_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="fl_caster_rotation_link" link2="gripper_finger_middle_link_0" reason="Never" />
-    <disable_collisions link1="fl_caster_rotation_link" link2="gripper_finger_middle_link_1" reason="Never" />
-    <disable_collisions link1="fl_caster_rotation_link" link2="gripper_finger_middle_link_2" reason="Never" />
-    <disable_collisions link1="fl_caster_rotation_link" link2="gripper_finger_middle_link_3" reason="Never" />
-    <disable_collisions link1="fl_caster_rotation_link" link2="gripper_finger_middle_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="fl_caster_rotation_link" link2="gripper_finger_middle_link_median_bar" reason="Never" />
-    <disable_collisions link1="fl_caster_rotation_link" link2="gripper_finger_middle_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="fl_caster_rotation_link" link2="gripper_finger_middle_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="fl_caster_rotation_link" link2="gripper_finger_middle_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="fl_caster_rotation_link" link2="gripper_finger_middle_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="fl_caster_rotation_link" link2="gripper_finger_middle_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="fl_caster_rotation_link" link2="gripper_finger_middle_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="fl_caster_rotation_link" link2="tower_base_link" reason="Never" />
-    <disable_collisions link1="fr_caster_r_wheel_link" link2="fr_caster_rotation_link" reason="Adjacent" />
-    <disable_collisions link1="fr_caster_r_wheel_link" link2="tower_base_link" reason="Never" />
-    <disable_collisions link1="fr_caster_rotation_link" link2="gripper_finger_1_link_0" reason="Never" />
-    <disable_collisions link1="fr_caster_rotation_link" link2="gripper_finger_1_link_3" reason="Never" />
-    <disable_collisions link1="fr_caster_rotation_link" link2="gripper_finger_1_link_median_bar" reason="Never" />
-    <disable_collisions link1="fr_caster_rotation_link" link2="gripper_finger_1_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="fr_caster_rotation_link" link2="gripper_finger_1_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="fr_caster_rotation_link" link2="gripper_finger_1_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="fr_caster_rotation_link" link2="gripper_finger_1_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="fr_caster_rotation_link" link2="gripper_finger_1_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="fr_caster_rotation_link" link2="gripper_finger_1_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="fr_caster_rotation_link" link2="gripper_finger_1_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="fr_caster_rotation_link" link2="gripper_finger_2_link_0" reason="Never" />
-    <disable_collisions link1="fr_caster_rotation_link" link2="gripper_finger_2_link_1" reason="Never" />
-    <disable_collisions link1="fr_caster_rotation_link" link2="gripper_finger_2_link_3" reason="Never" />
-    <disable_collisions link1="fr_caster_rotation_link" link2="gripper_finger_2_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="fr_caster_rotation_link" link2="gripper_finger_2_link_median_bar" reason="Never" />
-    <disable_collisions link1="fr_caster_rotation_link" link2="gripper_finger_2_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="fr_caster_rotation_link" link2="gripper_finger_2_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="fr_caster_rotation_link" link2="gripper_finger_2_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="fr_caster_rotation_link" link2="gripper_finger_2_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="fr_caster_rotation_link" link2="gripper_finger_2_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="fr_caster_rotation_link" link2="gripper_finger_2_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="fr_caster_rotation_link" link2="gripper_finger_2_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="fr_caster_rotation_link" link2="gripper_finger_middle_link_2" reason="Never" />
-    <disable_collisions link1="fr_caster_rotation_link" link2="gripper_finger_middle_link_3" reason="Never" />
-    <disable_collisions link1="fr_caster_rotation_link" link2="gripper_finger_middle_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="fr_caster_rotation_link" link2="gripper_finger_middle_link_median_bar" reason="Never" />
-    <disable_collisions link1="fr_caster_rotation_link" link2="gripper_finger_middle_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="fr_caster_rotation_link" link2="gripper_finger_middle_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="fr_caster_rotation_link" link2="gripper_finger_middle_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="fr_caster_rotation_link" link2="gripper_finger_middle_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="fr_caster_rotation_link" link2="gripper_finger_middle_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="fr_caster_rotation_link" link2="gripper_finger_middle_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="fr_caster_rotation_link" link2="gripper_finger_middle_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="fr_caster_rotation_link" link2="tower_base_link" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_0" link2="gripper_finger_1_link_1" reason="Adjacent" />
-    <disable_collisions link1="gripper_finger_1_link_0" link2="gripper_finger_1_link_2" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_0" link2="gripper_finger_1_link_3" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_0" link2="gripper_finger_1_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_0" link2="gripper_finger_1_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_0" link2="gripper_finger_1_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_0" link2="gripper_finger_1_link_paraproximal_actuating_hinge" reason="Adjacent" />
-    <disable_collisions link1="gripper_finger_1_link_0" link2="gripper_finger_1_link_proximal_actuating_hinge" reason="Adjacent" />
-    <disable_collisions link1="gripper_finger_1_link_0" link2="gripper_finger_2_link_0" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_0" link2="gripper_finger_2_link_1" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_0" link2="gripper_finger_2_link_2" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_0" link2="gripper_finger_2_link_3" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_0" link2="gripper_finger_2_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_0" link2="gripper_finger_2_link_median_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_0" link2="gripper_finger_2_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_0" link2="gripper_finger_2_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_0" link2="gripper_finger_2_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_0" link2="gripper_finger_2_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_0" link2="gripper_finger_2_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_0" link2="gripper_finger_2_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_0" link2="gripper_finger_2_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_0" link2="gripper_finger_middle_link_0" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_0" link2="gripper_finger_middle_link_1" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_0" link2="gripper_finger_middle_link_2" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_0" link2="gripper_finger_middle_link_3" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_0" link2="gripper_finger_middle_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_0" link2="gripper_finger_middle_link_median_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_0" link2="gripper_finger_middle_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_0" link2="gripper_finger_middle_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_0" link2="gripper_finger_middle_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_0" link2="gripper_finger_middle_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_0" link2="gripper_finger_middle_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_0" link2="gripper_finger_middle_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_0" link2="gripper_finger_middle_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_0" link2="gripper_palm" reason="Adjacent" />
-    <disable_collisions link1="gripper_finger_1_link_0" link2="wrist_camera_link" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_1" link2="gripper_finger_1_link_2" reason="Adjacent" />
-    <disable_collisions link1="gripper_finger_1_link_1" link2="gripper_finger_1_link_3" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_1" link2="gripper_finger_1_link_median_actuating_hinge" reason="Adjacent" />
-    <disable_collisions link1="gripper_finger_1_link_1" link2="gripper_finger_1_link_median_bar" reason="Default" />
-    <disable_collisions link1="gripper_finger_1_link_1" link2="gripper_finger_1_link_median_bar_underactuated" reason="Default" />
-    <disable_collisions link1="gripper_finger_1_link_1" link2="gripper_finger_1_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_1" link2="gripper_finger_1_link_paramedian_hinge" reason="Adjacent" />
-    <disable_collisions link1="gripper_finger_1_link_1" link2="gripper_finger_1_link_paraproximal_bar" reason="Default" />
-    <disable_collisions link1="gripper_finger_1_link_1" link2="gripper_finger_1_link_proximal_actuating_bar" reason="Default" />
-    <disable_collisions link1="gripper_finger_1_link_1" link2="gripper_finger_1_link_proximal_actuating_hinge" reason="Default" />
-    <disable_collisions link1="gripper_finger_1_link_1" link2="gripper_finger_2_link_0" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_1" link2="gripper_finger_2_link_1" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_1" link2="gripper_finger_2_link_2" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_1" link2="gripper_finger_2_link_3" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_1" link2="gripper_finger_2_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_1" link2="gripper_finger_2_link_median_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_1" link2="gripper_finger_2_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_1" link2="gripper_finger_2_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_1" link2="gripper_finger_2_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_1" link2="gripper_finger_2_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_1" link2="gripper_finger_2_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_1" link2="gripper_finger_2_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_1" link2="gripper_finger_2_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_1" link2="gripper_finger_middle_link_0" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_1" link2="gripper_finger_middle_link_1" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_1" link2="gripper_finger_middle_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_1" link2="gripper_finger_middle_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_1" link2="gripper_finger_middle_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_1" link2="gripper_finger_middle_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_1" link2="gripper_finger_middle_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_1" link2="gripper_finger_middle_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_1" link2="gripper_palm" reason="Default" />
-    <disable_collisions link1="gripper_finger_1_link_1" link2="wrist_camera_link" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_2" link2="gripper_finger_1_link_3" reason="Adjacent" />
-    <disable_collisions link1="gripper_finger_1_link_2" link2="gripper_finger_1_link_median_actuating_hinge" reason="Default" />
-    <disable_collisions link1="gripper_finger_1_link_2" link2="gripper_finger_1_link_median_bar" reason="Default" />
-    <disable_collisions link1="gripper_finger_1_link_2" link2="gripper_finger_1_link_median_bar_underactuated" reason="Default" />
-    <disable_collisions link1="gripper_finger_1_link_2" link2="gripper_finger_1_link_paradistal_hinge" reason="Adjacent" />
-    <disable_collisions link1="gripper_finger_1_link_2" link2="gripper_finger_1_link_paramedian_hinge" reason="Default" />
-    <disable_collisions link1="gripper_finger_1_link_2" link2="gripper_finger_1_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_2" link2="gripper_finger_1_link_paraproximal_bar" reason="Default" />
-    <disable_collisions link1="gripper_finger_1_link_2" link2="gripper_finger_1_link_proximal_actuating_bar" reason="Default" />
-    <disable_collisions link1="gripper_finger_1_link_2" link2="gripper_finger_1_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_2" link2="gripper_finger_2_link_0" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_2" link2="gripper_finger_2_link_1" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_2" link2="gripper_finger_2_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_2" link2="gripper_finger_2_link_median_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_2" link2="gripper_finger_2_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_2" link2="gripper_finger_2_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_2" link2="gripper_finger_2_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_2" link2="gripper_finger_2_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_2" link2="gripper_finger_2_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_2" link2="gripper_finger_middle_link_0" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_2" link2="gripper_finger_middle_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_2" link2="gripper_finger_middle_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_2" link2="gripper_finger_middle_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_2" link2="gripper_finger_middle_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_2" link2="gripper_finger_middle_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_2" link2="gripper_finger_middle_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_2" link2="wrist_camera_link" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_3" link2="gripper_finger_1_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_3" link2="gripper_finger_1_link_median_bar" reason="Default" />
-    <disable_collisions link1="gripper_finger_1_link_3" link2="gripper_finger_1_link_median_bar_underactuated" reason="Default" />
-    <disable_collisions link1="gripper_finger_1_link_3" link2="gripper_finger_1_link_paradistal_hinge" reason="Default" />
-    <disable_collisions link1="gripper_finger_1_link_3" link2="gripper_finger_1_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_3" link2="gripper_finger_1_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_3" link2="gripper_finger_1_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_3" link2="gripper_finger_2_link_0" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_3" link2="gripper_finger_2_link_1" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_3" link2="gripper_finger_2_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_3" link2="gripper_finger_2_link_median_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_3" link2="gripper_finger_2_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_3" link2="gripper_finger_2_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_3" link2="gripper_finger_2_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_3" link2="gripper_finger_2_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_3" link2="gripper_finger_2_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_3" link2="gripper_finger_middle_link_0" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_3" link2="gripper_finger_middle_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_3" link2="gripper_finger_middle_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_3" link2="gripper_finger_middle_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_3" link2="gripper_finger_middle_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_3" link2="wrist_camera_link" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_actuating_hinge" link2="gripper_finger_1_link_median_bar" reason="Adjacent" />
-    <disable_collisions link1="gripper_finger_1_link_median_actuating_hinge" link2="gripper_finger_1_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_actuating_hinge" link2="gripper_finger_1_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_actuating_hinge" link2="gripper_finger_1_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_actuating_hinge" link2="gripper_finger_1_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_actuating_hinge" link2="gripper_finger_1_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_actuating_hinge" link2="gripper_finger_1_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_actuating_hinge" link2="gripper_finger_2_link_0" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_actuating_hinge" link2="gripper_finger_2_link_1" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_actuating_hinge" link2="gripper_finger_2_link_2" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_actuating_hinge" link2="gripper_finger_2_link_3" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_actuating_hinge" link2="gripper_finger_2_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_actuating_hinge" link2="gripper_finger_2_link_median_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_actuating_hinge" link2="gripper_finger_2_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_actuating_hinge" link2="gripper_finger_2_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_actuating_hinge" link2="gripper_finger_2_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_actuating_hinge" link2="gripper_finger_2_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_actuating_hinge" link2="gripper_finger_2_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_actuating_hinge" link2="gripper_finger_2_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_actuating_hinge" link2="gripper_finger_2_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_actuating_hinge" link2="gripper_finger_middle_link_0" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_actuating_hinge" link2="gripper_finger_middle_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_actuating_hinge" link2="gripper_finger_middle_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_actuating_hinge" link2="gripper_finger_middle_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_actuating_hinge" link2="gripper_finger_middle_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_actuating_hinge" link2="gripper_finger_middle_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_actuating_hinge" link2="gripper_finger_middle_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_actuating_hinge" link2="wrist_camera_link" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_bar" link2="gripper_finger_1_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_bar" link2="gripper_finger_1_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_bar" link2="gripper_finger_1_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_bar" link2="gripper_finger_1_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_bar" link2="gripper_finger_1_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_bar" link2="gripper_finger_2_link_0" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_bar" link2="gripper_finger_2_link_1" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_bar" link2="gripper_finger_2_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_bar" link2="gripper_finger_2_link_median_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_bar" link2="gripper_finger_2_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_bar" link2="gripper_finger_2_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_bar" link2="gripper_finger_2_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_bar" link2="gripper_finger_2_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_bar" link2="gripper_finger_2_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_bar" link2="gripper_finger_middle_link_0" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_bar" link2="gripper_finger_middle_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_bar" link2="gripper_finger_middle_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_bar" link2="gripper_finger_middle_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_bar" link2="gripper_finger_middle_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_bar" link2="gripper_finger_middle_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_bar" link2="gripper_finger_middle_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_bar" link2="wrist_camera_link" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_bar_underactuated" link2="gripper_finger_1_link_paradistal_hinge" reason="Default" />
-    <disable_collisions link1="gripper_finger_1_link_median_bar_underactuated" link2="gripper_finger_1_link_paramedian_hinge" reason="Adjacent" />
-    <disable_collisions link1="gripper_finger_1_link_median_bar_underactuated" link2="gripper_finger_1_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_bar_underactuated" link2="gripper_finger_1_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_bar_underactuated" link2="gripper_finger_2_link_0" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_bar_underactuated" link2="gripper_finger_2_link_1" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_bar_underactuated" link2="gripper_finger_2_link_2" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_bar_underactuated" link2="gripper_finger_2_link_3" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_bar_underactuated" link2="gripper_finger_2_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_bar_underactuated" link2="gripper_finger_2_link_median_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_bar_underactuated" link2="gripper_finger_2_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_bar_underactuated" link2="gripper_finger_2_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_bar_underactuated" link2="gripper_finger_2_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_bar_underactuated" link2="gripper_finger_2_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_bar_underactuated" link2="gripper_finger_2_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_bar_underactuated" link2="gripper_finger_2_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_bar_underactuated" link2="gripper_finger_2_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_bar_underactuated" link2="gripper_finger_middle_link_0" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_bar_underactuated" link2="gripper_finger_middle_link_1" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_bar_underactuated" link2="gripper_finger_middle_link_2" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_bar_underactuated" link2="gripper_finger_middle_link_3" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_bar_underactuated" link2="gripper_finger_middle_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_bar_underactuated" link2="gripper_finger_middle_link_median_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_bar_underactuated" link2="gripper_finger_middle_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_bar_underactuated" link2="gripper_finger_middle_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_bar_underactuated" link2="gripper_finger_middle_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_bar_underactuated" link2="gripper_finger_middle_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_bar_underactuated" link2="gripper_finger_middle_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_bar_underactuated" link2="gripper_finger_middle_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_bar_underactuated" link2="gripper_finger_middle_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_median_bar_underactuated" link2="wrist_camera_link" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paradistal_hinge" link2="gripper_finger_1_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paradistal_hinge" link2="gripper_finger_1_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paradistal_hinge" link2="gripper_finger_1_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paradistal_hinge" link2="gripper_finger_1_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paradistal_hinge" link2="gripper_finger_2_link_0" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paradistal_hinge" link2="gripper_finger_2_link_1" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paradistal_hinge" link2="gripper_finger_2_link_2" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paradistal_hinge" link2="gripper_finger_2_link_3" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paradistal_hinge" link2="gripper_finger_2_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paradistal_hinge" link2="gripper_finger_2_link_median_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paradistal_hinge" link2="gripper_finger_2_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paradistal_hinge" link2="gripper_finger_2_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paradistal_hinge" link2="gripper_finger_2_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paradistal_hinge" link2="gripper_finger_2_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paradistal_hinge" link2="gripper_finger_2_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paradistal_hinge" link2="gripper_finger_2_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paradistal_hinge" link2="gripper_finger_2_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paradistal_hinge" link2="gripper_finger_middle_link_0" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paradistal_hinge" link2="gripper_finger_middle_link_1" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paradistal_hinge" link2="gripper_finger_middle_link_2" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paradistal_hinge" link2="gripper_finger_middle_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paradistal_hinge" link2="gripper_finger_middle_link_median_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paradistal_hinge" link2="gripper_finger_middle_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paradistal_hinge" link2="gripper_finger_middle_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paradistal_hinge" link2="gripper_finger_middle_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paradistal_hinge" link2="gripper_finger_middle_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paradistal_hinge" link2="gripper_finger_middle_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paradistal_hinge" link2="gripper_finger_middle_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paradistal_hinge" link2="gripper_finger_middle_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paradistal_hinge" link2="wrist_camera_link" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paramedian_hinge" link2="gripper_finger_1_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paramedian_hinge" link2="gripper_finger_1_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paramedian_hinge" link2="gripper_finger_1_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paramedian_hinge" link2="gripper_finger_2_link_0" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paramedian_hinge" link2="gripper_finger_2_link_1" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paramedian_hinge" link2="gripper_finger_2_link_2" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paramedian_hinge" link2="gripper_finger_2_link_3" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paramedian_hinge" link2="gripper_finger_2_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paramedian_hinge" link2="gripper_finger_2_link_median_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paramedian_hinge" link2="gripper_finger_2_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paramedian_hinge" link2="gripper_finger_2_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paramedian_hinge" link2="gripper_finger_2_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paramedian_hinge" link2="gripper_finger_2_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paramedian_hinge" link2="gripper_finger_2_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paramedian_hinge" link2="gripper_finger_2_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paramedian_hinge" link2="gripper_finger_2_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paramedian_hinge" link2="gripper_finger_middle_link_0" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paramedian_hinge" link2="gripper_finger_middle_link_1" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paramedian_hinge" link2="gripper_finger_middle_link_2" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paramedian_hinge" link2="gripper_finger_middle_link_3" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paramedian_hinge" link2="gripper_finger_middle_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paramedian_hinge" link2="gripper_finger_middle_link_median_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paramedian_hinge" link2="gripper_finger_middle_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paramedian_hinge" link2="gripper_finger_middle_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paramedian_hinge" link2="gripper_finger_middle_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paramedian_hinge" link2="gripper_finger_middle_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paramedian_hinge" link2="gripper_finger_middle_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paramedian_hinge" link2="gripper_finger_middle_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paramedian_hinge" link2="gripper_finger_middle_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paramedian_hinge" link2="wrist_camera_link" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_actuating_hinge" link2="gripper_finger_1_link_paraproximal_bar" reason="Adjacent" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_actuating_hinge" link2="gripper_finger_1_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_actuating_hinge" link2="gripper_finger_1_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_actuating_hinge" link2="gripper_finger_2_link_0" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_actuating_hinge" link2="gripper_finger_2_link_1" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_actuating_hinge" link2="gripper_finger_2_link_2" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_actuating_hinge" link2="gripper_finger_2_link_3" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_actuating_hinge" link2="gripper_finger_2_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_actuating_hinge" link2="gripper_finger_2_link_median_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_actuating_hinge" link2="gripper_finger_2_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_actuating_hinge" link2="gripper_finger_2_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_actuating_hinge" link2="gripper_finger_2_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_actuating_hinge" link2="gripper_finger_2_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_actuating_hinge" link2="gripper_finger_2_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_actuating_hinge" link2="gripper_finger_2_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_actuating_hinge" link2="gripper_finger_2_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_actuating_hinge" link2="gripper_finger_middle_link_0" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_actuating_hinge" link2="gripper_finger_middle_link_1" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_actuating_hinge" link2="gripper_finger_middle_link_2" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_actuating_hinge" link2="gripper_finger_middle_link_3" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_actuating_hinge" link2="gripper_finger_middle_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_actuating_hinge" link2="gripper_finger_middle_link_median_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_actuating_hinge" link2="gripper_finger_middle_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_actuating_hinge" link2="gripper_finger_middle_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_actuating_hinge" link2="gripper_finger_middle_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_actuating_hinge" link2="gripper_finger_middle_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_actuating_hinge" link2="gripper_finger_middle_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_actuating_hinge" link2="gripper_finger_middle_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_actuating_hinge" link2="gripper_finger_middle_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_actuating_hinge" link2="gripper_palm" reason="Default" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_actuating_hinge" link2="wrist_camera_link" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_bar" link2="gripper_finger_1_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_bar" link2="gripper_finger_1_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_bar" link2="gripper_finger_2_link_0" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_bar" link2="gripper_finger_2_link_1" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_bar" link2="gripper_finger_2_link_2" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_bar" link2="gripper_finger_2_link_3" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_bar" link2="gripper_finger_2_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_bar" link2="gripper_finger_2_link_median_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_bar" link2="gripper_finger_2_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_bar" link2="gripper_finger_2_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_bar" link2="gripper_finger_2_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_bar" link2="gripper_finger_2_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_bar" link2="gripper_finger_2_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_bar" link2="gripper_finger_2_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_bar" link2="gripper_finger_2_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_bar" link2="gripper_finger_middle_link_0" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_bar" link2="gripper_finger_middle_link_1" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_bar" link2="gripper_finger_middle_link_2" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_bar" link2="gripper_finger_middle_link_3" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_bar" link2="gripper_finger_middle_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_bar" link2="gripper_finger_middle_link_median_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_bar" link2="gripper_finger_middle_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_bar" link2="gripper_finger_middle_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_bar" link2="gripper_finger_middle_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_bar" link2="gripper_finger_middle_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_bar" link2="gripper_finger_middle_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_bar" link2="gripper_finger_middle_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_bar" link2="gripper_finger_middle_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_paraproximal_bar" link2="wrist_camera_link" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_proximal_actuating_bar" link2="gripper_finger_1_link_proximal_actuating_hinge" reason="Adjacent" />
-    <disable_collisions link1="gripper_finger_1_link_proximal_actuating_bar" link2="gripper_finger_2_link_0" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_proximal_actuating_bar" link2="gripper_finger_2_link_1" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_proximal_actuating_bar" link2="gripper_finger_2_link_2" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_proximal_actuating_bar" link2="gripper_finger_2_link_3" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_proximal_actuating_bar" link2="gripper_finger_2_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_proximal_actuating_bar" link2="gripper_finger_2_link_median_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_proximal_actuating_bar" link2="gripper_finger_2_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_proximal_actuating_bar" link2="gripper_finger_2_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_proximal_actuating_bar" link2="gripper_finger_2_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_proximal_actuating_bar" link2="gripper_finger_2_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_proximal_actuating_bar" link2="gripper_finger_2_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_proximal_actuating_bar" link2="gripper_finger_2_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_proximal_actuating_bar" link2="gripper_finger_2_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_proximal_actuating_bar" link2="gripper_finger_middle_link_0" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_proximal_actuating_bar" link2="gripper_finger_middle_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_proximal_actuating_bar" link2="gripper_finger_middle_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_proximal_actuating_bar" link2="gripper_finger_middle_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_proximal_actuating_bar" link2="gripper_finger_middle_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_proximal_actuating_bar" link2="gripper_finger_middle_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_proximal_actuating_bar" link2="gripper_finger_middle_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_proximal_actuating_bar" link2="wrist_camera_link" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_proximal_actuating_hinge" link2="gripper_finger_2_link_0" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_proximal_actuating_hinge" link2="gripper_finger_2_link_1" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_proximal_actuating_hinge" link2="gripper_finger_2_link_2" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_proximal_actuating_hinge" link2="gripper_finger_2_link_3" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_proximal_actuating_hinge" link2="gripper_finger_2_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_proximal_actuating_hinge" link2="gripper_finger_2_link_median_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_proximal_actuating_hinge" link2="gripper_finger_2_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_proximal_actuating_hinge" link2="gripper_finger_2_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_proximal_actuating_hinge" link2="gripper_finger_2_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_proximal_actuating_hinge" link2="gripper_finger_2_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_proximal_actuating_hinge" link2="gripper_finger_2_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_proximal_actuating_hinge" link2="gripper_finger_2_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_proximal_actuating_hinge" link2="gripper_finger_2_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_proximal_actuating_hinge" link2="gripper_finger_middle_link_0" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_proximal_actuating_hinge" link2="gripper_finger_middle_link_1" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_proximal_actuating_hinge" link2="gripper_finger_middle_link_2" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_proximal_actuating_hinge" link2="gripper_finger_middle_link_3" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_proximal_actuating_hinge" link2="gripper_finger_middle_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_proximal_actuating_hinge" link2="gripper_finger_middle_link_median_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_proximal_actuating_hinge" link2="gripper_finger_middle_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_proximal_actuating_hinge" link2="gripper_finger_middle_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_proximal_actuating_hinge" link2="gripper_finger_middle_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_proximal_actuating_hinge" link2="gripper_finger_middle_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_proximal_actuating_hinge" link2="gripper_finger_middle_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_proximal_actuating_hinge" link2="gripper_finger_middle_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_proximal_actuating_hinge" link2="gripper_finger_middle_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_1_link_proximal_actuating_hinge" link2="gripper_palm" reason="Default" />
-    <disable_collisions link1="gripper_finger_1_link_proximal_actuating_hinge" link2="wrist_camera_link" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_0" link2="gripper_finger_2_link_1" reason="Adjacent" />
-    <disable_collisions link1="gripper_finger_2_link_0" link2="gripper_finger_2_link_2" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_0" link2="gripper_finger_2_link_3" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_0" link2="gripper_finger_2_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_0" link2="gripper_finger_2_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_0" link2="gripper_finger_2_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_0" link2="gripper_finger_2_link_paraproximal_actuating_hinge" reason="Adjacent" />
-    <disable_collisions link1="gripper_finger_2_link_0" link2="gripper_finger_2_link_proximal_actuating_hinge" reason="Adjacent" />
-    <disable_collisions link1="gripper_finger_2_link_0" link2="gripper_finger_middle_link_0" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_0" link2="gripper_finger_middle_link_1" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_0" link2="gripper_finger_middle_link_2" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_0" link2="gripper_finger_middle_link_3" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_0" link2="gripper_finger_middle_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_0" link2="gripper_finger_middle_link_median_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_0" link2="gripper_finger_middle_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_0" link2="gripper_finger_middle_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_0" link2="gripper_finger_middle_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_0" link2="gripper_finger_middle_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_0" link2="gripper_finger_middle_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_0" link2="gripper_finger_middle_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_0" link2="gripper_finger_middle_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_0" link2="gripper_palm" reason="Adjacent" />
-    <disable_collisions link1="gripper_finger_2_link_0" link2="wrist_camera_link" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_1" link2="gripper_finger_2_link_2" reason="Adjacent" />
-    <disable_collisions link1="gripper_finger_2_link_1" link2="gripper_finger_2_link_3" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_1" link2="gripper_finger_2_link_median_actuating_hinge" reason="Adjacent" />
-    <disable_collisions link1="gripper_finger_2_link_1" link2="gripper_finger_2_link_median_bar" reason="Default" />
-    <disable_collisions link1="gripper_finger_2_link_1" link2="gripper_finger_2_link_median_bar_underactuated" reason="Default" />
-    <disable_collisions link1="gripper_finger_2_link_1" link2="gripper_finger_2_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_1" link2="gripper_finger_2_link_paramedian_hinge" reason="Adjacent" />
-    <disable_collisions link1="gripper_finger_2_link_1" link2="gripper_finger_2_link_paraproximal_bar" reason="Default" />
-    <disable_collisions link1="gripper_finger_2_link_1" link2="gripper_finger_2_link_proximal_actuating_bar" reason="Default" />
-    <disable_collisions link1="gripper_finger_2_link_1" link2="gripper_finger_2_link_proximal_actuating_hinge" reason="Default" />
-    <disable_collisions link1="gripper_finger_2_link_1" link2="gripper_finger_middle_link_0" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_1" link2="gripper_finger_middle_link_1" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_1" link2="gripper_finger_middle_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_1" link2="gripper_finger_middle_link_median_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_1" link2="gripper_finger_middle_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_1" link2="gripper_finger_middle_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_1" link2="gripper_finger_middle_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_1" link2="gripper_palm" reason="Default" />
-    <disable_collisions link1="gripper_finger_2_link_1" link2="wrist_camera_link" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_2" link2="gripper_finger_2_link_3" reason="Adjacent" />
-    <disable_collisions link1="gripper_finger_2_link_2" link2="gripper_finger_2_link_median_actuating_hinge" reason="Default" />
-    <disable_collisions link1="gripper_finger_2_link_2" link2="gripper_finger_2_link_median_bar" reason="Default" />
-    <disable_collisions link1="gripper_finger_2_link_2" link2="gripper_finger_2_link_median_bar_underactuated" reason="Default" />
-    <disable_collisions link1="gripper_finger_2_link_2" link2="gripper_finger_2_link_paradistal_hinge" reason="Adjacent" />
-    <disable_collisions link1="gripper_finger_2_link_2" link2="gripper_finger_2_link_paramedian_hinge" reason="Default" />
-    <disable_collisions link1="gripper_finger_2_link_2" link2="gripper_finger_2_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_2" link2="gripper_finger_2_link_paraproximal_bar" reason="Default" />
-    <disable_collisions link1="gripper_finger_2_link_2" link2="gripper_finger_2_link_proximal_actuating_bar" reason="Default" />
-    <disable_collisions link1="gripper_finger_2_link_2" link2="gripper_finger_2_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_2" link2="gripper_finger_middle_link_0" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_2" link2="gripper_finger_middle_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_2" link2="gripper_finger_middle_link_median_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_2" link2="gripper_finger_middle_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_2" link2="gripper_finger_middle_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_2" link2="gripper_finger_middle_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_2" link2="wrist_camera_link" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_3" link2="gripper_finger_2_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_3" link2="gripper_finger_2_link_median_bar" reason="Default" />
-    <disable_collisions link1="gripper_finger_2_link_3" link2="gripper_finger_2_link_median_bar_underactuated" reason="Default" />
-    <disable_collisions link1="gripper_finger_2_link_3" link2="gripper_finger_2_link_paradistal_hinge" reason="Default" />
-    <disable_collisions link1="gripper_finger_2_link_3" link2="gripper_finger_2_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_3" link2="gripper_finger_2_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_3" link2="gripper_finger_2_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_3" link2="gripper_finger_middle_link_0" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_3" link2="gripper_finger_middle_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_3" link2="gripper_finger_middle_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_3" link2="gripper_finger_middle_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_3" link2="gripper_finger_middle_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_3" link2="wrist_camera_link" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_median_actuating_hinge" link2="gripper_finger_2_link_median_bar" reason="Adjacent" />
-    <disable_collisions link1="gripper_finger_2_link_median_actuating_hinge" link2="gripper_finger_2_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_median_actuating_hinge" link2="gripper_finger_2_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_median_actuating_hinge" link2="gripper_finger_2_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_median_actuating_hinge" link2="gripper_finger_2_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_median_actuating_hinge" link2="gripper_finger_2_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_median_actuating_hinge" link2="gripper_finger_2_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_median_actuating_hinge" link2="gripper_finger_middle_link_0" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_median_actuating_hinge" link2="gripper_finger_middle_link_1" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_median_actuating_hinge" link2="gripper_finger_middle_link_2" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_median_actuating_hinge" link2="gripper_finger_middle_link_3" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_median_actuating_hinge" link2="gripper_finger_middle_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_median_actuating_hinge" link2="gripper_finger_middle_link_median_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_median_actuating_hinge" link2="gripper_finger_middle_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_median_actuating_hinge" link2="gripper_finger_middle_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_median_actuating_hinge" link2="gripper_finger_middle_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_median_actuating_hinge" link2="gripper_finger_middle_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_median_actuating_hinge" link2="gripper_finger_middle_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_median_actuating_hinge" link2="gripper_finger_middle_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_median_actuating_hinge" link2="gripper_finger_middle_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_median_actuating_hinge" link2="wrist_camera_link" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_median_bar" link2="gripper_finger_2_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_median_bar" link2="gripper_finger_2_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_median_bar" link2="gripper_finger_2_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_median_bar" link2="gripper_finger_2_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_median_bar" link2="gripper_finger_2_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_median_bar" link2="gripper_finger_middle_link_0" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_median_bar" link2="gripper_finger_middle_link_1" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_median_bar" link2="gripper_finger_middle_link_2" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_median_bar" link2="gripper_finger_middle_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_median_bar" link2="gripper_finger_middle_link_median_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_median_bar" link2="gripper_finger_middle_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_median_bar" link2="gripper_finger_middle_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_median_bar" link2="gripper_finger_middle_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_median_bar" link2="gripper_finger_middle_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_median_bar" link2="gripper_finger_middle_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_median_bar" link2="gripper_finger_middle_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_median_bar" link2="gripper_finger_middle_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_median_bar" link2="wrist_camera_link" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_median_bar_underactuated" link2="gripper_finger_2_link_paradistal_hinge" reason="Default" />
-    <disable_collisions link1="gripper_finger_2_link_median_bar_underactuated" link2="gripper_finger_2_link_paramedian_hinge" reason="Adjacent" />
-    <disable_collisions link1="gripper_finger_2_link_median_bar_underactuated" link2="gripper_finger_2_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_median_bar_underactuated" link2="gripper_finger_2_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_median_bar_underactuated" link2="gripper_finger_middle_link_0" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_median_bar_underactuated" link2="gripper_finger_middle_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_median_bar_underactuated" link2="gripper_finger_middle_link_median_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_median_bar_underactuated" link2="gripper_finger_middle_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_median_bar_underactuated" link2="gripper_finger_middle_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_median_bar_underactuated" link2="gripper_finger_middle_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_median_bar_underactuated" link2="wrist_camera_link" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_paradistal_hinge" link2="gripper_finger_2_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_paradistal_hinge" link2="gripper_finger_2_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_paradistal_hinge" link2="gripper_finger_2_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_paradistal_hinge" link2="gripper_finger_2_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_paradistal_hinge" link2="gripper_finger_middle_link_0" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_paradistal_hinge" link2="gripper_finger_middle_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_paradistal_hinge" link2="gripper_finger_middle_link_median_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_paradistal_hinge" link2="gripper_finger_middle_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_paradistal_hinge" link2="gripper_finger_middle_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_paradistal_hinge" link2="gripper_finger_middle_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_paradistal_hinge" link2="wrist_camera_link" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_paramedian_hinge" link2="gripper_finger_2_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_paramedian_hinge" link2="gripper_finger_2_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_paramedian_hinge" link2="gripper_finger_2_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_paramedian_hinge" link2="gripper_finger_middle_link_0" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_paramedian_hinge" link2="gripper_finger_middle_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_paramedian_hinge" link2="gripper_finger_middle_link_median_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_paramedian_hinge" link2="gripper_finger_middle_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_paramedian_hinge" link2="gripper_finger_middle_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_paramedian_hinge" link2="gripper_finger_middle_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_paramedian_hinge" link2="wrist_camera_link" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_paraproximal_actuating_hinge" link2="gripper_finger_2_link_paraproximal_bar" reason="Adjacent" />
-    <disable_collisions link1="gripper_finger_2_link_paraproximal_actuating_hinge" link2="gripper_finger_2_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_paraproximal_actuating_hinge" link2="gripper_finger_2_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_paraproximal_actuating_hinge" link2="gripper_finger_middle_link_0" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_paraproximal_actuating_hinge" link2="gripper_finger_middle_link_1" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_paraproximal_actuating_hinge" link2="gripper_finger_middle_link_2" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_paraproximal_actuating_hinge" link2="gripper_finger_middle_link_3" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_paraproximal_actuating_hinge" link2="gripper_finger_middle_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_paraproximal_actuating_hinge" link2="gripper_finger_middle_link_median_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_paraproximal_actuating_hinge" link2="gripper_finger_middle_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_paraproximal_actuating_hinge" link2="gripper_finger_middle_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_paraproximal_actuating_hinge" link2="gripper_finger_middle_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_paraproximal_actuating_hinge" link2="gripper_finger_middle_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_paraproximal_actuating_hinge" link2="gripper_finger_middle_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_paraproximal_actuating_hinge" link2="gripper_finger_middle_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_paraproximal_actuating_hinge" link2="gripper_finger_middle_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_paraproximal_actuating_hinge" link2="gripper_palm" reason="Default" />
-    <disable_collisions link1="gripper_finger_2_link_paraproximal_actuating_hinge" link2="wrist_camera_link" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_paraproximal_bar" link2="gripper_finger_2_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_paraproximal_bar" link2="gripper_finger_2_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_paraproximal_bar" link2="gripper_finger_middle_link_0" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_paraproximal_bar" link2="gripper_finger_middle_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_paraproximal_bar" link2="gripper_finger_middle_link_median_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_paraproximal_bar" link2="gripper_finger_middle_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_paraproximal_bar" link2="gripper_finger_middle_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_paraproximal_bar" link2="gripper_finger_middle_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_paraproximal_bar" link2="wrist_camera_link" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_proximal_actuating_bar" link2="gripper_finger_2_link_proximal_actuating_hinge" reason="Adjacent" />
-    <disable_collisions link1="gripper_finger_2_link_proximal_actuating_bar" link2="gripper_finger_middle_link_0" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_proximal_actuating_bar" link2="gripper_finger_middle_link_1" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_proximal_actuating_bar" link2="gripper_finger_middle_link_2" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_proximal_actuating_bar" link2="gripper_finger_middle_link_3" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_proximal_actuating_bar" link2="gripper_finger_middle_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_proximal_actuating_bar" link2="gripper_finger_middle_link_median_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_proximal_actuating_bar" link2="gripper_finger_middle_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_proximal_actuating_bar" link2="gripper_finger_middle_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_proximal_actuating_bar" link2="gripper_finger_middle_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_proximal_actuating_bar" link2="gripper_finger_middle_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_proximal_actuating_bar" link2="gripper_finger_middle_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_proximal_actuating_bar" link2="gripper_finger_middle_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_proximal_actuating_bar" link2="gripper_finger_middle_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_proximal_actuating_hinge" link2="gripper_finger_middle_link_0" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_proximal_actuating_hinge" link2="gripper_finger_middle_link_1" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_proximal_actuating_hinge" link2="gripper_finger_middle_link_2" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_proximal_actuating_hinge" link2="gripper_finger_middle_link_3" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_proximal_actuating_hinge" link2="gripper_finger_middle_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_proximal_actuating_hinge" link2="gripper_finger_middle_link_median_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_proximal_actuating_hinge" link2="gripper_finger_middle_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_proximal_actuating_hinge" link2="gripper_finger_middle_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_proximal_actuating_hinge" link2="gripper_finger_middle_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_proximal_actuating_hinge" link2="gripper_finger_middle_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_proximal_actuating_hinge" link2="gripper_finger_middle_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_proximal_actuating_hinge" link2="gripper_finger_middle_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_proximal_actuating_hinge" link2="gripper_finger_middle_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_2_link_proximal_actuating_hinge" link2="gripper_palm" reason="Default" />
-    <disable_collisions link1="gripper_finger_2_link_proximal_actuating_hinge" link2="wrist_camera_link" reason="Never" />
-    <disable_collisions link1="gripper_finger_middle_link_0" link2="gripper_finger_middle_link_1" reason="Adjacent" />
-    <disable_collisions link1="gripper_finger_middle_link_0" link2="gripper_finger_middle_link_2" reason="Never" />
-    <disable_collisions link1="gripper_finger_middle_link_0" link2="gripper_finger_middle_link_3" reason="Never" />
-    <disable_collisions link1="gripper_finger_middle_link_0" link2="gripper_finger_middle_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_middle_link_0" link2="gripper_finger_middle_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_middle_link_0" link2="gripper_finger_middle_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_middle_link_0" link2="gripper_finger_middle_link_paraproximal_actuating_hinge" reason="Adjacent" />
-    <disable_collisions link1="gripper_finger_middle_link_0" link2="gripper_finger_middle_link_proximal_actuating_hinge" reason="Adjacent" />
-    <disable_collisions link1="gripper_finger_middle_link_0" link2="gripper_palm" reason="Adjacent" />
-    <disable_collisions link1="gripper_finger_middle_link_0" link2="wrist_camera_link" reason="Never" />
-    <disable_collisions link1="gripper_finger_middle_link_1" link2="gripper_finger_middle_link_2" reason="Adjacent" />
-    <disable_collisions link1="gripper_finger_middle_link_1" link2="gripper_finger_middle_link_3" reason="Never" />
-    <disable_collisions link1="gripper_finger_middle_link_1" link2="gripper_finger_middle_link_median_actuating_hinge" reason="Adjacent" />
-    <disable_collisions link1="gripper_finger_middle_link_1" link2="gripper_finger_middle_link_median_bar" reason="Default" />
-    <disable_collisions link1="gripper_finger_middle_link_1" link2="gripper_finger_middle_link_median_bar_underactuated" reason="Default" />
-    <disable_collisions link1="gripper_finger_middle_link_1" link2="gripper_finger_middle_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_middle_link_1" link2="gripper_finger_middle_link_paramedian_hinge" reason="Adjacent" />
-    <disable_collisions link1="gripper_finger_middle_link_1" link2="gripper_finger_middle_link_paraproximal_bar" reason="Default" />
-    <disable_collisions link1="gripper_finger_middle_link_1" link2="gripper_finger_middle_link_proximal_actuating_bar" reason="Default" />
-    <disable_collisions link1="gripper_finger_middle_link_1" link2="gripper_finger_middle_link_proximal_actuating_hinge" reason="Default" />
-    <disable_collisions link1="gripper_finger_middle_link_1" link2="gripper_palm" reason="Default" />
-    <disable_collisions link1="gripper_finger_middle_link_1" link2="wrist_camera_link" reason="Never" />
-    <disable_collisions link1="gripper_finger_middle_link_2" link2="gripper_finger_middle_link_3" reason="Adjacent" />
-    <disable_collisions link1="gripper_finger_middle_link_2" link2="gripper_finger_middle_link_median_actuating_hinge" reason="Default" />
-    <disable_collisions link1="gripper_finger_middle_link_2" link2="gripper_finger_middle_link_median_bar" reason="Default" />
-    <disable_collisions link1="gripper_finger_middle_link_2" link2="gripper_finger_middle_link_median_bar_underactuated" reason="Default" />
-    <disable_collisions link1="gripper_finger_middle_link_2" link2="gripper_finger_middle_link_paradistal_hinge" reason="Adjacent" />
-    <disable_collisions link1="gripper_finger_middle_link_2" link2="gripper_finger_middle_link_paramedian_hinge" reason="Default" />
-    <disable_collisions link1="gripper_finger_middle_link_2" link2="gripper_finger_middle_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_middle_link_2" link2="gripper_finger_middle_link_paraproximal_bar" reason="Default" />
-    <disable_collisions link1="gripper_finger_middle_link_2" link2="gripper_finger_middle_link_proximal_actuating_bar" reason="Default" />
-    <disable_collisions link1="gripper_finger_middle_link_2" link2="gripper_finger_middle_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_middle_link_2" link2="wrist_camera_link" reason="Never" />
-    <disable_collisions link1="gripper_finger_middle_link_3" link2="gripper_finger_middle_link_median_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_middle_link_3" link2="gripper_finger_middle_link_median_bar" reason="Default" />
-    <disable_collisions link1="gripper_finger_middle_link_3" link2="gripper_finger_middle_link_median_bar_underactuated" reason="Default" />
-    <disable_collisions link1="gripper_finger_middle_link_3" link2="gripper_finger_middle_link_paradistal_hinge" reason="Default" />
-    <disable_collisions link1="gripper_finger_middle_link_3" link2="gripper_finger_middle_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_middle_link_3" link2="gripper_finger_middle_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_middle_link_3" link2="gripper_finger_middle_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_middle_link_3" link2="wrist_camera_link" reason="Never" />
-    <disable_collisions link1="gripper_finger_middle_link_median_actuating_hinge" link2="gripper_finger_middle_link_median_bar" reason="Adjacent" />
-    <disable_collisions link1="gripper_finger_middle_link_median_actuating_hinge" link2="gripper_finger_middle_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="gripper_finger_middle_link_median_actuating_hinge" link2="gripper_finger_middle_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_middle_link_median_actuating_hinge" link2="gripper_finger_middle_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_middle_link_median_actuating_hinge" link2="gripper_finger_middle_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_middle_link_median_actuating_hinge" link2="gripper_finger_middle_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_middle_link_median_actuating_hinge" link2="gripper_finger_middle_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_middle_link_median_actuating_hinge" link2="gripper_palm" reason="Never" />
-    <disable_collisions link1="gripper_finger_middle_link_median_actuating_hinge" link2="wrist_camera_link" reason="Never" />
-    <disable_collisions link1="gripper_finger_middle_link_median_bar" link2="gripper_finger_middle_link_median_bar_underactuated" reason="Never" />
-    <disable_collisions link1="gripper_finger_middle_link_median_bar" link2="gripper_finger_middle_link_paradistal_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_middle_link_median_bar" link2="gripper_finger_middle_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_middle_link_median_bar" link2="gripper_finger_middle_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_middle_link_median_bar" link2="gripper_finger_middle_link_paraproximal_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_middle_link_median_bar" link2="wrist_camera_link" reason="Never" />
-    <disable_collisions link1="gripper_finger_middle_link_median_bar_underactuated" link2="gripper_finger_middle_link_paradistal_hinge" reason="Default" />
-    <disable_collisions link1="gripper_finger_middle_link_median_bar_underactuated" link2="gripper_finger_middle_link_paramedian_hinge" reason="Adjacent" />
-    <disable_collisions link1="gripper_finger_middle_link_median_bar_underactuated" link2="gripper_finger_middle_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_middle_link_median_bar_underactuated" link2="gripper_finger_middle_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_middle_link_median_bar_underactuated" link2="wrist_camera_link" reason="Never" />
-    <disable_collisions link1="gripper_finger_middle_link_paradistal_hinge" link2="gripper_finger_middle_link_paramedian_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_middle_link_paradistal_hinge" link2="gripper_finger_middle_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_middle_link_paradistal_hinge" link2="gripper_finger_middle_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_middle_link_paradistal_hinge" link2="gripper_finger_middle_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_middle_link_paradistal_hinge" link2="wrist_camera_link" reason="Never" />
-    <disable_collisions link1="gripper_finger_middle_link_paramedian_hinge" link2="gripper_finger_middle_link_paraproximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_middle_link_paramedian_hinge" link2="gripper_finger_middle_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_middle_link_paramedian_hinge" link2="gripper_finger_middle_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_middle_link_paramedian_hinge" link2="gripper_palm" reason="Never" />
-    <disable_collisions link1="gripper_finger_middle_link_paramedian_hinge" link2="wrist_camera_link" reason="Never" />
-    <disable_collisions link1="gripper_finger_middle_link_paraproximal_actuating_hinge" link2="gripper_finger_middle_link_paraproximal_bar" reason="Adjacent" />
-    <disable_collisions link1="gripper_finger_middle_link_paraproximal_actuating_hinge" link2="gripper_finger_middle_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_middle_link_paraproximal_actuating_hinge" link2="gripper_finger_middle_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_middle_link_paraproximal_actuating_hinge" link2="gripper_palm" reason="Default" />
-    <disable_collisions link1="gripper_finger_middle_link_paraproximal_actuating_hinge" link2="wrist_camera_link" reason="Never" />
-    <disable_collisions link1="gripper_finger_middle_link_paraproximal_bar" link2="gripper_finger_middle_link_proximal_actuating_bar" reason="Never" />
-    <disable_collisions link1="gripper_finger_middle_link_paraproximal_bar" link2="gripper_finger_middle_link_proximal_actuating_hinge" reason="Never" />
-    <disable_collisions link1="gripper_finger_middle_link_paraproximal_bar" link2="wrist_camera_link" reason="Never" />
-    <disable_collisions link1="gripper_finger_middle_link_proximal_actuating_bar" link2="gripper_finger_middle_link_proximal_actuating_hinge" reason="Adjacent" />
-    <disable_collisions link1="gripper_finger_middle_link_proximal_actuating_bar" link2="wrist_camera_link" reason="Never" />
-    <disable_collisions link1="gripper_finger_middle_link_proximal_actuating_hinge" link2="gripper_palm" reason="Default" />
-    <disable_collisions link1="gripper_finger_middle_link_proximal_actuating_hinge" link2="wrist_camera_link" reason="Never" />
-    <disable_collisions link1="gripper_palm" link2="wrist_camera_link" reason="Never" />
 </robot>
