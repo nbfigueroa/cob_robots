@@ -79,7 +79,7 @@
   <!-- The rpy for simulation is different from the rpy setup for the actual camera. If we use the rpy from actual camera in simulation, the view will be wrong -->
   <!-- gazebo plug-in for simulating the camera -->
   <xacro:r200
-  sim="$(arg load_wrist_camera_simulator)"
+  sim="$(arg sim)"
   name="${wrist_camera_name}"
   parent="gripper_palm">
     <origin xyz="${wrist_camera_r200_xyz}" rpy="${wrist_camera_r200_rpy}"/>
@@ -87,14 +87,14 @@
   
   <xacro:if value="$(arg load_wrist_camera_simulator)">
     <xacro:r200_rgb_gazebo_v0 
-    sim="$(arg load_wrist_camera_simulator)"
+    sim="$(arg sim)"
     name="${wrist_camera_name}"
     link_name="${wrist_camera_name}_rgb_frame"
     frame_name="${wrist_camera_name}_rgb_optical_frame"
     camera_name="${wrist_camera_name}"
     visualize_wrist_camera_simulator="$(arg visualize_wrist_camera_simulator)" />
     <xacro:r200_ir_gazebo_v0
-    sim="$(arg load_wrist_camera_simulator)"
+    sim="$(arg sim)"
     name="${wrist_camera_name}"
     link_name="${wrist_camera_name}_depth_frame"
     frame_name="${wrist_camera_name}_depth_optical_frame"
