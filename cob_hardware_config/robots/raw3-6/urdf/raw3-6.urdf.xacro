@@ -86,7 +86,7 @@
   </xacro:r200>
   
   <xacro:if value="$(arg load_wrist_camera_simulator)">
-    <xacro:r200_rgb_gazebo_v0 
+    <xacro:r200_rgb_gazebo_v0
     name="${wrist_camera_name}"
     link_name="${wrist_camera_name}_rgb_frame"
     frame_name="${wrist_camera_name}_rgb_optical_frame"
