@@ -5,14 +5,14 @@ find_package(catkin REQUIRED COMPONENTS cob_supported_robots)
 
 catkin_package()
 
-if(CATKIN_ENABLE_TESTING)
-  find_package(roslaunch REQUIRED)
-  foreach(robot ${cob_supported_robots_ROBOTLIST})
-    message("testing for robot: ${robot}")
-    #roslaunch_add_file_check(upload_param.launch robot:=${robot})
-    roslaunch_add_file_check(robots/${robot}/upload_param_${robot}.launch robot:=${robot})
-  endforeach()
-endif()
+#if(CATKIN_ENABLE_TESTING)
+#  find_package(roslaunch REQUIRED)
+#  foreach(robot ${cob_supported_robots_ROBOTLIST})
+#    message("testing for robot: ${robot}")
+#    #roslaunch_add_file_check(upload_param.launch robot:=${robot})
+#    roslaunch_add_file_check(robots/${robot}/upload_param_${robot}.launch robot:=${robot})
+#  endforeach()
+#endif()
 
 ### INSTALL ###
 install(DIRECTORY robots
