@@ -28,6 +28,7 @@
   <arg name="base_navigation_global_planner" default="$(optenv BASE_NAVIGATION_GLOBAL_PLANNER !!NO_BASE_NAVIGATION_GLOBAL_PLANNER_SET!!)"/>
   <arg name="2dnav_linear" default="$(optenv 2DNAV_LINEAR !!NO_2DNAV_LINEAR_SET!!)"/>
 
+  <arg name="arm_planner" default="$(optenv ARM_PLANNER !!NO_ARM_PLANNER_SET!!)" />
 
   <arg name="load_arm_universal_robot_driver" default="$(optenv LOAD_ARM_UNIVERSAL_ROBOT_DRIVER !!NO_LOAD_ARM_UNIVERSAL_ROBOT_DRIVER_SET!!)"/>
   <arg name="load_arm_modern_ur_driver" default="$(optenv USE_ARM_MODERN_UR_DRIVER !!NO_USE_ARM_MODERN_UR_DRIVER_SET!!)"/>
@@ -198,6 +199,7 @@
       <group if="$(arg load_arm_moveit)">
         <include file="$(find cob_moveit_config)/launch/move_group.launch">
           <arg name="robot" value="$(arg robot)"/>
+          <arg name="planner" value="$(arg arm_planner)" />
         </include>
       </group>
 
