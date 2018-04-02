@@ -9,7 +9,7 @@
   <arg name="robot_description" default="robot_description"/>
 
   <!-- Load universal robot description format (URDF) -->
-  <param if="$(arg load_robot_description)" name="$(arg robot_description)" command="$(find xacro)/xacro --inorder '$(find cob_hardware_config)/robots/$(arg robot)/urdf/$(arg robot).urdf.xacro'" />
+  <param if="$(arg load_robot_description)" name="$(arg robot_description)" command="$(find xacro)/xacro --inorder '$(find cob_hardware_config)/robots/$(arg robot)/urdf/$(arg robot).urdf.xacro' sim:=true load_wrist_camera_simulator:=false" />
 
   <!-- The semantic description that corresponds to the URDF -->
   <param name="$(arg robot_description)_semantic" textfile="$(find cob_moveit_config)/robots/$(arg robot)/moveit/config/$(arg robot).srdf" />

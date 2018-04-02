@@ -1,5 +1,9 @@
 <?xml version="1.0"?>
 <launch>
+  <!-- <arg name="planner" default="ompl" /> -->
+  <!-- <arg name="planner" default="chomp" /> -->
+  <arg name="planner" default="stomp" />
+
   <arg name="robot" default="raw3-6"/>
   <!-- By default, we do not start a database (it can be large) -->
   <arg name="db" default="false" />
@@ -33,6 +37,7 @@
     <arg name="fake_execution" value="true"/>
     <arg name="info" value="true"/>
     <arg name="debug" value="$(arg debug)"/>
+    <arg name="planner" value="$(arg planner)"/>
   </include>
 
   <!-- Run Rviz and load the default config to see the state of the move_group node -->

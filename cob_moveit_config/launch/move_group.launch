@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
 <launch>
+  <arg name="planner" default="ompl" />
+  
   <arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
 
   <include file="$(find cob_moveit_config)/launch/planning_context.launch">
@@ -27,7 +29,7 @@
   <!-- Planning Functionality -->
   <include ns="move_group" file="$(find cob_moveit_config)/launch/planning_pipeline.launch.xml">
     <arg name="robot" value="$(arg robot)" />
-    <arg name="pipeline" value="ompl" />
+    <arg name="pipeline" value="$(arg planner)" />
   </include>
 
   <!-- Trajectory Execution Functionality -->
