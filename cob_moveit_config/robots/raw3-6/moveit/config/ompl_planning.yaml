@@ -65,10 +65,12 @@ arm:
     - TRRTkConfigDefault
     - PRMkConfigDefault
     - PRMstarkConfigDefault
-  # In Brad's version, there are no these next 2 lines.
-  # Shen tried to compare having vs not having these 2 lines, and he finds that with the next 2 lines, the planning becomes very slow. So comment them out for now.
-  # projection_evaluator: joints(arm_shoulder_pan_joint,arm_shoulder_lift_joint)
-  # longest_valid_segment_fraction: 0.05
+  ##Note: commenting the following line lets moveit chose RRTConnect as default planner rather than LBKPIECE
+  #projection_evaluator: joints(shoulder_pan_joint,shoulder_lift_joint)
+
+  # http://docs.ros.org/kinetic/api/moveit_tutorials/html/doc/ompl_interface_tutorial.html
+  # The longest_valid_segement_fraction defines the discretization of robot motions used for collision checking, and greatly affects the performance and reliability of OMPL-based solutions. 
+  longest_valid_segment_fraction: 0.01
 gripper:
   planner_configs:
     - SBLkConfigDefault
