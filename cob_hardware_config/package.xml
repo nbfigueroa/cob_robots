@@ -30,5 +30,6 @@
   <exec_depend>ur_description</exec_depend>
   <exec_depend>velocity_controllers</exec_depend>
   <exec_depend>xacro</exec_depend>
+  <exec_depend>robotiq_s_model_visualization</exec_depend>
 
 </package>
