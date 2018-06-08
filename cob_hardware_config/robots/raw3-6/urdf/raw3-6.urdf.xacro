@@ -23,7 +23,7 @@
   <!-- <xacro:include filename="$(find cob_description)/urdf/ur_arm/ur10_arm.urdf.xacro" /> -->
   
   <!-- For [despot_motion](https://github.com/Shentheman/despot_motion) -->
-  <xacro:include filename="$(find despot_motion)/config/ur10_arm.urdf.xacro" />
+  <xacro:include filename="$(find yuri_launch)/config/despot_ur10_arm.urdf.xacro" />
 
   <!-- robotiq gripper -->
   <xacro:include filename="$(find cob_description)/urdf/robotiq_gripper/robotiq_s_gripper.urdf.xacro" />
