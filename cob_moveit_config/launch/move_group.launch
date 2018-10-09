@@ -46,6 +46,12 @@
     <arg name="moveit_sensor_manager" value="$(arg robot)" />
   </include>
 
+  <!-- https://github.com/ros-planning/moveit_ros/issues/629#issuecomment-282573234 -->
+  <!-- https://answers.ros.org/question/265135/moveit-using-solve-type-speed-instead-of-distance/ -->
+  <group ns="move_group">
+    <rosparam command="load" file="$(find cob_moveit_config)/robots/raw3-6/moveit/config/kinematics.yaml"/>
+  </group>
+
   <!-- Start the actual move_group node/action server -->
   <node name="move_group" launch-prefix="$(arg launch_prefix)" pkg="moveit_ros_move_group" type="move_group" respawn="false" output="screen" args="$(arg command_args)">
     <!-- Set the display variable, in case OpenGL code is used internally -->
