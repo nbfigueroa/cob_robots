@@ -28,6 +28,8 @@
   <arg name="base_navigation_global_planner" default="$(optenv BASE_NAVIGATION_GLOBAL_PLANNER !!NO_BASE_NAVIGATION_GLOBAL_PLANNER_SET!!)"/>
   <arg name="2dnav_linear" default="$(optenv 2DNAV_LINEAR !!NO_2DNAV_LINEAR_SET!!)"/>
 
+  <arg name="move_base_flex" default="$(optenv MOVE_BASE_FLEX !!NO_MOVE_BASE_FLEX_SET!!)"/>
+
   <arg name="arm_planner" default="$(optenv ARM_PLANNER !!NO_ARM_PLANNER_SET!!)" />
 
   <arg name="load_arm_universal_robot_driver" default="$(optenv LOAD_ARM_UNIVERSAL_ROBOT_DRIVER !!NO_LOAD_ARM_UNIVERSAL_ROBOT_DRIVER_SET!!)"/>
@@ -125,6 +127,7 @@
           <arg name="pkg_nav_config" value="$(find cob_navigation_config)"/>
           <arg name="base_navigation_local_planner" value="$(arg base_navigation_local_planner)"/>
           <arg name="base_navigation_global_planner" value="$(arg base_navigation_global_planner)"/>
+          <arg name="move_base_flex" value="$(arg move_base_flex)"/>
         </include>
         
         <group unless="$(arg load_base_navigation_slam_rviz)">
@@ -152,6 +155,7 @@
           <arg name="pkg_nav_config" value="$(find cob_navigation_config)"/>
           <arg name="base_navigation_local_planner" value="$(arg base_navigation_local_planner)"/>
           <arg name="base_navigation_global_planner" value="$(arg base_navigation_global_planner)"/>
+          <arg name="move_base_flex" value="$(arg move_base_flex)"/>
           <arg name="pkg_data" value="$(arg pkg_data)" />
           <arg name="load_base_navigation_amcl" value="$(arg load_base_navigation_amcl)" />
         </include>
