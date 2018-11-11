@@ -111,6 +111,7 @@
     <child link="${wrist_camera_name}_mount_link"/>
   </joint>
 
+  <!-- The collisions for the mount link is  used for [despot_motion](https://github.com/Shentheman/despot_motion) -->
   <link name="${wrist_camera_name}_mount_link" >
     <inertial>
       <mass value="0.564" />
@@ -120,13 +121,15 @@
     <visual>
      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <box size="0.04 0.15 0.05"/>
+        <!-- <box size="0.04 0.15 0.05"/> -->
+        <box size="0.05 0.05 0.05"/>
       </geometry>
     </visual>
     <collision>
      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
-        <box size="0.04 0.15 0.05"/>
+        <!-- <box size="0.04 0.15 0.05"/> -->
+        <box size="0.05 0.05 0.05"/>
       </geometry>
     </collision>
   </link>
