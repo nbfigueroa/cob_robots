@@ -5,11 +5,12 @@
     <arg name="load_wrist_camera_simulator" default="$(optenv LOAD_WRIST_CAMERA_SIMULATOR !!NO_LOAD_WRIST_CAMERA_SIMULATOR_SET!!)"/>
     <arg name="visualize_wrist_camera_simulator" default="$(optenv VISUALIZE_WRIST_CAMERA_SIMULATOR !!NO_VISUALIZE_WRIST_CAMERA_SIMULATOR_SET!!)"/>
     <arg name="visualize_sick_s300_simulator" default="$(optenv VISUALIZE_SICK_S300_SIMULATOR !!NO_VISUALIZE_SICK_S300_SIMULATOR_SET!!)"/>
+  	<arg name="ur10_urdf_path" default="$(optenv ur10_urdf_path !!NO_UR10_URDF_PATH_SET!!)"/>
     <arg name="sim" default="$(optenv SIM !!NO_SIM_SET!!)"/>
     <arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 
 
     <!-- send cob urdf to param server -->
     <!-- https://answers.ros.org/question/38956/pass-parameters-to-xacro-in-launch-file/ -->
-    <param name="robot_description" command="$(find xacro)/xacro --inorder '$(arg pkg_hardware_config)/robots/$(arg robot)/urdf/$(arg robot).urdf.xacro' load_wrist_camera_simulator:=$(arg load_wrist_camera_simulator) visualize_wrist_camera_simulator:=$(arg visualize_wrist_camera_simulator) visualize_sick_s300_simulator:=$(arg visualize_sick_s300_simulator) sim:=$(arg sim)"/>
+    <param name="robot_description" command="$(find xacro)/xacro --inorder '$(arg pkg_hardware_config)/robots/$(arg robot)/urdf/$(arg robot).urdf.xacro' load_wrist_camera_simulator:=$(arg load_wrist_camera_simulator) visualize_wrist_camera_simulator:=$(arg visualize_wrist_camera_simulator) visualize_sick_s300_simulator:=$(arg visualize_sick_s300_simulator) ur10_urdf_path:=$(arg ur10_urdf_path) sim:=$(arg sim)"/>
 </launch>

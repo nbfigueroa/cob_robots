@@ -10,7 +10,8 @@
   <arg name="load_wrist_camera_simulator" default="$(optenv LOAD_WRIST_CAMERA_SIMULATOR !!NO_LOAD_WRIST_CAMERA_SIMULATOR_SET!!)"/>
   <arg name="visualize_wrist_camera_simulator" default="$(optenv VISUALIZE_WRIST_CAMERA_SIMULATOR !!NO_VISUALIZE_WRIST_CAMERA_SIMULATOR_SET!!)"/>
   <arg name="visualize_sick_s300_simulator" default="$(optenv VISUALIZE_SICK_S300_SIMULATOR !!NO_VISUALIZE_SICK_S300_SIMULATOR_SET!!)"/>
-
+  
+  <arg name="ur10_urdf_path" default="$(optenv ur10_urdf_path !!NO_UR10_URDF_PATH_SET!!)"/>
 
   <arg name="joystick_teleop" default="$(optenv JOYSTICK_TELEOP !!NO_JOYSTICK_TELEOP_SET!!)"/>
   <arg name="keyboard_teleop" default="$(optenv KEYBOARD_TELEOP !!NO_KEYBOARD_TELEOP_SET!!)"/>
@@ -54,6 +55,7 @@
     <arg name="load_wrist_camera_simulator" value="$(arg load_wrist_camera_simulator)"/>
     <arg name="visualize_wrist_camera_simulator" value="$(arg visualize_wrist_camera_simulator)"/>
     <arg name="visualize_sick_s300_simulator" value="$(arg visualize_sick_s300_simulator)"/>
+    <arg name="ur10_urdf_path" value="$(arg ur10_urdf_path)"/>
     <arg name="sim" value="$(arg sim)"/>
   </include>
   <!-- upload default configuration parameters -->
