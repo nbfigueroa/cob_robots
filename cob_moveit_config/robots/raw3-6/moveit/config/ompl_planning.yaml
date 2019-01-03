@@ -69,10 +69,14 @@ arm:
   #projection_evaluator: joints(shoulder_pan_joint,shoulder_lift_joint)
 
   # http://docs.ros.org/kinetic/api/moveit_tutorials/html/doc/ompl_interface_tutorial.html
-  # The longest_valid_segement_fraction defines the discretization of robot motions used for collision checking, and greatly affects the performance and reliability of OMPL-based solutions. 
+  # The longest_valid_segement_fraction defines the discretization of robot motions used for collision checking, and greatly affects the performance and reliability of OMPL-based solutions.
   longest_valid_segment_fraction: 0.05
   # default is 0.01, which makes planning slow
   # longest_valid_segment_fraction: 0.01
+
+  # You might have this issue if this is too high:
+  # https://answers.ros.org/question/247230/plan-was-found-but-it-seems-to-be-invalid-possibly-due-to-postprocessing/
+
 gripper:
   planner_configs:
     - SBLkConfigDefault
