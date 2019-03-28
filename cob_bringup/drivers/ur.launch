@@ -58,8 +58,8 @@
       <!-- <param name="tool_frame" type="str" value="$(arg tool_frame)"/> -->
       <!-- Added by Shen based on https://github.com/ros-industrial/ur_modern_driver/issues/132#issuecomment-326222790 -->
       <param name="servoj_time" type="double" value="0.016" />
-      <remap from="/arm/ros_controller/joint_states" to="/arm/joint_states"/>
-      <remap from="/arm/ros_controller/robot_description" to="/robot_description"/>
+      <!-- <remap from="/arm/joint_states" to="/arm/joint_states"/> -->
+      <remap from="/arm/robot_description" to="/robot_description"/>
     </node>
   </group>
 
