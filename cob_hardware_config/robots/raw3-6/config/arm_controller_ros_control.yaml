@@ -1,5 +1,8 @@
 ## joint_names
-joint_names: [arm_shoulder_pan_joint, arm_shoulder_lift_joint, arm_elbow_joint, arm_wrist_1_joint, arm_wrist_2_joint, arm_wrist_3_joint]
+# This is used by cob_control_mode_adapter
+# This is loaded at https://github.com/ipa320/cob_control/blob/f2116ffc9fbb924e5cb18ee21905434673068f63/cob_control_mode_adapter/src/cob_control_mode_adapter_node.cpp#L85
+# Since we don't use cob_control_mode_adapter, we won't include this parameter.
+# joint_names: [arm_shoulder_pan_joint, arm_shoulder_lift_joint, arm_elbow_joint, arm_wrist_1_joint, arm_wrist_2_joint, arm_wrist_3_joint]
 
 ## control_mode_adapter
 max_command_silence: 0.5

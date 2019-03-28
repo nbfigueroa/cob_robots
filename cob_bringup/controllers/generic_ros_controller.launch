@@ -33,6 +33,7 @@
         </group>
 
         <!-- control_mode_adapter -->
-        <node pkg="cob_control_mode_adapter" type="cob_control_mode_adapter_node" name="control_mode_adapter" cwd="node" respawn="false" output="screen"/> 
+        <!-- If enable this, we will have the error msg: `[ERROR] [1553784627.018896426]: //arm does not support 'joint_trajectory_controller' and no other controller was started yet` as https://github.com/ipa320/cob_control/blob/f2116ffc9fbb924e5cb18ee21905434673068f63/cob_control_mode_adapter/src/cob_control_mode_adapter_node.cpp#L313 -->
+        <!-- <node pkg="cob_control_mode_adapter" type="cob_control_mode_adapter_node" name="control_mode_adapter" cwd="node" respawn="false" output="screen"/> -->
     </group>
 </launch>
