@@ -16,6 +16,9 @@
         
         <!-- load other controller --> 
         <node name="ros_control_controller_manager" pkg="controller_manager" type="controller_manager" respawn="false"
-          output="screen" args="load vel_based_pos_traj_controller" /> 
+          output="screen" args="load vel_based_pos_traj_controller" />
+
+        <!-- control_mode_adapter -->
+        <node pkg="cob_control_mode_adapter" type="cob_control_mode_adapter_node" name="control_mode_adapter" cwd="node" respawn="false" output="screen"/> 
     </group>
 </launch>
