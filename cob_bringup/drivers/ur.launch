@@ -61,6 +61,23 @@
       <!-- <remap from="/arm/joint_states" to="/arm/joint_states"/> -->
       <remap from="/arm/robot_description" to="/robot_description"/>
     </node>
+    <!-- Same as load_arm_ur_modern_driver_ros_controller_pos -->
+    <node if="$(arg load_arm_ur_modern_driver_ros_controller_vel)" ns="arm" name="ur_hardware_interface" pkg="ur_modern_driver" type="ur_driver" output="screen">
+      <param name="prefix" type="str" value="$(arg prefix)"/>
+      <param name="robot_ip_address" type="str" value="$(arg robot_ip)"/>
+      <param name="min_payload" type="double" value="$(arg min_payload)"/>
+      <param name="max_payload" type="double" value="$(arg max_payload)"/>
+      <!-- The max_velocity  (rad/s) parameter is only used for debugging in the ur_driver. It's not related to actual velocity limits. https://github.com/Shentheman/ur_modern_driver/blob/3f7cbbf815ff3b736f99462d42e33e53b63c7629/launch/ur_common.launch#L20 -->
+      <param name="max_velocity" type="double" value="10.0" />
+      <param name="use_ros_control" type="bool" value="True"/>
+      <param name="servoj_gain" type="double" value="750" />
+      <!-- <param name="base_frame" type="str" value="$(arg base_frame)"/> -->
+      <!-- <param name="tool_frame" type="str" value="$(arg tool_frame)"/> -->
+      <!-- Added by Shen based on https://github.com/ros-industrial/ur_modern_driver/issues/132#issuecomment-326222790 -->
+      <param name="servoj_time" type="double" value="0.016" />
+      <!-- <remap from="/arm/joint_states" to="/arm/joint_states"/> -->
+      <remap from="/arm/robot_description" to="/robot_description"/>
+    </node>
   </group>
 
   <include if="$(arg sim)" file="$(find cob_bringup)/controllers/generic_controller.launch">
