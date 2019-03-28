@@ -1,56 +1,87 @@
 <?xml version="1.0"?>
 <launch>
 
-	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
-	<arg name="component_name" default="arm"/>
+  <arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+  <arg name="component_name" default="arm"/>
 
-	<arg name="load_arm_universal_robot_follow_joint_trajectory" default="$(optenv load_arm_universal_robot_follow_joint_trajectory !!NO_load_arm_universal_robot_follow_joint_trajectory_SET!!)"/>
-	<arg name="load_arm_ur_modern_driver_follow_joint_trajectory" default="$(optenv load_arm_ur_modern_driver_follow_joint_trajectory !!NO_load_arm_ur_modern_driver_follow_joint_trajectory_SET!!)"/>
-	<arg name="load_arm_ur_modern_driver_ros_controller_pos" default="$(optenv load_arm_ur_modern_driver_ros_controller_pos !!NO_load_arm_ur_modern_driver_ros_controller_pos_SET!!)"/>
-	<arg name="load_arm_ur_modern_driver_ros_controller_vel" default="$(optenv load_arm_ur_modern_driver_ros_controller_vel !!NO_load_arm_ur_modern_driver_ros_controller_vel_SET!!)"/>
+  <arg name="load_arm_universal_robot_follow_joint_trajectory" default="$(optenv load_arm_universal_robot_follow_joint_trajectory !!NO_load_arm_universal_robot_follow_joint_trajectory_SET!!)"/>
+  <arg name="load_arm_ur_modern_driver_follow_joint_trajectory" default="$(optenv load_arm_ur_modern_driver_follow_joint_trajectory !!NO_load_arm_ur_modern_driver_follow_joint_trajectory_SET!!)"/>
+  <arg name="load_arm_ur_modern_driver_ros_controller_pos" default="$(optenv load_arm_ur_modern_driver_ros_controller_pos !!NO_load_arm_ur_modern_driver_ros_controller_pos_SET!!)"/>
+  <arg name="load_arm_ur_modern_driver_ros_controller_vel" default="$(optenv load_arm_ur_modern_driver_ros_controller_vel !!NO_load_arm_ur_modern_driver_ros_controller_vel_SET!!)"/>
 
-	<arg name="robot_ip" default="localhost"/>
-	<arg name="reverse_port" default="50001"/>
-	<arg name="min_payload" default="0.0"/>
-	<arg name="max_payload" default="10.0"/>
-	<arg name="prefix" default="arm_"/>
-	<arg name="sim" default="false"/>
-	<arg name="cartesian_control" default="false"/>
+  <arg name="robot_ip" default="localhost"/>
+  <arg name="reverse_port" default="50001"/>
+  <arg name="min_payload" default="0.0"/>
+  <arg name="max_payload" default="10.0"/>
+  <arg name="prefix" default="arm_"/>
+  <arg name="sim" default="false"/>
+  <arg name="cartesian_control" default="false"/>
 
-	<group unless="$(arg sim)">
-  		<!-- Old driver - position control. https://github.com/ros-industrial/universal_robot -->
-		<node if="$(arg load_arm_universal_robot_follow_joint_trajectory)" ns="arm/joint_trajectory_controller" pkg="ur_driver" type="driver.py" name="ur_driver" args="$(arg robot_ip) $(arg reverse_port)" output="screen">
-			<remap from="/arm/joint_trajectory_controller/joint_states" to="/arm/joint_states"/>
-			<remap from="/arm/joint_trajectory_controller/robot_description" to="/robot_description"/>
-			<param name="min_payload" type="double" value="$(arg min_payload)"/>
-			<param name="max_payload" type="double" value="$(arg max_payload)"/>
-			<param name="prefix" value="$(arg prefix)"/>
-		</node>
+  <group unless="$(arg sim)">
+    <!-- Old driver - position control. https://github.com/ros-industrial/universal_robot -->
+    <node if="$(arg load_arm_universal_robot_follow_joint_trajectory)" ns="arm/joint_trajectory_controller" pkg="ur_driver" type="driver.py" name="ur_driver" args="$(arg robot_ip) $(arg reverse_port)" output="screen">
+      <remap from="/arm/joint_trajectory_controller/joint_states" to="/arm/joint_states"/>
+      <remap from="/arm/joint_trajectory_controller/robot_description" to="/robot_description"/>
+      <param name="min_payload" type="double" value="$(arg min_payload)"/>
+      <param name="max_payload" type="double" value="$(arg max_payload)"/>
+      <param name="prefix" value="$(arg prefix)"/>
+    </node>
 
-		<!-- universal robot modern driver -->
-        <node if="$(arg load_arm_ur_modern_driver_follow_joint_trajectory)" ns="arm/joint_trajectory_controller" pkg="ur_modern_driver" type="ur_driver" name="ur_driver" output="screen">
-            <param name="prefix" type="str" value="$(arg prefix)"/>
-	    	<param name="robot_ip_address" type="str" value="$(arg robot_ip)" />
-            <param name="min_payload" type="double" value="$(arg min_payload)"/>
-            <param name="max_payload" type="double" value="$(arg max_payload)"/>
-  			<!-- The max_velocity  (rad/s) parameter is only used for debugging in the ur_driver. It's not related to actual velocity limits. https://github.com/Shentheman/ur_modern_driver/blob/3f7cbbf815ff3b736f99462d42e33e53b63c7629/launch/ur_common.launch#L20 -->
-	    	<param name="max_velocity" type="double" value="10.0" />
-	    	<param name="servoj_time" type="double" value="0.008" />
-			<!-- <param name="base_frame" type="str" value="$(arg base_frame)"/> -->
-		    <!-- <param name="tool_frame" type="str" value="$(arg tool_frame)"/> -->
-            <remap from="/arm/joint_trajectory_controller/joint_states" to="/arm/joint_states"/>
-            <remap from="/arm/joint_trajectory_controller/robot_description" to="/robot_description"/>
-        </node>
-	  </node>
-	</group>
-	<include if="$(arg sim)" file="$(find cob_bringup)/controllers/generic_controller.launch">
-		<arg name="robot" value="$(arg robot)"/>
-		<arg name="component_name" value="$(arg component_name)"/>
-	</include>
-	<include if="$(arg cartesian_control)" file="$(find cob_bringup)/controllers/generic_cartesian_controller.launch">
-		<arg name="robot" value="$(arg robot)"/>
-		<arg name="component_name" value="$(arg component_name)"/>
-		<arg name="debug" value="false"/>
-	</include>
+    <!-- Modern driver - position control and direct joint_speed command for visual servoing. https://github.com/Shentheman/ur_modern_driver -->
+    <!-- https://github.com/Shentheman/ur_modern_driver/blob/master/launch/ur_common.launch -->
+    <node if="$(arg load_arm_ur_modern_driver_follow_joint_trajectory)" ns="arm/joint_trajectory_controller" pkg="ur_modern_driver" type="ur_driver" name="ur_driver" output="screen">
+      <param name="prefix" type="str" value="$(arg prefix)"/>
+      <param name="robot_ip_address" type="str" value="$(arg robot_ip)" />
+      <param name="min_payload" type="double" value="$(arg min_payload)"/>
+      <param name="max_payload" type="double" value="$(arg max_payload)"/>
+      <!-- The max_velocity  (rad/s) parameter is only used for debugging in the ur_driver. It's not related to actual velocity limits. https://github.com/Shentheman/ur_modern_driver/blob/3f7cbbf815ff3b736f99462d42e33e53b63c7629/launch/ur_common.launch#L20 -->
+      <param name="max_velocity" type="double" value="10.0" />
+      <param name="servoj_time" type="double" value="0.008" />
+      <!-- <param name="base_frame" type="str" value="$(arg base_frame)"/> -->
+      <!-- <param name="tool_frame" type="str" value="$(arg tool_frame)"/> -->
+      <remap from="/arm/joint_trajectory_controller/joint_states" to="/arm/joint_states"/>
+      <remap from="/arm/joint_trajectory_controller/robot_description" to="/robot_description"/>
+    </node>
+
+    <!-- Modern driver - ROS controller (position) = https://github.com/Shentheman/ur_modern_driver -->
+    <!-- https://github.com/Shentheman/ur_modern_driver/blob/irg/launch/ur10_ros_control_pos.launch -->
+    <node if="$(arg load_arm_ur_modern_driver_ros_controller_pos)" ns="arm/ros_controller" name="ur_driver" pkg="ur_modern_driver" type="ur_driver" output="screen">
+      <param name="prefix" type="str" value="$(arg prefix)"/>
+      <param name="robot_ip_address" type="str" value="$(arg robot_ip)"/>
+      <param name="min_payload" type="double" value="$(arg min_payload)"/>
+      <param name="max_payload" type="double" value="$(arg max_payload)"/>
+      <param name="max_velocity" type="double" value="$(arg max_velocity)"/>
+      <param name="use_ros_control" type="bool" value="True"/>
+      <param name="servoj_gain" type="double" value="750" />
+      <!-- <param name="base_frame" type="str" value="$(arg base_frame)"/> -->
+      <!-- <param name="tool_frame" type="str" value="$(arg tool_frame)"/> -->
+      <!-- Added by Shen based on https://github.com/ros-industrial/ur_modern_driver/issues/132#issuecomment-326222790 -->
+      <param name="servoj_time" type="double" value="0.016" />
+      <remap from="/arm/ros_controller/joint_states" to="/arm/joint_states"/>
+      <remap from="/arm/ros_controller/robot_description" to="/robot_description"/>
+    </node>
+  </group>
+
+  <include if="$(arg sim)" file="$(find cob_bringup)/controllers/generic_controller.launch">
+    <arg name="robot" value="$(arg robot)"/>
+    <arg name="component_name" value="$(arg component_name)"/>
+  </include>
+  <include if="$(arg cartesian_control)" file="$(find cob_bringup)/controllers/generic_cartesian_controller.launch">
+    <arg name="robot" value="$(arg robot)"/>
+    <arg name="component_name" value="$(arg component_name)"/>
+    <arg name="debug" value="false"/>
+  </include>
+
+  <!-- https://github.com/Shentheman/ur_modern_driver/blob/irg/launch/ur10_ros_control_pos.launch -->
+  <group if="$(arg load_arm_ur_modern_driver_ros_controller_pos)" ns="$(arg component_name)">
+    <!-- Load controller settings -->
+    <rosparam file="$(find ur_modern_driver)/config/ur10_controllers.yaml" command="load"/>
+    <!-- spawn controller manager -->
+    <node name="ros_control_controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+      output="screen" args="joint_state_controller force_torque_sensor_controller pos_based_pos_traj_controller" />
+    <!-- load other controller --> 
+    <node name="ros_control_controller_manager" pkg="controller_manager" type="controller_manager" respawn="false"
+      output="screen" args="load vel_based_pos_traj_controller" /> 
+  </group>
 
 </launch>

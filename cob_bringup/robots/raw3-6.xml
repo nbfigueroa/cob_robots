@@ -44,14 +44,11 @@
 
   <arg name="load_gripper_robitiq_s_driver" default="$(optenv LOAD_GRIPPER_ROBOTIQ_S_DRIVER !!NO_LOAD_GRIPPER_ROBOTIQ_S_DRIVER_SET!!)"/>
 
-
   <arg name="ur_ip" default="$(optenv UR_IP !!NO_UR_IP_SET!!)"/>
   <arg name="gripper_ip" default="$(optenv GRIPPER_IP !!NO_GRIPPER_IP_SET!!)"/>
   
-
   <arg name="env-script" default="$(optenv ENV_SCRIPT !!NO_ENV_SCRIPT_SET!!)"/>
   <arg name="pc1" default="$(optenv PC1 !!NO_PC1_SET!!)"/>
-
 
   <!-- upload robot description -->
   <include file="$(find cob_hardware_config)/upload_robot.launch" >
@@ -233,8 +230,6 @@
       </include>
     </group>
 
-
-
     <!-- start common nodes used in hardware and simulation -->
     <include file="$(find cob_bringup)/drivers/scan_unifier.launch" >
       <arg name="robot" value="$(arg robot)" />
@@ -277,7 +272,7 @@
     <arg name="yaw" default="0.0" />
     <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
         args="-urdf -x $(arg x) -y $(arg y) -z $(arg z) -Y $(arg yaw) -model raw3-6 -param robot_description"/>
- -->
+    -->
   </group>
   
   <machine name="pc1" address="$(arg pc1)" env-loader="$(arg env-script)" default="true"/>
