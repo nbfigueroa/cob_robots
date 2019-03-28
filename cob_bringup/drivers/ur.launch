@@ -18,7 +18,7 @@
   <arg name="cartesian_control" default="false"/>
 
   <group unless="$(arg sim)">
-    <!-- Old driver - position control. https://github.com/ros-industrial/universal_robot -->
+    <!-- I. Old driver - position control. https://github.com/ros-industrial/universal_robot -->
     <node if="$(arg load_arm_universal_robot_follow_joint_trajectory)" ns="arm/joint_trajectory_controller" pkg="ur_driver" type="driver.py" name="ur_driver" args="$(arg robot_ip) $(arg reverse_port)" output="screen">
       <remap from="/arm/joint_trajectory_controller/joint_states" to="/arm/joint_states"/>
       <remap from="/arm/joint_trajectory_controller/robot_description" to="/robot_description"/>
@@ -27,7 +27,7 @@
       <param name="prefix" value="$(arg prefix)"/>
     </node>
 
-    <!-- Modern driver - position control and direct joint_speed command for visual servoing. https://github.com/Shentheman/ur_modern_driver -->
+    <!-- II. Modern driver - position control and direct joint_speed command for visual servoing. https://github.com/Shentheman/ur_modern_driver -->
     <!-- https://github.com/Shentheman/ur_modern_driver/blob/master/launch/ur_common.launch -->
     <node if="$(arg load_arm_ur_modern_driver_follow_joint_trajectory)" ns="arm/joint_trajectory_controller" pkg="ur_modern_driver" type="ur_driver" name="ur_driver" output="screen">
       <param name="prefix" type="str" value="$(arg prefix)"/>
@@ -43,7 +43,7 @@
       <remap from="/arm/joint_trajectory_controller/robot_description" to="/robot_description"/>
     </node>
 
-    <!-- Modern driver - ROS controller (position) = https://github.com/Shentheman/ur_modern_driver -->
+    <!-- III. Modern driver - ROS controller (position) = https://github.com/Shentheman/ur_modern_driver -->
     <!-- https://github.com/Shentheman/ur_modern_driver/blob/irg/launch/ur10_ros_control_pos.launch -->
     <node if="$(arg load_arm_ur_modern_driver_ros_controller_pos)" ns="arm" name="ur_hardware_interface" pkg="ur_modern_driver" type="ur_driver" output="screen">
       <param name="prefix" type="str" value="$(arg prefix)"/>
@@ -61,6 +61,8 @@
       <!-- <remap from="/arm/joint_states" to="/arm/joint_states"/> -->
       <remap from="/arm/robot_description" to="/robot_description"/>
     </node>
+
+    <!-- IV. Modern driver - ROS controller (position) = https://github.com/Shentheman/ur_modern_driver -->
     <!-- Same as load_arm_ur_modern_driver_ros_controller_pos -->
     <node if="$(arg load_arm_ur_modern_driver_ros_controller_vel)" ns="arm" name="ur_hardware_interface" pkg="ur_modern_driver" type="ur_driver" output="screen">
       <param name="prefix" type="str" value="$(arg prefix)"/>
@@ -80,10 +82,6 @@
     </node>
   </group>
 
-  <include if="$(arg sim)" file="$(find cob_bringup)/controllers/generic_controller.launch">
-    <arg name="robot" value="$(arg robot)"/>
-    <arg name="component_name" value="$(arg component_name)"/>
-  </include>
 
   <include if="$(arg cartesian_control)" file="$(find cob_bringup)/controllers/generic_cartesian_controller.launch">
     <arg name="robot" value="$(arg robot)"/>
@@ -91,18 +89,38 @@
     <arg name="debug" value="false"/>
   </include>
 
+  <!-- Simulated controllers for I. old driver - position control. https://github.com/ros-industrial/universal_robot -->
+  <group if="$(arg load_arm_universal_robot_follow_joint_trajectory)">
+    <include if="$(arg sim)" file="$(find cob_bringup)/controllers/generic_controller.launch">
+      <arg name="robot" value="$(arg robot)"/>
+      <arg name="component_name" value="$(arg component_name)"/>
+    </include>
+  </group>
+
+  <!-- Simulated controllers for II. modern driver - position control and direct joint_speed command for visual servoing. https://github.com/Shentheman/ur_modern_driver -->
+  <group if="$(arg load_arm_ur_modern_driver_follow_joint_trajectory)">
+    <include if="$(arg sim)" file="$(find cob_bringup)/controllers/generic_controller.launch">
+      <arg name="robot" value="$(arg robot)"/>
+      <arg name="component_name" value="$(arg component_name)"/>
+    </include>
+  </group>
+
+  <!-- Controllers and simulated controllers for III. modern driver - ROS controller (position) = https://github.com/Shentheman/ur_modern_driver -->
   <include if="$(arg load_arm_ur_modern_driver_ros_controller_pos)" file="$(find cob_bringup)/controllers/generic_ros_controller.launch">
     <arg name="robot" value="$(arg robot)"/>
     <arg name="component_name" value="$(arg component_name)"/>
     <arg name="pos_control" value="true"/>
     <arg name="vel_control" value="false"/>
+    <arg name="sim" value="$(arg sim)"/>
   </include>
 
+  <!-- Controllers and simulated controllers for IV. modern driver - ROS controller (position) = https://github.com/Shentheman/ur_modern_driver -->
   <include if="$(arg load_arm_ur_modern_driver_ros_controller_vel)" file="$(find cob_bringup)/controllers/generic_ros_controller.launch">
     <arg name="robot" value="$(arg robot)"/>
     <arg name="component_name" value="$(arg component_name)"/>
     <arg name="pos_control" value="false"/>
     <arg name="vel_control" value="true"/>
+    <arg name="sim" value="$(arg sim)"/>
   </include>
 
 </launch>
