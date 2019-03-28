@@ -196,10 +196,10 @@
     <group unless="$(arg load_arm_python_urx)">
       <include file="$(find cob_bringup)/drivers/ur.launch">
         <arg name="robot" value="$(arg robot)"/>
-        <arg name="load_arm_universal_robot_follow_joint_trajectory" default="$(arg load_arm_universal_robot_follow_joint_trajectory)"/>
-        <arg name="load_arm_ur_modern_driver_follow_joint_trajectory" default="$(arg load_arm_ur_modern_driver_follow_joint_trajectory)"/>
-        <arg name="load_arm_ur_modern_driver_ros_controller_pos" default="$(arg load_arm_ur_modern_driver_ros_controller_pos)"/>
-        <arg name="load_arm_ur_modern_driver_ros_controller_vel" default="$(arg load_arm_ur_modern_driver_ros_controller_vel)"/>
+        <arg name="load_arm_universal_robot_follow_joint_trajectory" value="$(arg load_arm_universal_robot_follow_joint_trajectory)"/>
+        <arg name="load_arm_ur_modern_driver_follow_joint_trajectory" value="$(arg load_arm_ur_modern_driver_follow_joint_trajectory)"/>
+        <arg name="load_arm_ur_modern_driver_ros_controller_pos" value="$(arg load_arm_ur_modern_driver_ros_controller_pos)"/>
+        <arg name="load_arm_ur_modern_driver_ros_controller_vel" value="$(arg load_arm_ur_modern_driver_ros_controller_vel)"/>
         <arg name="component_name" value="arm"/>
         <arg name="robot_ip" value="$(arg ur_ip)"/>
         <arg name="min_payload"  value="0.0"/>
