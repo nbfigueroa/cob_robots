@@ -33,8 +33,12 @@
 
   <arg name="arm_planner" default="$(optenv ARM_PLANNER !!NO_ARM_PLANNER_SET!!)" />
 
-  <arg name="load_arm_universal_robot_driver" default="$(optenv LOAD_ARM_UNIVERSAL_ROBOT_DRIVER !!NO_LOAD_ARM_UNIVERSAL_ROBOT_DRIVER_SET!!)"/>
-  <arg name="load_arm_modern_ur_driver" default="$(optenv USE_ARM_MODERN_UR_DRIVER !!NO_USE_ARM_MODERN_UR_DRIVER_SET!!)"/>
+  <arg name="load_arm_python_urx" default="$(optenv load_arm_python_urx !!NO_load_arm_python_urx_SET!!)"/>
+  <arg name="load_arm_universal_robot_follow_joint_trajectory" default="$(optenv load_arm_universal_robot_follow_joint_trajectory !!NO_load_arm_universal_robot_follow_joint_trajectory_SET!!)"/>
+  <arg name="load_arm_ur_modern_driver_follow_joint_trajectory" default="$(optenv load_arm_ur_modern_driver_follow_joint_trajectory !!NO_load_arm_ur_modern_driver_follow_joint_trajectory_SET!!)"/>
+  <arg name="load_arm_ur_modern_driver_ros_controller_pos" default="$(optenv load_arm_ur_modern_driver_ros_controller_pos !!NO_load_arm_ur_modern_driver_ros_controller_pos_SET!!)"/>
+  <arg name="load_arm_ur_modern_driver_ros_controller_vel" default="$(optenv load_arm_ur_modern_driver_ros_controller_vel !!NO_load_arm_ur_modern_driver_ros_controller_vel_SET!!)"/>
+  
   <arg name="load_arm_moveit" default="$(optenv LOAD_ARM_MOVEIT !!NO_LOAD_ARM_MOVEIT_SET!!)"/>
   <arg name="load_arm_moveit_rviz" default="$(optenv LOAD_ARM_MOVEIT_RVIZ !!NO_LOAD_ARM_MOVEIT_RVIZ_SET!!)"/>
 
@@ -190,12 +194,15 @@
       <arg name="robot" value="$(arg robot)" />
     </include>
     -->
-    
+
     <!-- upper robot -->
-    <group if="$(arg load_arm_universal_robot_driver)">
+    <group unless="$(arg load_arm_python_urx)">
       <include file="$(find cob_bringup)/drivers/ur.launch">
         <arg name="robot" value="$(arg robot)"/>
-        <arg name="load_arm_modern_ur_driver" default="$(arg load_arm_modern_ur_driver)"/>
+        <arg name="load_arm_universal_robot_follow_joint_trajectory" default="$(arg load_arm_universal_robot_follow_joint_trajectory)"/>
+        <arg name="load_arm_ur_modern_driver_follow_joint_trajectory" default="$(arg load_arm_ur_modern_driver_follow_joint_trajectory)"/>
+        <arg name="load_arm_ur_modern_driver_ros_controller_pos" default="$(arg load_arm_ur_modern_driver_ros_controller_pos)"/>
+        <arg name="load_arm_ur_modern_driver_ros_controller_vel" default="$(arg load_arm_ur_modern_driver_ros_controller_vel)"/>
         <arg name="component_name" value="arm"/>
         <arg name="robot_ip" value="$(arg ur_ip)"/>
         <arg name="min_payload"  value="0.0"/>

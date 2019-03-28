@@ -3,7 +3,12 @@
 
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
 	<arg name="component_name" default="arm"/>
-    <arg name="load_arm_modern_ur_driver" default="$(optenv USE_ARM_MODERN_UR_DRIVER !!NO_USE_ARM_MODERN_UR_DRIVER_SET!!)"/>
+
+	<arg name="load_arm_universal_robot_follow_joint_trajectory" default="$(optenv load_arm_universal_robot_follow_joint_trajectory !!NO_load_arm_universal_robot_follow_joint_trajectory_SET!!)"/>
+	<arg name="load_arm_ur_modern_driver_follow_joint_trajectory" default="$(optenv load_arm_ur_modern_driver_follow_joint_trajectory !!NO_load_arm_ur_modern_driver_follow_joint_trajectory_SET!!)"/>
+	<arg name="load_arm_ur_modern_driver_ros_controller_pos" default="$(optenv load_arm_ur_modern_driver_ros_controller_pos !!NO_load_arm_ur_modern_driver_ros_controller_pos_SET!!)"/>
+	<arg name="load_arm_ur_modern_driver_ros_controller_vel" default="$(optenv load_arm_ur_modern_driver_ros_controller_vel !!NO_load_arm_ur_modern_driver_ros_controller_vel_SET!!)"/>
+
 	<arg name="robot_ip" default="localhost"/>
 	<arg name="reverse_port" default="50001"/>
 	<arg name="min_payload" default="0.0"/>
@@ -13,22 +18,30 @@
 	<arg name="cartesian_control" default="false"/>
 
 	<group unless="$(arg sim)">
-		<!-- universal robot python driver -->
-		<node unless="$(arg load_arm_modern_ur_driver)" ns="arm/joint_trajectory_controller" pkg="ur_driver" type="driver.py" name="ur_driver" args="$(arg robot_ip) $(arg reverse_port)" output="screen">
+  		<!-- Old driver - position control. https://github.com/ros-industrial/universal_robot -->
+		<node if="$(arg load_arm_universal_robot_follow_joint_trajectory)" ns="arm/joint_trajectory_controller" pkg="ur_driver" type="driver.py" name="ur_driver" args="$(arg robot_ip) $(arg reverse_port)" output="screen">
 			<remap from="/arm/joint_trajectory_controller/joint_states" to="/arm/joint_states"/>
 			<remap from="/arm/joint_trajectory_controller/robot_description" to="/robot_description"/>
 			<param name="min_payload" type="double" value="$(arg min_payload)"/>
 			<param name="max_payload" type="double" value="$(arg max_payload)"/>
 			<param name="prefix" value="$(arg prefix)"/>
 		</node>
+
 		<!-- universal robot modern driver -->
-        <node if="$(arg load_arm_modern_ur_driver)" ns="arm/joint_trajectory_controller" pkg="ur_modern_driver" type="ur_driver" name="ur_driver" args="$(arg robot_ip) $(arg reverse_port)" output="screen">
-            <remap from="/arm/joint_trajectory_controller/joint_states" to="/arm/joint_states"/>
-            <remap from="/arm/joint_trajectory_controller/robot_description" to="/robot_description"/>
+        <node if="$(arg load_arm_ur_modern_driver_follow_joint_trajectory)" ns="arm/joint_trajectory_controller" pkg="ur_modern_driver" type="ur_driver" name="ur_driver" output="screen">
+            <param name="prefix" type="str" value="$(arg prefix)"/>
+	    	<param name="robot_ip_address" type="str" value="$(arg robot_ip)" />
             <param name="min_payload" type="double" value="$(arg min_payload)"/>
             <param name="max_payload" type="double" value="$(arg max_payload)"/>
-            <param name="prefix" value="$(arg prefix)"/>
+  			<!-- The max_velocity  (rad/s) parameter is only used for debugging in the ur_driver. It's not related to actual velocity limits. https://github.com/Shentheman/ur_modern_driver/blob/3f7cbbf815ff3b736f99462d42e33e53b63c7629/launch/ur_common.launch#L20 -->
+	    	<param name="max_velocity" type="double" value="10.0" />
+	    	<param name="servoj_time" type="double" value="0.008" />
+			<!-- <param name="base_frame" type="str" value="$(arg base_frame)"/> -->
+		    <!-- <param name="tool_frame" type="str" value="$(arg tool_frame)"/> -->
+            <remap from="/arm/joint_trajectory_controller/joint_states" to="/arm/joint_states"/>
+            <remap from="/arm/joint_trajectory_controller/robot_description" to="/robot_description"/>
         </node>
+	  </node>
 	</group>
 	<include if="$(arg sim)" file="$(find cob_bringup)/controllers/generic_controller.launch">
 		<arg name="robot" value="$(arg robot)"/>
