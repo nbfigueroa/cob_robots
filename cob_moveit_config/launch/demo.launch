@@ -4,6 +4,8 @@
   <!-- <arg name="planner" default="chomp" /> -->
   <!-- <arg name="planner" default="stomp" /> -->
 
+  <arg name="ur10_urdf_path" default="$(find yuri_launch)/config/ur10_arm.urdf.xacro"/>
+
   <arg name="robot" default="raw3-6"/>
   <!-- By default, we do not start a database (it can be large) -->
   <arg name="db" default="false" />
@@ -15,6 +17,7 @@
   <!-- Load the URDF, SRDF and other .yaml configuration files on the param server -->
   <include file="$(find cob_moveit_config)/launch/planning_context.launch">
     <arg name="robot" value="$(arg robot)" />
+    <arg name="ur10_urdf_path" value="$(arg ur10_urdf_path)" />
     <arg name="load_robot_description" value="true"/>
   </include>
 
