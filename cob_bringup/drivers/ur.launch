@@ -50,7 +50,8 @@
       <param name="robot_ip_address" type="str" value="$(arg robot_ip)"/>
       <param name="min_payload" type="double" value="$(arg min_payload)"/>
       <param name="max_payload" type="double" value="$(arg max_payload)"/>
-      <param name="max_velocity" type="double" value="$(arg max_velocity)"/>
+      <!-- The max_velocity  (rad/s) parameter is only used for debugging in the ur_driver. It's not related to actual velocity limits. https://github.com/Shentheman/ur_modern_driver/blob/3f7cbbf815ff3b736f99462d42e33e53b63c7629/launch/ur_common.launch#L20 -->
+      <param name="max_velocity" type="double" value="10.0" />
       <param name="use_ros_control" type="bool" value="True"/>
       <param name="servoj_gain" type="double" value="750" />
       <!-- <param name="base_frame" type="str" value="$(arg base_frame)"/> -->
@@ -75,7 +76,7 @@
   <!-- https://github.com/Shentheman/ur_modern_driver/blob/irg/launch/ur10_ros_control_pos.launch -->
   <group if="$(arg load_arm_ur_modern_driver_ros_controller_pos)" ns="$(arg component_name)">
     <!-- Load controller settings -->
-    <rosparam file="$(find ur_modern_driver)/config/ur10_controllers.yaml" command="load"/>
+    <rosparam command="load" file="$(arg pkg_hardware_config)/robots/$(arg robot)/config/$(arg component_name)_controller_ros_control.yaml"/>
     <!-- spawn controller manager -->
     <node name="ros_control_controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
       output="screen" args="joint_state_controller force_torque_sensor_controller pos_based_pos_traj_controller" />
