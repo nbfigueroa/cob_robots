@@ -77,6 +77,15 @@
   <include if="$(arg load_arm_ur_modern_driver_ros_controller_pos)" file="$(find cob_bringup)/controllers/generic_ros_controller.launch">
     <arg name="robot" value="$(arg robot)"/>
     <arg name="component_name" value="$(arg component_name)"/>
+    <arg name="pos_control" value="true"/>
+    <arg name="vel_control" value="false"/>
+  </include>
+
+  <include if="$(arg load_arm_ur_modern_driver_ros_controller_vel)" file="$(find cob_bringup)/controllers/generic_ros_controller.launch">
+    <arg name="robot" value="$(arg robot)"/>
+    <arg name="component_name" value="$(arg component_name)"/>
+    <arg name="pos_control" value="false"/>
+    <arg name="vel_control" value="true"/>
   </include>
 
 </launch>
