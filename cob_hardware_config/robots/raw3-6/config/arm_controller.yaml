@@ -63,8 +63,8 @@ arm_wrist_3_joint_position_controller:
   joint: arm_wrist_3_joint
 
 
-# UR10 might not support velocity control yet
-# In /home/shen/my-workspace/src/universal_robot/ur_description/urdf/ur.transmission.xacro, each transmission only has PositionJointInterface as a hardwareInterface, but no VelocityJointInterface nor EffortJointInterface
+# universal_robot https://github.com/ros-industrial/universal_robot does not support velocity control.
+# As we can see at https://github.com/ros-industrial/universal_robot/blob/kinetic-devel/ur_description/urdf/ur.transmission.xacro, each transmission only has PositionJointInterface as a hardwareInterface, but no VelocityJointInterface nor EffortJointInterface.
 #https://answers.ros.org/question/204042/ur5-velocity-control-and-trajectory-recordingreplaying/
 #https://answers.ros.org/question/186681/no-valid-hardware-interface-element-found-in-joint/
 #
