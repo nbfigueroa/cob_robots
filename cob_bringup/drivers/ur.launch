@@ -45,7 +45,7 @@
 
     <!-- Modern driver - ROS controller (position) = https://github.com/Shentheman/ur_modern_driver -->
     <!-- https://github.com/Shentheman/ur_modern_driver/blob/irg/launch/ur10_ros_control_pos.launch -->
-    <node if="$(arg load_arm_ur_modern_driver_ros_controller_pos)" ns="arm/ros_controller" name="ur_driver" pkg="ur_modern_driver" type="ur_driver" output="screen">
+    <node if="$(arg load_arm_ur_modern_driver_ros_controller_pos)" ns="arm" name="ur_hardware_interface" pkg="ur_modern_driver" type="ur_driver" output="screen">
       <param name="prefix" type="str" value="$(arg prefix)"/>
       <param name="robot_ip_address" type="str" value="$(arg robot_ip)"/>
       <param name="min_payload" type="double" value="$(arg min_payload)"/>

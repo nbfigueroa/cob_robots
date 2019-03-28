@@ -1,8 +1,8 @@
-## joint_names
-joint_names: [arm_shoulder_pan_joint, arm_shoulder_lift_joint, arm_elbow_joint, arm_wrist_1_joint, arm_wrist_2_joint, arm_wrist_3_joint]
+# ## joint_names
+# joint_names: [arm_shoulder_pan_joint, arm_shoulder_lift_joint, arm_elbow_joint, arm_wrist_1_joint, arm_wrist_2_joint, arm_wrist_3_joint]
 
-## control_mode_adapter
-max_command_silence: 0.5
+# ## control_mode_adapter
+# max_command_silence: 0.5
 
 # This is used for ur_modern_driver
 # https://github.com/Shentheman/ur_modern_driver/blob/irg/config/ur10_controllers.yaml
