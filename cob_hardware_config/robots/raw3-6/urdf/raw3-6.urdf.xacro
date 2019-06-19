@@ -2,6 +2,7 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro"
        name="raw3-6" >
   <arg name="load_wrist_camera_simulator" default="$(optenv LOAD_WRIST_CAMERA_SIMULATOR !!NO_LOAD_WRIST_CAMERA_SIMULATOR_SET!!)"/>
+  <arg name="fix_base_with_world" default="$(optenv FIX_BASE_WITH_WORLD !!NO_FIX_BASE_WITH_WORLD_SET!!)"/>
   <arg name="visualize_wrist_camera_simulator" default="$(optenv VISUALIZE_WRIST_CAMERA_SIMULATOR !!NO_VISUALIZE_WRIST_CAMERA_SIMULATOR_SET!!)"/>
   <arg name="visualize_sick_s300_simulator" default="$(optenv VISUALIZE_SICK_S300_SIMULATOR !!NO_VISUALIZE_SICK_S300_SIMULATOR_SET!!)"/>
 
@@ -36,7 +37,8 @@
   <xacro:include filename="$(find cob_description)/urdf/sensors/sick_s300_laser.urdf.xacro"/>
 
   <!-- composition of the robot -->
-  <xacro:raw_base sim="$(arg sim)" visualize_sick_s300_simulator="$(arg visualize_sick_s300_simulator)" name="base"/>
+  <xacro:property name="base_name" value="base" />
+  <xacro:raw_base sim="$(arg sim)" visualize_sick_s300_simulator="$(arg visualize_sick_s300_simulator)" name="${base_name}"/>
 
   <!-- These are already defined at ./src/cob_common/raw_description/urdf/base_long/base.urdf.xacro. -->
   <!-- These are already defined at ./src/cob_common/raw_description/urdf/base_short/base.urdf.xacro. -->
@@ -133,6 +135,16 @@
     </collision>
   </link>
 
+  <!-- If we don't want the base to move at all: -->
+  <!-- https://github.com/ros-industrial/universal_robot/blob/830a7b480063d66b22d939c42a0c6c08901713e6/ur_description/urdf/ur10_joint_limited_robot.urdf.xacro#L21 -->
+  <xacro:if value="$(arg fix_base_with_world)">
+    <link name="world" />
+    <joint name="world_joint" type="fixed">
+      <parent link="world" />
+      <child link = "${base_name}_footprint" />
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+    </joint>
+  </xacro:if>
 
   <!--
   <xacro:sensor_r200 prefix="vision_wrist_" parent="arm_tool0">
