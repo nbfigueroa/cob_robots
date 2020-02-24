@@ -15,7 +15,7 @@
   <arg name="max_payload" default="10.0"/>
   <arg name="prefix" default="arm_"/>
   <arg name="sim" default="false"/>
-  <arg name="cartesian_control" default="false"/>
+  <arg name="cartesian_control" default="true"/>
 
   <group unless="$(arg sim)">
     <!-- I. Old driver - position control. https://github.com/ros-industrial/universal_robot -->
