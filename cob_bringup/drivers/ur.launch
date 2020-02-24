@@ -114,8 +114,8 @@
     <arg name="sim" value="$(arg sim)"/>
   </include>
 
-  <!-- Controllers and simulated controllers for IV. modern driver - ROS controller (position) = https://github.com/Shentheman/ur_modern_driver -->
-  <include if="$(arg load_arm_ur_modern_driver_ros_controller_vel)" file="$(find cob_bringup)/controllers/generic_ros_controller.launch">
+  <!-- Controllers and simulated controllers for IV. modern driver - ROS controller (velocity) = https://github.com/Shentheman/ur_modern_driver -->
+  <include if="$(arg load_arm_ur_modern_driver_ros_controller_vel)" file="$(find cob_bringup)/controllers/generic_ros_controller_nadia.launch">
     <arg name="robot" value="$(arg robot)"/>
     <arg name="component_name" value="$(arg component_name)"/>
     <arg name="pos_control" value="false"/>
