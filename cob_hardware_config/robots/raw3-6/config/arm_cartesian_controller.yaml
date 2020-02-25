@@ -1,5 +1,6 @@
 ## Cartesian controller parameters
-chain_base_link: arm_base_link
+# chain_base_link: arm_base_link
+chain_base_link: base_link
 chain_tip_link: arm_ee_link
 root_frame: odom_combined
 
